@@ -1,0 +1,781 @@
+{
+  "generatedAt": "2026-07-05T11:14:35.895Z",
+  "products": [
+    {
+      "id": "bogeumjari",
+      "name": "보금자리론",
+      "provider": "한국주택금융공사",
+      "category": "bogeumjari",
+      "description": "보금자리론은 HF 공식 URL을 기준으로 관리한다.",
+      "isActive": true,
+      "maxLoanAmount": 360000000,
+      "legacyMaxLoanAmount": null,
+      "minRate": 4.9,
+      "maxRate": 5.3,
+      "defaultRate": 5.2,
+      "repaymentTypes": [
+        "equal_payment",
+        "equal_principal",
+        "graduated_payment"
+      ],
+      "prepaymentPenalty": "",
+      "prepaymentPenaltyLevel": "unknown",
+      "eligibility": {
+        "maxHousePrice": 600000000,
+        "maxCombinedIncome": 100000000,
+        "maxDualIncome": null,
+        "maxNetAsset": null,
+        "maxExclusiveArea": null,
+        "requiresMarried": false,
+        "requiresNewlyMarried": false,
+        "maxMarriageYears": null,
+        "requiresNewborn": false,
+        "requiresNoHouse": false,
+        "requiresHouseholdNoHouseConfirmed": false,
+        "requiresPurchasePurpose": true,
+        "requiresNoExistingFundLoan": false,
+        "requiresSaleContract": true,
+        "requiresMoveInPlan": true,
+        "requiresEligibleHouseType": true,
+        "requiresNoCreditIssue": true,
+        "ltvRatio": 0.7
+      },
+      "rates": {
+        "rateNoticeDate": "2026-07-07",
+        "fixedRateUntilMaturity": true,
+        "termYearsAvailable": [
+          10,
+          15,
+          20,
+          30,
+          40,
+          50
+        ],
+        "baseRateTable": [
+          {
+            "productType": "U_BOGEUMJARI",
+            "rates": {
+              "10": 5,
+              "15": 5.1,
+              "20": 5.15,
+              "30": 5.2,
+              "40": 5.25,
+              "50": 5.3
+            }
+          },
+          {
+            "productType": "AKKIM_E_BOGEUMJARI",
+            "rates": {
+              "10": 4.9,
+              "15": 5,
+              "20": 5.05,
+              "30": 5.1,
+              "40": 5.15,
+              "50": 5.2
+            }
+          },
+          {
+            "productType": "T_BOGEUMJARI",
+            "rates": {
+              "10": 5,
+              "15": 5.1,
+              "20": 5.15,
+              "30": 5.2,
+              "40": 5.25,
+              "50": 5.3
+            }
+          }
+        ],
+        "notes": [
+          "t-보금자리론은 은행 방문 대면 신청 상품",
+          "아낌e보금자리론은 전자약정 및 전자등기 처리로 u-보금자리론보다 0.1%p 저렴",
+          "대출 실행일부터 만기까지 고정금리"
+        ]
+      },
+      "discounts": {
+        "subscriptionRules": {
+          "ACTIVE": false,
+          "WON_AND_CLOSED": false,
+          "NONE": false
+        },
+        "maxDiscountPercentPoint": 1,
+        "electronicAgreementAndRegistrationAdditional": true,
+        "discounts": [
+          {
+            "code": "ELECTRONIC_AGREEMENT_REGISTRATION",
+            "condition": "아낌e보금자리론 전자약정 및 전자등기",
+            "discountPercentPoint": 0.1
+          },
+          {
+            "code": "LOW_INCOME_YOUTH",
+            "condition": "부부합산 연소득 7천만원 이하 && 만 40세 미만",
+            "discountPercentPoint": 0.1
+          },
+          {
+            "code": "NEWLYWED",
+            "condition": "부부합산 연소득 7천만원 이하 && 혼인신고일 7년 이내 또는 결혼예정",
+            "discountPercentPoint": 0.3
+          },
+          {
+            "code": "NEWBORN",
+            "condition": "부부합산 연소득 7천만원 이하 && 대출신청일 기준 2년 내 출산",
+            "discountPercentPoint": 0.2,
+            "notCombinableWith": [
+              "NEWLYWED"
+            ]
+          },
+          {
+            "code": "TWO_CHILDREN",
+            "condition": "만 19세 미만 자녀 2인",
+            "discountPercentPoint": 0.5
+          },
+          {
+            "code": "THREE_OR_MORE_CHILDREN",
+            "condition": "만 19세 미만 자녀 3인 이상",
+            "discountPercentPoint": 0.7
+          },
+          {
+            "code": "SINGLE_PARENT",
+            "condition": "부부합산 연소득 7천만원 이하 및 한부모가구 요건 충족",
+            "discountPercentPoint": 0.7
+          },
+          {
+            "code": "DISABLED_HOUSEHOLD",
+            "condition": "부부합산 연소득 7천만원 이하 및 장애인가구 요건 충족",
+            "discountPercentPoint": 0.7
+          },
+          {
+            "code": "MULTICULTURAL_HOUSEHOLD",
+            "condition": "부부합산 연소득 7천만원 이하 및 다문화가구 요건 충족",
+            "discountPercentPoint": 0.7
+          },
+          {
+            "code": "UNSOLD_MANAGEMENT_AREA_APARTMENT",
+            "condition": "부부합산 연소득 7천만원 이하 && 구입용도 && 무주택자 && 최초 수분양자 && 비수도권 미분양관리지역 미분양 아파트",
+            "discountPercentPoint": 0.2
+          },
+          {
+            "code": "GREEN_BUILDING",
+            "condition": "녹색건축 인증 2등급 이상 또는 제로에너지 건축물 인증",
+            "discountPercentPoint": 0.1
+          },
+          {
+            "code": "JEONSE_FRAUD_VICTIM",
+            "condition": "전세사기피해자",
+            "discountPercentPoint": 1
+          }
+        ],
+        "additions": [
+          {
+            "code": "REGULATED_AREA",
+            "condition": "담보주택이 규제지역 소재",
+            "additionPercentPoint": 0.1,
+            "exception": "전세사기피해자"
+          }
+        ]
+      },
+      "recommendation": {
+        "rankingMetric": "totalCost",
+        "rankWhen": [
+          "대출 자격 가능",
+          "희망 대출금액이 가능 한도 이내",
+          "월 납입금 계산 가능",
+          "총 이자 계산 가능",
+          "중도상환수수료와 기타 고객부담 비용 반영 가능"
+        ],
+        "preferWhen": [
+          "고정금리를 선호함",
+          "디딤돌 한도가 부족함",
+          "장기 고정금리 안정성이 중요함",
+          "생애최초 한도로 4.2억원까지 필요한 경우"
+        ],
+        "lowerRankWhen": [
+          "디딤돌보다 총비용이 큼",
+          "우대금리 조건이 적음",
+          "일반 주담대보다 실질 총비용이 큼"
+        ],
+        "compareWith": [
+          "DIDIMDOL",
+          "NEWBORN_SPECIAL_DIDIMDOL",
+          "GENERAL_MORTGAGE"
+        ]
+      },
+      "fees": null,
+      "sourceReferences": []
+    },
+    {
+      "id": "didimdol",
+      "name": "내집마련디딤돌대출",
+      "provider": "주택도시기금",
+      "category": "didimdol",
+      "description": "무주택자의 주택구입자금 지원",
+      "isActive": true,
+      "maxLoanAmount": 320000000,
+      "legacyMaxLoanAmount": 400000000,
+      "minRate": 2.85,
+      "maxRate": 4.15,
+      "defaultRate": 3.8,
+      "repaymentTypes": [
+        "equal_payment",
+        "equal_principal",
+        "graduated_payment"
+      ],
+      "prepaymentPenalty": "중도상환수수료율 0.6% (3년 이내). 2026.12.31까지 한시 면제.",
+      "prepaymentPenaltyLevel": "low",
+      "eligibility": {
+        "maxHousePrice": 600000000,
+        "maxCombinedIncome": 85000000,
+        "maxDualIncome": null,
+        "maxNetAsset": 511000000,
+        "maxExclusiveArea": 85,
+        "requiresMarried": true,
+        "requiresNewlyMarried": true,
+        "maxMarriageYears": 7,
+        "requiresNewborn": false,
+        "requiresNoHouse": true,
+        "requiresHouseholdNoHouseConfirmed": true,
+        "requiresPurchasePurpose": true,
+        "requiresNoExistingFundLoan": true,
+        "requiresSaleContract": true,
+        "requiresMoveInPlan": true,
+        "requiresEligibleHouseType": true,
+        "requiresNoCreditIssue": true,
+        "ltvRatio": 0.7
+      },
+      "rates": {
+        "termYearsAvailable": [
+          10,
+          15,
+          20,
+          30
+        ],
+        "baseRateTable": [
+          {
+            "incomeMin": 0,
+            "incomeMax": 20000000,
+            "rates": {
+              "10": 2.85,
+              "15": 2.95,
+              "20": 3.05,
+              "30": 3.1
+            }
+          },
+          {
+            "incomeMin": 20000001,
+            "incomeMax": 40000000,
+            "rates": {
+              "10": 3.2,
+              "15": 3.3,
+              "20": 3.4,
+              "30": 3.45
+            }
+          },
+          {
+            "incomeMin": 40000001,
+            "incomeMax": 70000000,
+            "rates": {
+              "10": 3.55,
+              "15": 3.65,
+              "20": 3.75,
+              "30": 3.8
+            }
+          },
+          {
+            "incomeMin": 70000001,
+            "incomeMax": 85000000,
+            "rates": {
+              "10": 3.9,
+              "15": 4,
+              "20": 4.1,
+              "30": 4.15
+            }
+          }
+        ],
+        "regionalDiscounts": [
+          {
+            "condition": "대출대상주택이 지방 소재",
+            "discountPercentPoint": 0.2
+          }
+        ],
+        "interestRateTypeAdditions": [
+          {
+            "type": "FIVE_YEAR_VARIABLE",
+            "additionPercentPoint": 0.1
+          },
+          {
+            "type": "TEN_YEAR_FIXED_THEN_VARIABLE",
+            "additionPercentPoint": 0.2
+          },
+          {
+            "type": "PURE_FIXED",
+            "additionPercentPoint": 0.3
+          },
+          {
+            "type": "TEN_YEAR_FIXED_THEN_VARIABLE_WITH_10_YEAR_TERM",
+            "additionPercentPoint": 0.3
+          }
+        ],
+        "landLeaseholdIncomeExcessAdditionPercentPoint": 0.3,
+        "finalRateFloorPercent": 1.5,
+        "discountCapPercentPoint": {
+          "general": 0.5,
+          "multiChild": 0.7
+        }
+      },
+      "discounts": {
+        "subscriptionRules": {
+          "ACTIVE": true,
+          "WON_AND_CLOSED": true,
+          "NONE": false
+        },
+        "nonCombinableDiscounts": [
+          {
+            "code": "SINGLE_PARENT",
+            "condition": "annualIncome <= 60000000 && isSingleParentHousehold",
+            "discountPercentPoint": 0.5
+          },
+          {
+            "code": "DISABLED_HOUSEHOLD",
+            "condition": "isDisabledHousehold",
+            "discountPercentPoint": 0.2
+          },
+          {
+            "code": "MULTICULTURAL_HOUSEHOLD",
+            "condition": "isMulticulturalHousehold",
+            "discountPercentPoint": 0.2
+          },
+          {
+            "code": "NEWLYWED",
+            "condition": "isNewlywedHousehold",
+            "discountPercentPoint": 0.2,
+            "maxApplyYears": 5
+          },
+          {
+            "code": "FIRST_HOME",
+            "condition": "isFirstHomeBuyer",
+            "discountPercentPoint": 0.2,
+            "maxApplyYears": 5
+          },
+          {
+            "code": "THREE_OR_MORE_CHILDREN",
+            "condition": "childrenCount >= 3",
+            "discountPercentPoint": 0.7
+          },
+          {
+            "code": "TWO_CHILDREN",
+            "condition": "childrenCount == 2",
+            "discountPercentPoint": 0.5
+          },
+          {
+            "code": "ONE_CHILD",
+            "condition": "childrenCount == 1",
+            "discountPercentPoint": 0.3,
+            "note": "2025.3.24 신규접수분부터 자녀 1명당 5년 적용, 최대 15년"
+          }
+        ],
+        "combinableAdditionalDiscounts": [
+          {
+            "code": "SUBSCRIPTION_SAVINGS_5Y_60",
+            "condition": "subscriptionSavingsYears >= 5 && subscriptionSavingsPaymentCount >= 60",
+            "discountPercentPoint": 0.3,
+            "maxApplyYears": 5
+          },
+          {
+            "code": "SUBSCRIPTION_SAVINGS_10Y_120",
+            "condition": "subscriptionSavingsYears >= 10 && subscriptionSavingsPaymentCount >= 120",
+            "discountPercentPoint": 0.4,
+            "maxApplyYears": 5
+          },
+          {
+            "code": "SUBSCRIPTION_SAVINGS_15Y_180",
+            "condition": "subscriptionSavingsYears >= 15 && subscriptionSavingsPaymentCount >= 180",
+            "discountPercentPoint": 0.5,
+            "maxApplyYears": 5
+          },
+          {
+            "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_5Y",
+            "condition": "privateHousingMinimumDepositSatisfiedYears >= 5",
+            "discountPercentPoint": 0.3
+          },
+          {
+            "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_10Y",
+            "condition": "privateHousingMinimumDepositSatisfiedYears >= 10",
+            "discountPercentPoint": 0.4
+          },
+          {
+            "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_15Y",
+            "condition": "privateHousingMinimumDepositSatisfiedYears >= 15",
+            "discountPercentPoint": 0.5
+          },
+          {
+            "code": "ELECTRONIC_CONTRACT",
+            "condition": "usesElectronicContract == true",
+            "discountPercentPoint": 0.1,
+            "validUntil": "2026-12-31",
+            "maxApplyYears": 5
+          },
+          {
+            "code": "LOW_REQUESTED_AMOUNT",
+            "condition": "requestedLoanAmount <= calculatedLoanLimit * 0.30",
+            "discountPercentPoint": 0.1,
+            "validFrom": "2024-07-31",
+            "maxApplyYears": 5
+          },
+          {
+            "code": "EARLY_REPAYMENT_OVER_40_AFTER_1Y",
+            "condition": "afterOneYear && earlyRepaymentAmount >= originalPrincipal * 0.40",
+            "discountPercentPoint": 0.2,
+            "validFrom": "2024-07-31"
+          },
+          {
+            "code": "LOCAL_UNSOLD_COMPLETED_HOUSING",
+            "condition": "isUnsoldCompletedLocalHousing == true",
+            "discountPercentPoint": 0.2,
+            "maxApplyYears": 5
+          }
+        ]
+      },
+      "recommendation": null,
+      "fees": {
+        "stampTax": {
+          "payer": "고객/은행 각 50%"
+        },
+        "mortgageRegistrationCost": {
+          "payer": "은행 부담",
+          "customerPays": [
+            "국민주택채권매입 비용"
+          ]
+        },
+        "appraisalCost": {
+          "customerPaysWhen": "고객이 직접 감정평가업자에게 의뢰한 경우",
+          "fundPaysWhen": "가격정보 또는 공시가격이 없어 감정하는 경우"
+        },
+        "prepaymentFee": {
+          "appliesWithinYears": 3,
+          "maxRate": 0.006,
+          "formula": "prepaymentPrincipal * 0.006 * ((3 years - elapsedDays) / 3 years)",
+          "waiver": [
+            {
+              "condition": "대출계약 철회",
+              "waived": true
+            },
+            {
+              "condition": "2024-08-12부터 2026-12-31까지 중도상환된 원금",
+              "waived": true
+            }
+          ]
+        }
+      },
+      "sourceReferences": []
+    },
+    {
+      "id": "newborn-special",
+      "name": "신생아 특례 디딤돌대출",
+      "provider": "주택도시기금/마이홈",
+      "category": "didimdol_newborn",
+      "description": "신생아 특례 디딤돌대출은 주택도시기금 정책상품이다.",
+      "isActive": true,
+      "maxLoanAmount": 400000000,
+      "legacyMaxLoanAmount": 500000000,
+      "minRate": 1.8,
+      "maxRate": 4.5,
+      "defaultRate": 2.9,
+      "repaymentTypes": [
+        "equal_payment",
+        "equal_principal",
+        "graduated_payment"
+      ],
+      "prepaymentPenalty": "중도상환수수료율 0.6% (3년 이내). 2026.12.31까지 한시 면제.",
+      "prepaymentPenaltyLevel": "low",
+      "eligibility": {
+        "maxHousePrice": 900000000,
+        "maxCombinedIncome": 130000000,
+        "maxDualIncome": 200000000,
+        "maxNetAsset": 511000000,
+        "maxExclusiveArea": 85,
+        "requiresMarried": false,
+        "requiresNewlyMarried": false,
+        "maxMarriageYears": null,
+        "requiresNewborn": true,
+        "requiresNoHouse": true,
+        "requiresHouseholdNoHouseConfirmed": true,
+        "requiresPurchasePurpose": true,
+        "requiresNoExistingFundLoan": true,
+        "requiresSaleContract": true,
+        "requiresMoveInPlan": true,
+        "requiresEligibleHouseType": true,
+        "requiresNoCreditIssue": true,
+        "ltvRatio": 0.7
+      },
+      "rates": {
+        "specialRateApplyYearsDefault": 5,
+        "specialRateMaxApplyYearsWithAdditionalBirth": 15,
+        "termYearsAvailable": [
+          10,
+          15,
+          20,
+          30
+        ],
+        "baseRateTable": [
+          {
+            "incomeMin": 0,
+            "incomeMax": 20000000,
+            "rates": {
+              "10": 1.8,
+              "15": 1.9,
+              "20": 2,
+              "30": 2.05
+            }
+          },
+          {
+            "incomeMin": 20000001,
+            "incomeMax": 40000000,
+            "rates": {
+              "10": 2.15,
+              "15": 2.25,
+              "20": 2.35,
+              "30": 2.4
+            }
+          },
+          {
+            "incomeMin": 40000001,
+            "incomeMax": 60000000,
+            "rates": {
+              "10": 2.4,
+              "15": 2.5,
+              "20": 2.6,
+              "30": 2.65
+            }
+          },
+          {
+            "incomeMin": 60000001,
+            "incomeMax": 85000000,
+            "rates": {
+              "10": 2.65,
+              "15": 2.75,
+              "20": 2.85,
+              "30": 2.9
+            }
+          },
+          {
+            "incomeMin": 85000001,
+            "incomeMax": 100000000,
+            "rates": {
+              "10": 2.9,
+              "15": 3,
+              "20": 3.1,
+              "30": 3.2
+            }
+          },
+          {
+            "incomeMin": 100000001,
+            "incomeMax": 130000000,
+            "rates": {
+              "10": 3.2,
+              "15": 3.3,
+              "20": 3.4,
+              "30": 3.5
+            }
+          },
+          {
+            "incomeMin": 130000001,
+            "incomeMax": 150000000,
+            "dualIncomeOnly": true,
+            "rates": {
+              "10": 3.5,
+              "15": 3.6,
+              "20": 3.7,
+              "30": 3.8
+            }
+          },
+          {
+            "incomeMin": 150000001,
+            "incomeMax": 170000000,
+            "dualIncomeOnly": true,
+            "rates": {
+              "10": 3.85,
+              "15": 3.95,
+              "20": 4.05,
+              "30": 4.15
+            }
+          },
+          {
+            "incomeMin": 170000001,
+            "incomeMax": 200000000,
+            "dualIncomeOnly": true,
+            "rates": {
+              "10": 4.2,
+              "15": 4.3,
+              "20": 4.4,
+              "30": 4.5
+            }
+          }
+        ],
+        "regionalDiscounts": [
+          {
+            "condition": "대출대상주택이 지방 소재",
+            "discountPercentPoint": 0.2
+          }
+        ],
+        "specialRateExtension": {
+          "condition": "대출접수일 기준 2년 내 추가 출산 자녀",
+          "extensionYearsPerChild": 5,
+          "maxSpecialRateYears": 15
+        },
+        "afterSpecialRateEnds": {
+          "incomeUpTo85000000": "기 적용 특례금리에 신혼부부 디딤돌대출 최저기본금리와 특례금리 최저기본금리 차이만큼 가산",
+          "incomeOver85000000": "한국은행 고시 예금은행 주택담보대출 금리와 은행연합회 고시 수탁은행 분할상환 주택담보대출 최저금리 중 작은 값 적용",
+          "lowerBound": [
+            "연소득 1.3억원 이하인 경우 8.5천만원 이하 특례금리 종료 후 금리의 최고금리",
+            "연소득 1.3억원 초과인 경우 기 적용 특례금리에 0.2%p 가산한 금리"
+          ]
+        },
+        "finalRateFloorPercent": 1.2
+      },
+      "discounts": {
+        "subscriptionRules": {
+          "ACTIVE": true,
+          "WON_AND_CLOSED": true,
+          "NONE": false
+        },
+        "combinable": true,
+        "discounts": [
+          {
+            "code": "SUBSCRIPTION_SAVINGS_5Y_60",
+            "condition": "subscriptionSavingsYears >= 5 && subscriptionSavingsPaymentCount >= 60",
+            "discountPercentPoint": 0.3,
+            "maxApplyYears": 5
+          },
+          {
+            "code": "SUBSCRIPTION_SAVINGS_10Y_120",
+            "condition": "subscriptionSavingsYears >= 10 && subscriptionSavingsPaymentCount >= 120",
+            "discountPercentPoint": 0.4,
+            "maxApplyYears": 5
+          },
+          {
+            "code": "SUBSCRIPTION_SAVINGS_15Y_180",
+            "condition": "subscriptionSavingsYears >= 15 && subscriptionSavingsPaymentCount >= 180",
+            "discountPercentPoint": 0.5,
+            "maxApplyYears": 5
+          },
+          {
+            "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_5Y",
+            "condition": "privateHousingMinimumDepositSatisfiedYears >= 5",
+            "discountPercentPoint": 0.3
+          },
+          {
+            "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_10Y",
+            "condition": "privateHousingMinimumDepositSatisfiedYears >= 10",
+            "discountPercentPoint": 0.4
+          },
+          {
+            "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_15Y",
+            "condition": "privateHousingMinimumDepositSatisfiedYears >= 15",
+            "discountPercentPoint": 0.5
+          },
+          {
+            "code": "ELECTRONIC_CONTRACT",
+            "condition": "usesElectronicContract == true",
+            "discountPercentPoint": 0.1,
+            "validUntil": "2026-12-31",
+            "maxApplyYears": 5
+          },
+          {
+            "code": "ADDITIONAL_BIRTH",
+            "condition": "additionalBirthWithin2YearsAtApplication || additionalBirthAfterLoanExecution",
+            "discountPercentPoint": 0.2,
+            "maxApplyYearsPerChild": 5,
+            "maxApplyYearsTotal": 15
+          },
+          {
+            "code": "EXISTING_MINOR_CHILD_OVER_2",
+            "condition": "existingMinorChildrenOverAge2Count >= 1",
+            "discountPercentPointPerChild": 0.1,
+            "maxApplyYears": 5
+          },
+          {
+            "code": "LOW_REQUESTED_AMOUNT",
+            "condition": "requestedLoanAmount <= calculatedLoanLimit * 0.30",
+            "discountPercentPoint": 0.1,
+            "validFrom": "2024-07-31",
+            "maxApplyYears": 5
+          },
+          {
+            "code": "EARLY_REPAYMENT_OVER_40_AFTER_1Y",
+            "condition": "afterOneYear && earlyRepaymentAmount >= originalPrincipal * 0.40",
+            "discountPercentPoint": 0.2,
+            "validFrom": "2024-07-31"
+          },
+          {
+            "code": "LOCAL_UNSOLD_COMPLETED_HOUSING",
+            "condition": "isLocalUnsoldCompletedHousing == true",
+            "discountPercentPoint": 0.2,
+            "maxApplyYears": 5
+          }
+        ],
+        "finalRateFloorPercent": 1.2,
+        "note": "최종 우대금리 적용은 수탁은행의 서류 심사 결과에 따라 결정"
+      },
+      "recommendation": {
+        "rankingMetric": "totalCost",
+        "rankWhen": [
+          "신생아 특례 자격 가능",
+          "희망 대출금액이 가능 한도 이내",
+          "월 납입금 계산 가능",
+          "총 이자 계산 가능",
+          "중도상환수수료와 고객부담 비용 반영 가능"
+        ],
+        "preferWhen": [
+          "대출접수일 기준 2년 내 출산 또는 입양",
+          "디딤돌 또는 보금자리론보다 적용금리가 낮음",
+          "기존 주담대에서 대환 가능하고 총비용이 감소함",
+          "추가 출산으로 특례금리 기간 연장 또는 우대금리 적용 가능"
+        ],
+        "lowerRankWhen": [
+          "신생아 특례 자격 미충족",
+          "대출 한도 부족",
+          "기존 대출 중도상환수수료를 포함하면 총비용이 더 큼"
+        ],
+        "compareWith": [
+          "DIDIMDOL",
+          "BOGEUMJARI",
+          "GENERAL_MORTGAGE"
+        ],
+        "totalCostComponents": [
+          "totalInterest",
+          "prepaymentFee",
+          "stampTaxCustomerShare",
+          "bondPurchaseCost",
+          "customerAppraisalCostIfAny"
+        ]
+      },
+      "fees": {
+        "stampTax": {
+          "payer": "고객/은행 각 50%"
+        },
+        "mortgageRegistrationCost": {
+          "payer": "은행 부담",
+          "customerPays": [
+            "국민주택채권매입 비용"
+          ]
+        },
+        "appraisalCost": {
+          "customerPaysWhen": "고객이 직접 감정평가업자에게 의뢰한 경우",
+          "fundPaysWhen": "가격정보나 공시가격이 없어 감정하는 경우"
+        },
+        "prepaymentFee": {
+          "appliesWithinYears": 3,
+          "maxRate": 0.006,
+          "formula": "prepaymentPrincipal * 0.006 * ((3 years - elapsedDays) / 3 years)",
+          "waiver": [
+            {
+              "condition": "2024-08-12부터 2026-12-31까지 중도상환된 원금",
+              "waived": true
+            }
+          ]
+        }
+      },
+      "sourceReferences": []
+    }
+  ]
+}

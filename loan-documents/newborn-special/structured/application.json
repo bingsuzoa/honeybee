@@ -1,0 +1,9 @@
+{
+  "applicationTiming": {
+    "purchase": "소유권이전등기 전 신청. 이전등기 완료 시 접수일로부터 3개월 이내 신청",
+    "refinance": "대환대출은 신청시기 제한 없음"
+  },
+  "consultation": {
+    "assetReview": "주택도시보증공사 콜센터 1566-9009 및 심사 진행 중 안내된 담당자"
+  }
+}

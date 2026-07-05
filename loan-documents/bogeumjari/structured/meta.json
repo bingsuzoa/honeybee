@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05",
+  "provider": "한국주택금융공사",
+  "productName": "보금자리론",
+  "loanType": "BOGEUMJARI",
+  "sourceType": "OFFICIAL_URL",
+  "status": "MVP_READY_WITH_URL_SNAPSHOT",
+  "notes": [
+    "보금자리론은 HF 공식 URL을 기준으로 관리한다.",
+    "금리표는 공시일 기준으로 변동될 수 있으므로 주기적으로 갱신해야 한다.",
+    "기존 업로드 PDF의 소득산정 규칙은 income_assessment.json으로 별도 반영 가능하다."
+  ],
+  "sources": [
+    {
+      "name": "상품소개",
+      "url": "https://www.hf.go.kr/ko/sub01/sub01_01_01.do",
+      "documentRole": "product_eligibility_limits_repayment"
+    },
+    {
+      "name": "금리안내",
+      "url": "https://www.hf.go.kr/ko/sub01/sub01_01_04.do",
+      "documentRole": "rates_discounts_additions"
+    },
+    {
+      "name": "신청절차",
+      "url": "https://www.hf.go.kr/ko/sub01/sub01_01_03.do",
+      "documentRole": "application_process_documents"
+    },
+    {
+      "name": "자주 하는 질문",
+      "url": "https://www.hf.go.kr/ko/sub01/sub01_07_01.do",
+      "documentRole": "faq"
+    }
+  ]
+}

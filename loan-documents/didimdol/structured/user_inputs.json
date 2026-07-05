@@ -1,0 +1,56 @@
+{
+  "borrower": [
+    "isAdult",
+    "isHouseholdHead",
+    "isSingleHousehold",
+    "age",
+    "isMarried",
+    "marriageDate",
+    "isProspectiveMarried",
+    "isFirstHomeBuyer",
+    "childrenCount",
+    "isNewlywedHousehold",
+    "allHouseholdMembersHomeless",
+    "hasExistingHousingFundLoan",
+    "hasExistingMortgageLoan",
+    "creditIssueExists"
+  ],
+  "incomeAndAsset": [
+    "borrowerAnnualIncome",
+    "spouseAnnualIncome",
+    "combinedAnnualIncome",
+    "netAssetAmount"
+  ],
+  "house": [
+    "housePrice",
+    "houseEvaluationAmount",
+    "exclusiveAreaM2",
+    "regionType",
+    "isCapitalArea",
+    "isRegulatedArea",
+    "isRuralTownArea",
+    "isLandLeaseholdHousing",
+    "isUnsoldCompletedLocalHousing"
+  ],
+  "loanRequest": [
+    "requestedLoanAmount",
+    "termYears",
+    "repaymentMethod",
+    "interestRateType",
+    "gracePeriodYears",
+    "seniorLienAmount",
+    "rentalDepositAmount",
+    "smallTenantPriorityRepaymentAmount"
+  ],
+  "discountInputs": [
+    "isSingleParentHousehold",
+    "isDisabledHousehold",
+    "isMulticulturalHousehold",
+    "subscriptionSavingsYears",
+    "subscriptionSavingsPaymentCount",
+    "privateHousingMinimumDepositSatisfiedYears",
+    "usesElectronicContract",
+    "requestedAmountUnderThirtyPercentOfCalculatedLimit",
+    "earlyRepaymentAfterOneYearOverFortyPercent"
+  ]
+}

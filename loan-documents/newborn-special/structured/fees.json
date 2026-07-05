@@ -1,0 +1,26 @@
+{
+  "stampTax": {
+    "payer": "고객/은행 각 50%"
+  },
+  "mortgageRegistrationCost": {
+    "payer": "은행 부담",
+    "customerPays": [
+      "국민주택채권매입 비용"
+    ]
+  },
+  "appraisalCost": {
+    "customerPaysWhen": "고객이 직접 감정평가업자에게 의뢰한 경우",
+    "fundPaysWhen": "가격정보나 공시가격이 없어 감정하는 경우"
+  },
+  "prepaymentFee": {
+    "appliesWithinYears": 3,
+    "maxRate": 0.006,
+    "formula": "prepaymentPrincipal * 0.006 * ((3 years - elapsedDays) / 3 years)",
+    "waiver": [
+      {
+        "condition": "2024-08-12부터 2026-12-31까지 중도상환된 원금",
+        "waived": true
+      }
+    ]
+  }
+}

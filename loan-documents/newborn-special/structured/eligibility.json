@@ -1,0 +1,77 @@
+{
+  "contract": {
+    "mustHavePurchaseContract": true,
+    "excludedAcquisitionTypes": [
+      "상속",
+      "증여",
+      "재산분할"
+    ]
+  },
+  "householdHead": {
+    "mustBeAdultHouseholdHeadAtApplication": true,
+    "alsoConsideredHouseholdHead": [
+      "세대주의 배우자",
+      "주민등록표상 세대원으로 등록된 자가 대출접수일 현재 3개월 이내 결혼으로 세대주 예정인 자"
+    ]
+  },
+  "birthOrAdoption": {
+    "required": true,
+    "withinYearsFromApplicationDate": 2,
+    "birthDateFrom": "2023-01-01",
+    "pregnancyExcluded": true,
+    "adoptionIncluded": true,
+    "adoptedChildAgeAtApplicationMustBeUnderYears": 2,
+    "unmarriedParentsEligible": true,
+    "specialSupplyException": "신생아 특별공급 또는 우선공급 당첨자는 대출신청일 현재 자녀가 만 2세 초과해도 가능"
+  },
+  "homeless": {
+    "requiredForNewPurchase": true,
+    "target": "세대주를 포함한 세대원 전원",
+    "unmarriedParentsTarget": "혼인신고를 하지 않은 경우 신생아 가족관계증명서상 등재된 부모 포함",
+    "preSaleRightCountsAsHouse": true,
+    "associationMemberRightCountsAsHouse": true
+  },
+  "refinance": {
+    "oneHouseholdRefinanceAllowed": true,
+    "existingMortgageRefinanceAllowed": true,
+    "notAllowedIfCombinedIncomeOver": 130000000,
+    "applicationTimingRestriction": "대환대출은 신청시기 제한 없음"
+  },
+  "duplicateLoan": {
+    "housingFundLoanNotAllowed": true,
+    "bankJeonseLoanNotAllowed": true,
+    "bankMortgageNotAllowedExceptRefinance": true,
+    "housingFundJeonseLoanException": "기금 전세자금 대출은 실행일 당일 상환조건부로 가능",
+    "sameNewbornDuplicateLoanProhibitedForUnmarriedParents": true
+  },
+  "incomeLimit": {
+    "generalCombinedIncome": 130000000,
+    "dualIncomeCombinedIncome": 200000000,
+    "dualIncomeEachSpouseIncomeMax": 130000000,
+    "unmarriedParentsIncomeReview": "대출신청인과 신생아 기준 가족관계증명서상 등재된 신생아 부모의 합산 총소득 심사"
+  },
+  "assetLimit": {
+    "netAssetAmount": 511000000,
+    "basis": "최근년도 가계금융복지조사 소득 4분위 전체가구 평균값 이하",
+    "unmarriedParentsAssetReview": "혼인신고를 하지 않은 경우 대출신청인과 신생아 부모의 합산 순자산가액 심사"
+  },
+  "credit": {
+    "creditScoreRequirement": "신용정보회사의 개인신용평가 일정점수 이상",
+    "disqualifyingCreditInformation": [
+      "연체",
+      "대위변제·대지급",
+      "부도",
+      "관련인 정보",
+      "금융질서문란정보",
+      "공공기록정보",
+      "특수기록정보",
+      "신용회복지원등록정보"
+    ],
+    "bankInternalRestrictionMayApply": true
+  },
+  "applicationTiming": {
+    "beforeOwnershipTransferRegistration": true,
+    "afterOwnershipTransferRegistrationDeadlineMonths": 3,
+    "refinanceNoTimingRestriction": true
+  }
+}

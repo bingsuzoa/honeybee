@@ -1,0 +1,82 @@
+{
+  "subscriptionRules": {
+    "ACTIVE": false,
+    "WON_AND_CLOSED": false,
+    "NONE": false
+  },
+  "maxDiscountPercentPoint": 1.0,
+  "electronicAgreementAndRegistrationAdditional": true,
+  "discounts": [
+    {
+      "code": "ELECTRONIC_AGREEMENT_REGISTRATION",
+      "condition": "아낌e보금자리론 전자약정 및 전자등기",
+      "discountPercentPoint": 0.1
+    },
+    {
+      "code": "LOW_INCOME_YOUTH",
+      "condition": "부부합산 연소득 7천만원 이하 && 만 40세 미만",
+      "discountPercentPoint": 0.1
+    },
+    {
+      "code": "NEWLYWED",
+      "condition": "부부합산 연소득 7천만원 이하 && 혼인신고일 7년 이내 또는 결혼예정",
+      "discountPercentPoint": 0.3
+    },
+    {
+      "code": "NEWBORN",
+      "condition": "부부합산 연소득 7천만원 이하 && 대출신청일 기준 2년 내 출산",
+      "discountPercentPoint": 0.2,
+      "notCombinableWith": [
+        "NEWLYWED"
+      ]
+    },
+    {
+      "code": "TWO_CHILDREN",
+      "condition": "만 19세 미만 자녀 2인",
+      "discountPercentPoint": 0.5
+    },
+    {
+      "code": "THREE_OR_MORE_CHILDREN",
+      "condition": "만 19세 미만 자녀 3인 이상",
+      "discountPercentPoint": 0.7
+    },
+    {
+      "code": "SINGLE_PARENT",
+      "condition": "부부합산 연소득 7천만원 이하 및 한부모가구 요건 충족",
+      "discountPercentPoint": 0.7
+    },
+    {
+      "code": "DISABLED_HOUSEHOLD",
+      "condition": "부부합산 연소득 7천만원 이하 및 장애인가구 요건 충족",
+      "discountPercentPoint": 0.7
+    },
+    {
+      "code": "MULTICULTURAL_HOUSEHOLD",
+      "condition": "부부합산 연소득 7천만원 이하 및 다문화가구 요건 충족",
+      "discountPercentPoint": 0.7
+    },
+    {
+      "code": "UNSOLD_MANAGEMENT_AREA_APARTMENT",
+      "condition": "부부합산 연소득 7천만원 이하 && 구입용도 && 무주택자 && 최초 수분양자 && 비수도권 미분양관리지역 미분양 아파트",
+      "discountPercentPoint": 0.2
+    },
+    {
+      "code": "GREEN_BUILDING",
+      "condition": "녹색건축 인증 2등급 이상 또는 제로에너지 건축물 인증",
+      "discountPercentPoint": 0.1
+    },
+    {
+      "code": "JEONSE_FRAUD_VICTIM",
+      "condition": "전세사기피해자",
+      "discountPercentPoint": 1.0
+    }
+  ],
+  "additions": [
+    {
+      "code": "REGULATED_AREA",
+      "condition": "담보주택이 규제지역 소재",
+      "additionPercentPoint": 0.1,
+      "exception": "전세사기피해자"
+    }
+  ]
+}

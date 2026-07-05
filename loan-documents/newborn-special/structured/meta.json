@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05",
+  "provider": "주택도시기금/마이홈",
+  "productName": "신생아 특례 디딤돌대출",
+  "loanType": "NEWBORN_SPECIAL_DIDIMDOL",
+  "sourceType": "OFFICIAL_URL",
+  "status": "MVP_READY",
+  "sources": [
+    {
+      "name": "상품소개 및 상세조건",
+      "url": "https://m.myhome.go.kr/hws/portal/cont/selectBabySpecialCaseStepStoneLoneView.do",
+      "documentRole": "product_eligibility_limits_rates_discounts_fees_repayment"
+    }
+  ],
+  "notes": [
+    "신생아 특례 디딤돌대출은 주택도시기금 정책상품이다.",
+    "자격 판단과 비용 계산은 structured JSON을 사용하고, 설명과 근거 제시는 rag Markdown을 사용한다.",
+    "최종 가능 여부와 우대금리는 수탁은행 심사 결과에 따라 달라질 수 있다."
+  ]
+}

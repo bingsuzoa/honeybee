@@ -1,0 +1,33 @@
+{
+  "rankingMetric": "totalCost",
+  "rankWhen": [
+    "신생아 특례 자격 가능",
+    "희망 대출금액이 가능 한도 이내",
+    "월 납입금 계산 가능",
+    "총 이자 계산 가능",
+    "중도상환수수료와 고객부담 비용 반영 가능"
+  ],
+  "preferWhen": [
+    "대출접수일 기준 2년 내 출산 또는 입양",
+    "디딤돌 또는 보금자리론보다 적용금리가 낮음",
+    "기존 주담대에서 대환 가능하고 총비용이 감소함",
+    "추가 출산으로 특례금리 기간 연장 또는 우대금리 적용 가능"
+  ],
+  "lowerRankWhen": [
+    "신생아 특례 자격 미충족",
+    "대출 한도 부족",
+    "기존 대출 중도상환수수료를 포함하면 총비용이 더 큼"
+  ],
+  "compareWith": [
+    "DIDIMDOL",
+    "BOGEUMJARI",
+    "GENERAL_MORTGAGE"
+  ],
+  "totalCostComponents": [
+    "totalInterest",
+    "prepaymentFee",
+    "stampTaxCustomerShare",
+    "bondPurchaseCost",
+    "customerAppraisalCostIfAny"
+  ]
+}

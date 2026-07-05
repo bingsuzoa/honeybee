@@ -1,0 +1,26 @@
+{
+  "rankingMetric": "totalCost",
+  "rankWhen": [
+    "대출 자격 가능",
+    "희망 대출금액이 가능 한도 이내",
+    "월 납입금 계산 가능",
+    "총 이자 계산 가능",
+    "중도상환수수료와 기타 고객부담 비용 반영 가능"
+  ],
+  "preferWhen": [
+    "고정금리를 선호함",
+    "디딤돌 한도가 부족함",
+    "장기 고정금리 안정성이 중요함",
+    "생애최초 한도로 4.2억원까지 필요한 경우"
+  ],
+  "lowerRankWhen": [
+    "디딤돌보다 총비용이 큼",
+    "우대금리 조건이 적음",
+    "일반 주담대보다 실질 총비용이 큼"
+  ],
+  "compareWith": [
+    "DIDIMDOL",
+    "NEWBORN_SPECIAL_DIDIMDOL",
+    "GENERAL_MORTGAGE"
+  ]
+}

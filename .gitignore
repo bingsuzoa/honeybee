@@ -1,0 +1,19 @@
+# Node modules
+node_modules/
+
+# Database
+data/usage-logs.json
+data/usage-logs.db
+data/usage-logs.db-journal
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db

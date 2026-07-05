@@ -1,0 +1,41 @@
+{
+  "maxLoanAmount": {
+    "general": 360000000,
+    "multiChild": 400000000,
+    "jeonseFraudVictim": 400000000,
+    "firstHomeBuyer": 420000000
+  },
+  "ltv": {
+    "apartment": 0.7,
+    "otherHousing": 0.65,
+    "deductionConditions": [
+      {
+        "condition": "regulatedArea",
+        "deductionPercentPoint": 0.1
+      },
+      {
+        "condition": "cbScore271To614OrLowMss",
+        "deductionPercentPoint": 0.1
+      },
+      {
+        "condition": "incomeEstimationMethodUsed",
+        "deductionPercentPoint": 0.1
+      }
+    ],
+    "deductionExceptions": [
+      "생애최초",
+      "전세사기피해자",
+      "실수요자"
+    ]
+  },
+  "dti": {
+    "max": 0.6,
+    "regulatedAreaDeductionPercentPoint": 0.1,
+    "deductionExceptions": [
+      "임차보증금 반환용도",
+      "생애최초",
+      "전세사기피해자",
+      "실수요자"
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "subscriptionRules": {
+    "ACTIVE": true,
+    "WON_AND_CLOSED": true,
+    "NONE": false
+  },
+  "combinable": true,
+  "discounts": [
+    {
+      "code": "SUBSCRIPTION_SAVINGS_5Y_60",
+      "condition": "subscriptionSavingsYears >= 5 && subscriptionSavingsPaymentCount >= 60",
+      "discountPercentPoint": 0.3,
+      "maxApplyYears": 5
+    },
+    {
+      "code": "SUBSCRIPTION_SAVINGS_10Y_120",
+      "condition": "subscriptionSavingsYears >= 10 && subscriptionSavingsPaymentCount >= 120",
+      "discountPercentPoint": 0.4,
+      "maxApplyYears": 5
+    },
+    {
+      "code": "SUBSCRIPTION_SAVINGS_15Y_180",
+      "condition": "subscriptionSavingsYears >= 15 && subscriptionSavingsPaymentCount >= 180",
+      "discountPercentPoint": 0.5,
+      "maxApplyYears": 5
+    },
+    {
+      "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_5Y",
+      "condition": "privateHousingMinimumDepositSatisfiedYears >= 5",
+      "discountPercentPoint": 0.3
+    },
+    {
+      "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_10Y",
+      "condition": "privateHousingMinimumDepositSatisfiedYears >= 10",
+      "discountPercentPoint": 0.4
+    },
+    {
+      "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_15Y",
+      "condition": "privateHousingMinimumDepositSatisfiedYears >= 15",
+      "discountPercentPoint": 0.5
+    },
+    {
+      "code": "ELECTRONIC_CONTRACT",
+      "condition": "usesElectronicContract == true",
+      "discountPercentPoint": 0.1,
+      "validUntil": "2026-12-31",
+      "maxApplyYears": 5
+    },
+    {
+      "code": "ADDITIONAL_BIRTH",
+      "condition": "additionalBirthWithin2YearsAtApplication || additionalBirthAfterLoanExecution",
+      "discountPercentPoint": 0.2,
+      "maxApplyYearsPerChild": 5,
+      "maxApplyYearsTotal": 15
+    },
+    {
+      "code": "EXISTING_MINOR_CHILD_OVER_2",
+      "condition": "existingMinorChildrenOverAge2Count >= 1",
+      "discountPercentPointPerChild": 0.1,
+      "maxApplyYears": 5
+    },
+    {
+      "code": "LOW_REQUESTED_AMOUNT",
+      "condition": "requestedLoanAmount <= calculatedLoanLimit * 0.30",
+      "discountPercentPoint": 0.1,
+      "validFrom": "2024-07-31",
+      "maxApplyYears": 5
+    },
+    {
+      "code": "EARLY_REPAYMENT_OVER_40_AFTER_1Y",
+      "condition": "afterOneYear && earlyRepaymentAmount >= originalPrincipal * 0.40",
+      "discountPercentPoint": 0.2,
+      "validFrom": "2024-07-31"
+    },
+    {
+      "code": "LOCAL_UNSOLD_COMPLETED_HOUSING",
+      "condition": "isLocalUnsoldCompletedHousing == true",
+      "discountPercentPoint": 0.2,
+      "maxApplyYears": 5
+    }
+  ],
+  "finalRateFloorPercent": 1.2,
+  "note": "최종 우대금리 적용은 수탁은행의 서류 심사 결과에 따라 결정"
+}

@@ -1,0 +1,27 @@
+{
+  "houseRules": {
+    "exclusiveAreaLimitM2": {
+      "default": 85,
+      "nonUrbanEupMyeon": 100
+    },
+    "housePriceLimit": 900000000
+  },
+  "maxLoanAmount": {
+    "general": 400000000,
+    "legacyContractBefore2025_06_27": 500000000
+  },
+  "dtiLimit": 0.6,
+  "ltvLimit": {
+    "general": 0.7,
+    "firstHomeBuyer": 0.8,
+    "firstHomeBuyerCapitalOrRegulatedArea": 0.7
+  },
+  "calculationFormula": {
+    "description": "다음 중 작은 금액으로 산정",
+    "rules": [
+      "최고 4억원 이내",
+      "매매 또는 분양가격 이내",
+      "(담보주택 평가액 × LTV) - 선순위채권 - 임대보증금 - 최우선변제소액임차보증금"
+    ]
+  }
+}

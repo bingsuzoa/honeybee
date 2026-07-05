@@ -1,0 +1,13 @@
+{
+  "provider": "주택도시기금/마이홈",
+  "loanType": "NEWBORN_SPECIAL_DIDIMDOL",
+  "productName": "신생아 특례 디딤돌대출",
+  "generatedAt": "2026-07-05",
+  "sources": [
+    {
+      "name": "상품소개 및 상세조건",
+      "url": "https://m.myhome.go.kr/hws/portal/cont/selectBabySpecialCaseStepStoneLoneView.do",
+      "documentRole": "product_eligibility_limits_rates_discounts_fees_repayment"
+    }
+  ]
+}

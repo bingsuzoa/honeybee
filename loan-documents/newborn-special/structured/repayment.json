@@ -1,0 +1,24 @@
+{
+  "termYears": [
+    10,
+    15,
+    20,
+    30
+  ],
+  "gracePeriodOptionsYears": [
+    0,
+    1
+  ],
+  "methods": [
+    "EQUAL_PRINCIPAL_AND_INTEREST",
+    "EQUAL_PRINCIPAL",
+    "GRADUATED_PAYMENT"
+  ],
+  "collateral": "대출 대상주택에 대출실행일 이전 제1순위 근저당권 설정",
+  "valuationOrder": [
+    "가격정보",
+    "국토교통부 공시가격",
+    "분양가액",
+    "감정가액"
+  ]
+}

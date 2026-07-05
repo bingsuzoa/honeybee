@@ -1,0 +1,28 @@
+{
+  "provider": "한국주택금융공사",
+  "loanType": "BOGEUMJARI",
+  "productName": "보금자리론",
+  "generatedAt": "2026-07-05",
+  "sources": [
+    {
+      "name": "상품소개",
+      "url": "https://www.hf.go.kr/ko/sub01/sub01_01_01.do",
+      "documentRole": "product_eligibility_limits_repayment"
+    },
+    {
+      "name": "금리안내",
+      "url": "https://www.hf.go.kr/ko/sub01/sub01_01_04.do",
+      "documentRole": "rates_discounts_additions"
+    },
+    {
+      "name": "신청절차",
+      "url": "https://www.hf.go.kr/ko/sub01/sub01_01_03.do",
+      "documentRole": "application_process_documents"
+    },
+    {
+      "name": "자주 하는 질문",
+      "url": "https://www.hf.go.kr/ko/sub01/sub01_07_01.do",
+      "documentRole": "faq"
+    }
+  ]
+}

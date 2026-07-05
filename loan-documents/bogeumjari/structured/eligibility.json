@@ -1,0 +1,46 @@
+{
+  "applicant": {
+    "mustBeAdult": true,
+    "nationality": "대한민국 국민",
+    "overseasKoreanIncluded": true,
+    "creditScoreMin": 271,
+    "disqualifyingCreditInfo": [
+      "한국신용정보원 신용정보관리규약 해당사항",
+      "연체",
+      "대위변제·대지급",
+      "부도",
+      "금융질서문란정보",
+      "공공정보",
+      "신용회복지원 신청 및 등록정보"
+    ]
+  },
+  "house": {
+    "housePriceLimit": 600000000,
+    "houseType": [
+      "아파트",
+      "연립주택",
+      "다세대주택",
+      "단독주택"
+    ],
+    "mustBeResidential": true,
+    "purchasePurposeRule": "시세정보, 감정평가액, 매매가액 중 어느 하나라도 6억원 초과 시 취급 불가"
+  },
+  "ownership": {
+    "allowedHouseCountExcludingCollateral": [
+      "무주택",
+      "1주택"
+    ],
+    "temporaryTwoHouseAllowedForReplacementPurchase": true,
+    "existingHouseDisposalDeadlineYears": 3
+  },
+  "incomeLimit": {
+    "general": 70000000,
+    "newlywed": 85000000,
+    "oneChild": 90000000,
+    "multiChild": 100000000
+  },
+  "credit": {
+    "cbScoreMin": 271,
+    "spouseCreditInfoCheckWhenIncomeExists": true
+  }
+}

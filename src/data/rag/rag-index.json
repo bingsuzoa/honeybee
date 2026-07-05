@@ -1,0 +1,549 @@
+{
+  "generatedAt": "2026-07-05T11:14:35.954Z",
+  "chunks": [
+    {
+      "id": "bogeumjari/application/section-1",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "application",
+      "heading": "신청 흐름",
+      "content": "1. 인터넷 신청\n2. 상담정보 입력\n3. 전화상담\n4. 서류제출\n5. 심사 및 승인\n6. 은행 방문 및 대출금 수령"
+    },
+    {
+      "id": "bogeumjari/application/section-2",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "application",
+      "heading": "서류 제출",
+      "content": "공사 홈페이지, 스마트주택금융 앱, 카카오톡 플러스친구를 통해 제출할 수 있습니다."
+    },
+    {
+      "id": "bogeumjari/discounts/section-1",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "discounts",
+      "heading": "우대금리",
+      "content": "최대 1.0%p 한도로 중복 적용 가능하며, 전자약정 및 전자등기 우대금리는 추가 적용 가능합니다.\n\n주요 우대:\n- 전자약정 및 전자등기 0.1%p\n- 저소득청년 0.1%p\n- 신혼가구 0.3%p\n- 신생아 출산가구 0.2%p\n- 2자녀 0.5%p\n- 3자녀 이상 0.7%p\n- 전세사기피해자 1.0%p"
+    },
+    {
+      "id": "bogeumjari/discounts/section-2",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "discounts",
+      "heading": "가산금리",
+      "content": "담보주택이 규제지역에 있으면 0.1%p 가산될 수 있습니다."
+    },
+    {
+      "id": "bogeumjari/eligibility/section-1",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "eligibility",
+      "heading": "신청대상",
+      "content": "- 민법상 성년\n- 대한민국 국민\n- CB점수 271점 이상\n- 한국신용정보원 신용정보관리규약 해당사항 없음"
+    },
+    {
+      "id": "bogeumjari/eligibility/section-2",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "eligibility",
+      "heading": "주택 요건",
+      "content": "- 6억원 이하 공부상 주택\n- 실주거용 주택"
+    },
+    {
+      "id": "bogeumjari/eligibility/section-3",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "eligibility",
+      "heading": "소득 요건",
+      "content": "- 일반: 부부합산 연소득 7천만원 이하\n- 신혼부부: 8천5백만원 이하\n- 미성년 자녀 1명: 9천만원 이하\n- 다자녀가구: 1억원 이하"
+    },
+    {
+      "id": "bogeumjari/eligibility/section-4",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "eligibility",
+      "heading": "주택 보유 수",
+      "content": "본건 담보주택 제외 무주택 또는 1주택까지 가능하며, 일시적 2주택자는 기존주택 처분조건부로 가능할 수 있습니다."
+    },
+    {
+      "id": "bogeumjari/limits/section-1",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "limits",
+      "heading": "대출한도",
+      "content": "- 일반: 최대 3.6억원\n- 다자녀·전세사기피해자: 최대 4억원\n- 생애최초: 최대 4.2억원"
+    },
+    {
+      "id": "bogeumjari/limits/section-2",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "limits",
+      "heading": "LTV",
+      "content": "아파트는 최대 70%, 기타주택은 65% 이내입니다.\n규제지역, 낮은 신용점수 구간, 소득추정 방식 사용 시 차감될 수 있습니다."
+    },
+    {
+      "id": "bogeumjari/limits/section-3",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "limits",
+      "heading": "DTI",
+      "content": "최대 60%입니다.\n규제지역인 경우 차감될 수 있으나, 생애최초·전세사기피해자·실수요자 등은 차감 예외가 있을 수 있습니다."
+    },
+    {
+      "id": "bogeumjari/overview/section-1",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "overview",
+      "heading": "보금자리론 개요",
+      "content": "보금자리론은 한국주택금융공사(HF)가 운영하는 장기 고정금리 주택담보대출입니다."
+    },
+    {
+      "id": "bogeumjari/overview/section-2",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "overview",
+      "heading": "서비스 내 역할",
+      "content": "사용자의 입력값을 바탕으로 보금자리론 가능 여부, 적용 금리, 대출한도, 월 납입금, 총 이자, 총 상환금액을 계산합니다."
+    },
+    {
+      "id": "bogeumjari/overview/section-3",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "overview",
+      "heading": "주요 특징",
+      "content": "- 만기까지 고정금리\n- 최대 3.6억원, 생애최초는 최대 4.2억원\n- 10년부터 50년까지 만기 선택 가능\n- 원리금균등, 원금균등, 체증식 가능"
+    },
+    {
+      "id": "bogeumjari/rates/section-1",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "rates",
+      "heading": "금리 구조",
+      "content": "보금자리론은 대출 실행일부터 만기까지 고정금리입니다."
+    },
+    {
+      "id": "bogeumjari/rates/section-2",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "rates",
+      "heading": "2026년 7월 7일 공시 기준",
+      "content": "- u-보금자리론 30년: 5.20%\n- 아낌e보금자리론 30년: 5.10%\n- t-보금자리론 30년: 5.20%\n\n금리표는 `structured/rates.json`을 기준으로 계산합니다."
+    },
+    {
+      "id": "bogeumjari/recommendation/section-1",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "recommendation",
+      "heading": "보금자리론이 유리한 경우",
+      "content": "- 디딤돌 한도가 부족한 경우\n- 생애최초로 4.2억원까지 필요한 경우\n- 장기 고정금리를 선호하는 경우\n- 정책대출 자격은 되지만 디딤돌보다 높은 한도가 필요한 경우"
+    },
+    {
+      "id": "bogeumjari/recommendation/section-2",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "recommendation",
+      "heading": "순위 산정 기준",
+      "content": "사용자가 실제로 지불하는 총비용을 기준으로 정렬합니다.\n\n총비용에는 다음을 포함합니다.\n- 총 이자\n- 중도상환수수료\n- 기타 고객 부담 비용\n\n다만 보금자리론은 고정금리 안정성이 있으므로 금리 변동 위험 회피 목적도 함께 설명할 수 있습니다."
+    },
+    {
+      "id": "bogeumjari/repayment/section-1",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "repayment",
+      "heading": "가능 상환방식",
+      "content": "- 원리금균등분할상환\n- 원금균등분할상환\n- 체증식분할상환"
+    },
+    {
+      "id": "bogeumjari/repayment/section-2",
+      "productId": "bogeumjari",
+      "productName": "보금자리론",
+      "topic": "repayment",
+      "heading": "만기",
+      "content": "10년, 15년, 20년, 30년, 40년, 50년\n\n40년과 50년 만기는 연령 또는 신혼가구 조건을 충족해야 합니다.\n체증식은 만 40세 미만 및 공사 사전심사 조건이 있으며 50년 만기에는 적용할 수 없습니다."
+    },
+    {
+      "id": "didimdol/application/section-1",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "application",
+      "heading": "신청 경로",
+      "content": "디딤돌대출은 기금e든든 온라인 신청 또는 기금 수탁은행 방문 신청이 가능하다."
+    },
+    {
+      "id": "didimdol/application/section-2",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "application",
+      "heading": "서비스 내 활용",
+      "content": "신청 절차는 대출 순위 산정의 핵심 기준은 아니지만, 사용자가 최종 선택 후 실제 신청할 때 안내용으로 제공한다."
+    },
+    {
+      "id": "didimdol/discounts/section-1",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "discounts",
+      "heading": "비결합 우대금리 (택 1)",
+      "content": "- 한부모가구: -0.5%p (연소득 6천만원 이하)\n- 장애인가구: -0.2%p\n- 다문화가구: -0.2%p\n- 신혼가구: -0.2%p (5년간)\n- 생애최초: -0.2%p (5년간)\n- 다자녀(3명 이상): -0.7%p\n- 2자녀: -0.5%p\n- 1자녀: -0.3%p"
+    },
+    {
+      "id": "didimdol/discounts/section-2",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "discounts",
+      "heading": "청약저축 우대금리 (단계별)",
+      "content": "- 5년 이상 + 60회 이상 납입: -0.3%p (5년간)\n- 10년 이상 + 120회 이상 납입: -0.4%p (5년간)\n- 15년 이상 + 180회 이상 납입: -0.5%p (5년간)\n\n가입기간과 납입횟수를 모두 충족해야 해당 단계의 우대금리가 적용됩니다."
+    },
+    {
+      "id": "didimdol/discounts/section-3",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "discounts",
+      "heading": "청약 당첨 해지 인정",
+      "content": "본건 목적물 당첨에 따라 해지된 청약저축 계좌도 우대금리 적용 대상에 포함됩니다.\n(근거: 한국주택금융공사 업무처리기준)"
+    },
+    {
+      "id": "didimdol/discounts/section-4",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "discounts",
+      "heading": "기타 결합 가능 우대",
+      "content": "- 부동산 전자계약: -0.1%p (5년간, 2026년 12월 31일까지 계약분)\n- 민영주택 청약저축 최소예치금 충족 5년 이상: -0.3%p\n- 민영주택 청약저축 최소예치금 충족 10년 이상: -0.4%p\n- 민영주택 청약저축 최소예치금 충족 15년 이상: -0.5%p\n- 대출신청 금액이 산정한도 30% 이하: -0.1%p (5년간)\n- 대출 실행 1년 후 원금 40% 이상 중도상환: -0.2%p\n- 지방 준공 후 미분양주택: -0.2%p (5년간)"
+    },
+    {
+      "id": "didimdol/discounts/section-5",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "discounts",
+      "heading": "우대금리 상한",
+      "content": "- 일반: 최대 0.5%p\n- 다자녀(3명 이상): 최대 0.7%p\n\n우대금리 적용 후 최종금리가 연 1.5% 미만이면 연 1.5%를 적용합니다."
+    },
+    {
+      "id": "didimdol/eligibility/section-1",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "eligibility",
+      "heading": "핵심 조건",
+      "content": "디딤돌대출은 기본적으로 주택을 구입하려는 무주택 세대주를 위한 정책대출이다."
+    },
+    {
+      "id": "didimdol/eligibility/section-2",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "eligibility",
+      "heading": "사용자에게 확인할 질문",
+      "content": "- 주택매매계약 또는 분양계약을 체결했나요?\n- 현재 세대주인가요?\n- 본인, 배우자, 세대원 전원이 무주택인가요?\n- 기존 주택도시기금 대출 또는 다른 주택담보대출을 이용 중인가요?\n- 부부합산 연소득은 얼마인가요?\n- 순자산은 얼마인가요?\n- 구입하려는 주택가격은 얼마인가요?\n- 전용면적은 몇 ㎡인가요?\n- 생애최초 주택구입자인가요?\n- 신혼가구인가요?\n- 자녀 수는 몇 명인가요?"
+    },
+    {
+      "id": "didimdol/eligibility/section-3",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "eligibility",
+      "heading": "불가능 사유 예시",
+      "content": "- 세대원 중 주택 보유자가 있음\n- 소득 기준 초과\n- 순자산 기준 초과\n- 주택가격 기준 초과\n- 전용면적 기준 초과\n- 이미 다른 주택담보대출을 이용 중"
+    },
+    {
+      "id": "didimdol/fees/section-1",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "fees",
+      "heading": "중도상환수수료",
+      "content": "디딤돌대출은 일정 기간 내 중도상환 시 수수료가 발생할 수 있다.\n다만 특정 기간에는 면제 조건이 있을 수 있다."
+    },
+    {
+      "id": "didimdol/fees/section-2",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "fees",
+      "heading": "사용자에게 보여줄 비용",
+      "content": "- 월 납입금\n- 총 이자\n- 총 상환금액\n- 중도상환수수료\n- 인지세 고객 부담분\n- 국민주택채권매입 비용\n- 감정비용 발생 가능성"
+    },
+    {
+      "id": "didimdol/limits/section-1",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "limits",
+      "heading": "한도 산정",
+      "content": "디딤돌대출 한도는 단순히 최대한도만 보는 것이 아니라 다음 중 작은 금액으로 산정한다.\n\n1. 상품별 호당대출한도\n2. 매매 또는 분양가격 이내\n3. 담보주택 평가액 × LTV - 선순위채권 - 임대보증금 - 최우선변제소액임차보증금"
+    },
+    {
+      "id": "didimdol/limits/section-2",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "limits",
+      "heading": "서비스 처리 방식",
+      "content": "사용자가 원하는 대출금액이 계산된 가능 한도보다 크면, 디딤돌 단독으로는 부족하다고 표시한다."
+    },
+    {
+      "id": "didimdol/overview/section-1",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "overview",
+      "heading": "상품 정보",
+      "content": "- 상품명: 내집마련디딤돌대출\n- 운영기관: 주택도시기금\n- 상품유형: POLICY_MORTGAGE\n- 목적: 무주택자의 주택구입자금 지원"
+    },
+    {
+      "id": "didimdol/overview/section-2",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "overview",
+      "heading": "서비스 내 역할",
+      "content": "디딤돌대출은 사용자가 주택 구입을 위해 받을 수 있는 정책대출 후보 중 하나이다.\n서비스는 사용자의 입력값을 바탕으로 디딤돌대출 가능 여부, 예상 금리, 한도, 월 납입금, 총 이자, 총 상환금액을 계산한다."
+    },
+    {
+      "id": "didimdol/overview/section-3",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "overview",
+      "heading": "판단 흐름",
+      "content": "1. 계약, 세대주, 무주택, 중복대출 여부 확인\n2. 소득 및 순자산 기준 확인\n3. 대상주택 가격과 면적 기준 확인\n4. 대출 한도 계산\n5. 금리와 우대금리 계산\n6. 월 납입금 및 총 비용 계산\n7. 다른 대출과 비교하여 총 지불금액이 낮은 순으로 정렬"
+    },
+    {
+      "id": "didimdol/rates/section-1",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "rates",
+      "heading": "금리 결정 방식",
+      "content": "디딤돌대출 금리는 부부합산 연소득 구간과 대출기간에 따라 달라진다."
+    },
+    {
+      "id": "didimdol/rates/section-2",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "rates",
+      "heading": "서비스 처리 방식",
+      "content": "1. 사용자의 부부합산 연소득을 확인한다.\n2. 사용자가 선택한 대출기간을 확인한다.\n3. 구조화 데이터 `structured/rates.json`의 금리표에서 기본금리를 찾는다.\n4. 지방 소재 주택, 금리유형, 토지임대부 분양주택 등 가산·감면 조건을 반영한다.\n5. 우대금리 조건을 반영한다.\n6. 최저금리 하한과 우대금리 적용 상한을 적용한다."
+    },
+    {
+      "id": "didimdol/recommendation/section-1",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "recommendation",
+      "heading": "1순위가 될 수 있는 경우",
+      "content": "- 자격 조건을 충족한다.\n- 사용자가 원하는 대출금액이 한도 이내이다.\n- 다른 대출보다 총 지불금액이 낮다.\n- 월 납입금 또는 총 이자가 다른 상품보다 적다."
+    },
+    {
+      "id": "didimdol/recommendation/section-2",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "recommendation",
+      "heading": "순위가 낮아지는 경우",
+      "content": "- 대출한도가 부족하다.\n- 우대금리를 적용해도 다른 상품보다 총비용이 크다.\n- 사용자가 원하는 상환방식이 불리하다.\n- 중도상환 계획이 있는데 수수료 부담이 크다."
+    },
+    {
+      "id": "didimdol/recommendation/section-3",
+      "productId": "didimdol",
+      "productName": "내집마련디딤돌대출",
+      "topic": "recommendation",
+      "heading": "순위 산정 기준",
+      "content": "대출 적합성 순위는 추천자의 주관이 아니라 사용자가 실제로 부담하는 총비용이 낮은 순서로 산정한다.\n\n총비용에는 다음을 포함한다.\n- 총 이자\n- 중도상환수수료\n- 고객 부담 비용\n- 기타 확인 가능한 부대비용"
+    },
+    {
+      "id": "newborn-special/application/section-1",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "application",
+      "heading": "신청시기",
+      "content": "주택구입 목적 대출은 소유권이전등기 전 신청합니다.\n소유권이전등기를 한 경우 이전등기 접수일로부터 3개월 이내까지 신청할 수 있습니다.\n\n대환대출의 경우 신청시기에 제한이 없습니다."
+    },
+    {
+      "id": "newborn-special/application/section-2",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "application",
+      "heading": "실거주의무",
+      "content": "대출받은 날로부터 1개월 내 전입하고 2년 이상 실거주해야 합니다."
+    },
+    {
+      "id": "newborn-special/application/section-3",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "application",
+      "heading": "1주택 유지 의무",
+      "content": "대출기간 중 1주택을 유지해야 합니다.\n추가주택 취득 후 6개월 이내 미처분 시 대출금 회수 대상이 될 수 있습니다."
+    },
+    {
+      "id": "newborn-special/discounts/section-1",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "discounts",
+      "heading": "청약저축 우대금리 (단계별)",
+      "content": "- 5년 이상 + 60회 이상 납입: -0.3%p (5년간)\n- 10년 이상 + 120회 이상 납입: -0.4%p (5년간)\n- 15년 이상 + 180회 이상 납입: -0.5%p (5년간)\n\n가입기간과 납입횟수를 모두 충족해야 해당 단계의 우대금리가 적용됩니다."
+    },
+    {
+      "id": "newborn-special/discounts/section-2",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "discounts",
+      "heading": "청약 당첨 해지 인정",
+      "content": "물건지가 해당 청약통장을 활용하여 당첨된 주택인 경우 우대금리 적용 가능합니다.\n청약 당첨으로 통장을 해지하더라도 해당 주택 구입 목적의 대출에서는 가입기간과 납입횟수가 인정됩니다."
+    },
+    {
+      "id": "newborn-special/discounts/section-3",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "discounts",
+      "heading": "기타 우대금리",
+      "content": "- 부동산 전자계약: -0.1%p (5년간, 2026년 12월 31일까지 계약분)\n- 추가 출산 자녀 1명당: -0.2%p (5년간, 최대 15년)\n- 기존 미성년 자녀 1명당: -0.1%p (5년간)\n- 대출신청 금액이 산정한도 30% 이하: -0.1%p (5년간)\n- 대출 실행 1년 후 원금 40% 이상 중도상환: -0.2%p\n- 지방 준공 후 미분양주택: -0.2%p (5년간)"
+    },
+    {
+      "id": "newborn-special/discounts/section-4",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "discounts",
+      "heading": "우대금리 상한",
+      "content": "- 최대 0.7%p\n\n우대금리 적용 후 최종금리가 연 1.2% 미만이면 연 1.2%를 적용합니다."
+    },
+    {
+      "id": "newborn-special/eligibility/section-1",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "eligibility",
+      "heading": "출산 요건",
+      "content": "대출신청일 기준 2년 내 출산 또는 입양한 가구여야 합니다.\n2023년 1월 1일 이후 출생아부터 적용되며, 임신 중인 태아는 포함하지 않습니다.\n\n혼인신고를 하지 않고 자녀를 출산하거나 입양한 경우에도 대출 취급이 가능합니다."
+    },
+    {
+      "id": "newborn-special/eligibility/section-2",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "eligibility",
+      "heading": "무주택 요건",
+      "content": "세대주를 포함한 세대원 전원이 무주택이어야 합니다.\n혼인신고를 하지 않은 경우 신생아 가족관계증명서상 등재된 부모도 함께 확인합니다."
+    },
+    {
+      "id": "newborn-special/eligibility/section-3",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "eligibility",
+      "heading": "소득 요건",
+      "content": "부부합산 연소득 1.3억원 이하가 기본입니다.\n맞벌이는 합산 2억원 이하까지 가능하지만, 부부 각 1인의 소득은 1.3억원 이하여야 합니다."
+    },
+    {
+      "id": "newborn-special/eligibility/section-4",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "eligibility",
+      "heading": "자산 요건",
+      "content": "순자산가액 5.11억원 이하입니다."
+    },
+    {
+      "id": "newborn-special/fees/section-1",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "fees",
+      "heading": "중도상환수수료",
+      "content": "3년 이내 중도상환 원금에 대해 대출실행일부터 경과일수별로 0.6% 한도 내에서 부과됩니다.\n\n계산식:\n중도상환원금 × 0.6% × [(3년 - 대출경과일수) / 3년]\n\n2024년 8월 12일부터 2026년 12월 31일까지 중도상환된 원금은 중도상환수수료가 면제됩니다."
+    },
+    {
+      "id": "newborn-special/fees/section-2",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "fees",
+      "heading": "고객부담비용",
+      "content": "- 인지세: 고객/은행 각 50%\n- 국민주택채권매입 비용: 고객 부담\n- 감정비용: 고객이 직접 감정평가를 의뢰한 경우 고객 부담"
+    },
+    {
+      "id": "newborn-special/limits/section-1",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "limits",
+      "heading": "대상 주택",
+      "content": "- 주택가격 9억원 이하\n- 전용면적 85㎡ 이하\n- 수도권 제외 도시지역이 아닌 읍·면 지역은 100㎡ 이하"
+    },
+    {
+      "id": "newborn-special/limits/section-2",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "limits",
+      "heading": "대출한도",
+      "content": "최대 4억원입니다.\n단, 2025년 6월 27일 이전 계약 체결 건은 5억원 이내 기준이 적용될 수 있습니다."
+    },
+    {
+      "id": "newborn-special/limits/section-3",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "limits",
+      "heading": "LTV / DTI",
+      "content": "- LTV 70%\n- DTI 60%\n- 생애최초 주택구입자는 LTV 80%\n- 단, 수도권·규제지역은 생애최초라도 LTV 70%"
+    },
+    {
+      "id": "newborn-special/overview/section-1",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "overview",
+      "heading": "신생아 특례 디딤돌대출 개요",
+      "content": "신생아 특례 디딤돌대출은 신생아 출산 가구의 주거안정을 위해 주택구입자금을 지원하는 정책대출입니다."
+    },
+    {
+      "id": "newborn-special/overview/section-2",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "overview",
+      "heading": "서비스 내 역할",
+      "content": "사용자의 입력값을 바탕으로 신생아 특례 디딤돌대출 가능 여부, 적용 금리, 대출한도, 월 납입금, 총 이자, 총 상환금액을 계산합니다."
+    },
+    {
+      "id": "newborn-special/overview/section-3",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "overview",
+      "heading": "핵심 특징",
+      "content": "- 대출접수일 기준 2년 내 출산 또는 입양 가구\n- 2023년 1월 1일 이후 출생아부터 적용\n- 무주택 세대주와 1주택 세대주 대환대출 가능\n- 최대 4억원\n- 주택가격 9억원 이하\n- 특례금리 기본 5년, 추가 출산 시 최장 15년까지 연장 가능"
+    },
+    {
+      "id": "newborn-special/rates/section-1",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "rates",
+      "heading": "특례금리",
+      "content": "특례금리는 기본 5년 적용됩니다."
+    },
+    {
+      "id": "newborn-special/rates/section-2",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "rates",
+      "heading": "30년 기준 예시",
+      "content": "- 2천만원 이하: 2.05%\n- 2천만원 초과 ~ 4천만원 이하: 2.40%\n- 4천만원 초과 ~ 6천만원 이하: 2.65%\n- 6천만원 초과 ~ 8.5천만원 이하: 2.90%\n- 8.5천만원 초과 ~ 1억원 이하: 3.20%\n- 1억원 초과 ~ 1.3억원 이하: 3.50%\n- 맞벌이 1.3억원 초과 ~ 1.5억원 이하: 3.80%\n- 맞벌이 1.5억원 초과 ~ 1.7억원 이하: 4.15%\n- 맞벌이 1.7억원 초과 ~ 2억원 이하: 4.50%\n\n추가 출산 시 자녀 1명당 특례금리 적용기간을 5년 연장할 수 있으며, 최장 15년까지 적용 가능합니다."
+    },
+    {
+      "id": "newborn-special/recommendation/section-1",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "recommendation",
+      "heading": "1순위가 될 수 있는 경우",
+      "content": "- 신생아 특례 자격을 충족한다.\n- 다른 대출보다 적용 금리가 낮다.\n- 총 이자와 총 상환금액이 가장 적다.\n- 기존 대출에서 대환할 때 중도상환수수료를 포함해도 총비용이 감소한다."
+    },
+    {
+      "id": "newborn-special/recommendation/section-2",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "recommendation",
+      "heading": "순위가 낮아지는 경우",
+      "content": "- 출산 또는 입양 요건을 충족하지 못한다.\n- 희망 대출금액이 한도를 초과한다.\n- 기존 대출 중도상환수수료를 포함하면 총비용이 더 커진다."
+    },
+    {
+      "id": "newborn-special/recommendation/section-3",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "recommendation",
+      "heading": "순위 산정 기준",
+      "content": "대출 적합성 순위는 사용자가 실제로 부담하는 총비용이 낮은 순서로 산정합니다."
+    },
+    {
+      "id": "newborn-special/repayment/section-1",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "repayment",
+      "heading": "이용기간",
+      "content": "10년, 15년, 20년, 30년"
+    },
+    {
+      "id": "newborn-special/repayment/section-2",
+      "productId": "newborn-special",
+      "productName": "신생아 특례 디딤돌대출",
+      "topic": "repayment",
+      "heading": "상환방법",
+      "content": "- 원리금균등분할상환\n- 원금균등분할상환\n- 체증식상환\n\n거치 1년 또는 비거치를 선택할 수 있습니다."
+    }
+  ]
+}

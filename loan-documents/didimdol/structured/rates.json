@@ -1,0 +1,80 @@
+{
+  "termYearsAvailable": [
+    10,
+    15,
+    20,
+    30
+  ],
+  "baseRateTable": [
+    {
+      "incomeMin": 0,
+      "incomeMax": 20000000,
+      "rates": {
+        "10": 2.85,
+        "15": 2.95,
+        "20": 3.05,
+        "30": 3.1
+      }
+    },
+    {
+      "incomeMin": 20000001,
+      "incomeMax": 40000000,
+      "rates": {
+        "10": 3.2,
+        "15": 3.3,
+        "20": 3.4,
+        "30": 3.45
+      }
+    },
+    {
+      "incomeMin": 40000001,
+      "incomeMax": 70000000,
+      "rates": {
+        "10": 3.55,
+        "15": 3.65,
+        "20": 3.75,
+        "30": 3.8
+      }
+    },
+    {
+      "incomeMin": 70000001,
+      "incomeMax": 85000000,
+      "rates": {
+        "10": 3.9,
+        "15": 4.0,
+        "20": 4.1,
+        "30": 4.15
+      }
+    }
+  ],
+  "regionalDiscounts": [
+    {
+      "condition": "대출대상주택이 지방 소재",
+      "discountPercentPoint": 0.2
+    }
+  ],
+  "interestRateTypeAdditions": [
+    {
+      "type": "FIVE_YEAR_VARIABLE",
+      "additionPercentPoint": 0.1
+    },
+    {
+      "type": "TEN_YEAR_FIXED_THEN_VARIABLE",
+      "additionPercentPoint": 0.2
+    },
+    {
+      "type": "PURE_FIXED",
+      "additionPercentPoint": 0.3
+    },
+    {
+      "type": "TEN_YEAR_FIXED_THEN_VARIABLE_WITH_10_YEAR_TERM",
+      "additionPercentPoint": 0.3
+    }
+  ],
+  "landLeaseholdIncomeExcessAdditionPercentPoint": 0.3,
+  "finalRateFloorPercent": 1.5,
+  "discountCapPercentPoint": {
+    "general": 0.5,
+    "multiChild": 0.7
+  }
+}

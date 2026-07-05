@@ -1,0 +1,58 @@
+{
+  "borrower": [
+    "isAdult",
+    "isHouseholdHead",
+    "isMarried",
+    "hasBirthOrAdoptionWithin2Years",
+    "childBirthDate",
+    "isChildBornAfter2023_01_01",
+    "isPregnantOnly",
+    "isSpecialSupplyWinner",
+    "childrenCount",
+    "isFirstHomeBuyer",
+    "allHouseholdMembersHomeless",
+    "currentHouseCount",
+    "isRefinance",
+    "hasExistingHousingFundLoan",
+    "hasExistingMortgageLoan",
+    "creditIssueExists"
+  ],
+  "incomeAndAsset": [
+    "borrowerAnnualIncome",
+    "spouseAnnualIncome",
+    "combinedAnnualIncome",
+    "bothSpousesHaveIncome",
+    "eachSpouseIncome",
+    "netAssetAmount"
+  ],
+  "house": [
+    "housePrice",
+    "houseEvaluationAmount",
+    "exclusiveAreaM2",
+    "isCapitalArea",
+    "isRegulatedArea",
+    "isNonUrbanEupMyeon",
+    "isLocalArea",
+    "isLocalUnsoldCompletedHousing"
+  ],
+  "loanRequest": [
+    "requestedLoanAmount",
+    "termYears",
+    "repaymentMethod",
+    "gracePeriodYears",
+    "seniorLienAmount",
+    "rentalDepositAmount",
+    "smallTenantPriorityRepaymentAmount"
+  ],
+  "discountInputs": [
+    "subscriptionSavingsYears",
+    "subscriptionSavingsPaymentCount",
+    "privateHousingMinimumDepositSatisfiedYears",
+    "usesElectronicContract",
+    "additionalBirthWithin2YearsAtApplication",
+    "additionalBirthAfterLoanExecution",
+    "existingMinorChildrenOverAge2Count",
+    "requestedAmountUnderThirtyPercentOfCalculatedLimit",
+    "earlyRepaymentAfterOneYearOverFortyPercent"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "termYears": [
+    10,
+    15,
+    20,
+    30,
+    40,
+    50
+  ],
+  "termRestrictions": {
+    "40": "만 40세 미만 또는 만 50세 미만 신혼가구",
+    "50": "만 35세 미만 또는 만 40세 미만 신혼가구"
+  },
+  "methods": [
+    "EQUAL_PRINCIPAL_AND_INTEREST",
+    "EQUAL_PRINCIPAL",
+    "GRADUATED_PAYMENT"
+  ],
+  "graduatedPaymentRestrictions": {
+    "allowedOnlyWhen": "만 40세 미만 채무자 및 공사 사전심사",
+    "notAllowedForTermYears": [
+      50
+    ]
+  },
+  "changeAfterExecution": {
+    "termChangeAllowed": false,
+    "repaymentMethodChangeAllowed": false
+  }
+}

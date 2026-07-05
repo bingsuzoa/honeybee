@@ -1,0 +1,76 @@
+{
+  "eligibilityRules": {
+    "contract": {
+      "mustHavePurchaseContract": true,
+      "excludedAcquisitionTypes": [
+        "상속",
+        "증여",
+        "재산분할"
+      ]
+    },
+    "householdHead": {
+      "mustBeAdultHouseholdHeadAtApplication": true,
+      "under30SingleHouseholdExcluded": true,
+      "under30SingleHouseholdException": "미성년 형제·자매 1인 이상과 동일세대 구성 및 주민등록등본상 부양기간 6개월 이상인 경우 가능",
+      "under30UnmarriedHouseholdExcluded": true,
+      "under30UnmarriedException": "직계존·비속 1인 이상과 동일세대 구성 및 주민등록등본상 부양기간 6개월 이상인 경우 가능. 직계비속은 부양기간 요건 제외",
+      "landLeaseholdHousingException": "토지임대부 분양주택 신청자는 부양조건 없이 신청 가능"
+    },
+    "homeless": {
+      "required": true,
+      "target": "세대주를 포함한 세대원 전원",
+      "ruleExpression": "allHouseholdMembersHomeless == true"
+    },
+    "duplicateLoan": {
+      "housingFundLoanNotAllowed": true,
+      "bankMortgageNotAllowed": true,
+      "housingFundJeonseLoanException": "기금 전세자금 대출은 실행일 당일 상환조건부로 가능",
+      "mortgageRule": "차주 및 배우자가 다른 목적물로 주택담보대출 또는 중도금대출 이용 중이면 불가"
+    },
+    "incomeLimit": {
+      "general": 60000000,
+      "firstHomeBuyer": 70000000,
+      "twoOrMoreChildren": 70000000,
+      "newlywed": 85000000,
+      "landLeaseholdHousingException": "토지임대부 분양주택 신청자는 청약 소득요건 충족으로 소득 초과 시에도 신청 가능"
+    },
+    "assetLimit": {
+      "netAssetAmount": 511000000,
+      "basis": "최근년도 가계금융복지조사 소득 4분위 전체가구 평균값 이하"
+    },
+    "credit": {
+      "creditScoreRequirement": "신용정보회사의 개인신용평가 일정점수 이상",
+      "disqualifyingCreditInformation": [
+        "연체",
+        "대위변제·대지급",
+        "부도",
+        "관련인 정보",
+        "금융질서문란정보",
+        "공공기록정보",
+        "특수기록정보",
+        "신용회복지원등록정보"
+      ],
+      "bankInternalRestrictionMayApply": true
+    },
+    "applicationTiming": {
+      "beforeOwnershipTransferRegistration": true,
+      "afterOwnershipTransferRegistrationDeadlineMonths": 3
+    }
+  },
+  "houseRules": {
+    "exclusiveAreaLimitM2": {
+      "default": 85,
+      "nonUrbanEupMyeon": 100,
+      "singleUnmarriedOver30": {
+        "default": 60,
+        "nonUrbanEupMyeon": 70
+      }
+    },
+    "housePriceLimit": {
+      "general": 500000000,
+      "newlywed": 600000000,
+      "twoOrMoreChildren": 600000000,
+      "singleUnmarriedOver30": 300000000
+    }
+  }
+}

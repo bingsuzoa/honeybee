@@ -1,0 +1,41 @@
+{
+  "repayment": {
+    "termYears": [
+      10,
+      15,
+      20,
+      30
+    ],
+    "gracePeriodOptionsYears": [
+      0,
+      1
+    ],
+    "methods": [
+      "EQUAL_PRINCIPAL_AND_INTEREST",
+      "EQUAL_PRINCIPAL",
+      "GRADUATED_PAYMENT"
+    ],
+    "collateral": "대출 대상주택에 대출실행일 이전 제1순위 근저당권 설정"
+  },
+  "residenceAndOwnershipObligations": {
+    "realResidence": {
+      "moveInWithinMonths": 1,
+      "residenceMaintainYears": 2,
+      "extensionForMoveInDifficultyMonths": 2,
+      "deferralForUnavoidableReasonsMaxYears": 3,
+      "violationEffect": "기한이익 상실 및 대출금 상환"
+    },
+    "oneHouseMaintenance": {
+      "appliesFromNewApplicationsAfter": "2024-06-19",
+      "required": true,
+      "violationEffect": "담보주택 외 추가주택 취득 후 6개월 이내 미처분 시 대출금 회수",
+      "exceptions": [
+        "상속 공유지분 취득 후 3개월 이내 처분",
+        "상속 단독주택 취득 후 6개월 이내 처분",
+        "혼인신고 전 배우자 주택 보유 후 합가한 경우 3년 이내 처분",
+        "전세사기피해주택 낙찰 후 3년 이내 처분",
+        "분양권 또는 조합원 입주권 취득 후 3년 이내 처분"
+      ]
+    }
+  }
+}

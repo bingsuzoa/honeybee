@@ -1,0 +1,569 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05",
+  "sourceSummary": {
+    "provider": "주택도시기금",
+    "productName": "내집마련디딤돌대출",
+    "loanType": "DIDIMDOL",
+    "sourceDocuments": [
+      {
+        "name": "일반대출 안내.pdf",
+        "documentRole": "main_policy",
+        "notes": "대출대상, 소득·자산 기준, 대상주택, 한도, 금리, 우대금리, 상환방법, 중도상환수수료, 실거주의무 기준"
+      },
+      {
+        "name": "생애주기형 구입자금 전환대출.pdf",
+        "documentRole": "special_case",
+        "notes": "기존 미혼 단독세대주 디딤돌 차주의 결혼 후 신혼부부 우대 적용 전환 조건"
+      },
+      {
+        "name": "유한책임대출 안내.pdf",
+        "documentRole": "option",
+        "notes": "유한책임대출 취급 기준"
+      },
+      {
+        "name": "이용절차 및 제출서류.pdf",
+        "documentRole": "application_process",
+        "notes": "신청 방법, 이용절차, 제출서류"
+      },
+      {
+        "name": "원금상환유예제도 안내.pdf",
+        "documentRole": "after_loan_support",
+        "notes": "원금상환유예 지원 대상, 신청 시기, 유예 방식"
+      }
+    ]
+  },
+  "product": {
+    "name": "내집마련디딤돌대출",
+    "category": "POLICY_MORTGAGE",
+    "purpose": "무주택자의 주택구입자금 지원",
+    "operatingInstitution": "주택도시기금",
+    "applicationChannels": {
+      "online": {
+        "available": true,
+        "platform": "기금e든든",
+        "availableBanks": [
+          "우리은행",
+          "KB국민은행",
+          "신한은행",
+          "NH농협은행",
+          "하나은행",
+          "부산은행",
+          "iM뱅크"
+        ]
+      },
+      "branch": {
+        "available": true,
+        "availableBanks": [
+          "우리은행",
+          "신한은행",
+          "KB국민은행",
+          "NH농협은행",
+          "하나은행",
+          "부산은행",
+          "iM뱅크"
+        ]
+      }
+    }
+  },
+  "userInputsRequired": {
+    "borrower": [
+      "isAdult",
+      "isHouseholdHead",
+      "isSingleHousehold",
+      "age",
+      "isMarried",
+      "marriageDate",
+      "isProspectiveMarried",
+      "isFirstHomeBuyer",
+      "childrenCount",
+      "isNewlywedHousehold",
+      "allHouseholdMembersHomeless",
+      "hasExistingHousingFundLoan",
+      "hasExistingMortgageLoan",
+      "creditIssueExists"
+    ],
+    "incomeAndAsset": [
+      "borrowerAnnualIncome",
+      "spouseAnnualIncome",
+      "combinedAnnualIncome",
+      "netAssetAmount"
+    ],
+    "house": [
+      "housePrice",
+      "houseEvaluationAmount",
+      "exclusiveAreaM2",
+      "regionType",
+      "isCapitalArea",
+      "isRegulatedArea",
+      "isRuralTownArea",
+      "isLandLeaseholdHousing",
+      "isUnsoldCompletedLocalHousing"
+    ],
+    "loanRequest": [
+      "requestedLoanAmount",
+      "termYears",
+      "repaymentMethod",
+      "interestRateType",
+      "gracePeriodYears",
+      "seniorLienAmount",
+      "rentalDepositAmount",
+      "smallTenantPriorityRepaymentAmount"
+    ],
+    "discountInputs": [
+      "isSingleParentHousehold",
+      "isDisabledHousehold",
+      "isMulticulturalHousehold",
+      "subscriptionSavingsYears",
+      "subscriptionSavingsPaymentCount",
+      "privateHousingMinimumDepositSatisfiedYears",
+      "usesElectronicContract",
+      "requestedAmountUnderThirtyPercentOfCalculatedLimit",
+      "earlyRepaymentAfterOneYearOverFortyPercent"
+    ]
+  },
+  "eligibilityRules": {
+    "contract": {
+      "mustHavePurchaseContract": true,
+      "excludedAcquisitionTypes": [
+        "상속",
+        "증여",
+        "재산분할"
+      ]
+    },
+    "householdHead": {
+      "mustBeAdultHouseholdHeadAtApplication": true,
+      "under30SingleHouseholdExcluded": true,
+      "under30SingleHouseholdException": "미성년 형제·자매 1인 이상과 동일세대 구성 및 주민등록등본상 부양기간 6개월 이상인 경우 가능",
+      "under30UnmarriedHouseholdExcluded": true,
+      "under30UnmarriedException": "직계존·비속 1인 이상과 동일세대 구성 및 주민등록등본상 부양기간 6개월 이상인 경우 가능. 직계비속은 부양기간 요건 제외",
+      "landLeaseholdHousingException": "토지임대부 분양주택 신청자는 부양조건 없이 신청 가능"
+    },
+    "homeless": {
+      "required": true,
+      "target": "세대주를 포함한 세대원 전원",
+      "ruleExpression": "allHouseholdMembersHomeless == true"
+    },
+    "duplicateLoan": {
+      "housingFundLoanNotAllowed": true,
+      "bankMortgageNotAllowed": true,
+      "housingFundJeonseLoanException": "기금 전세자금 대출은 실행일 당일 상환조건부로 가능",
+      "mortgageRule": "차주 및 배우자가 다른 목적물로 주택담보대출 또는 중도금대출 이용 중이면 불가"
+    },
+    "incomeLimit": {
+      "general": 60000000,
+      "firstHomeBuyer": 70000000,
+      "twoOrMoreChildren": 70000000,
+      "newlywed": 85000000,
+      "landLeaseholdHousingException": "토지임대부 분양주택 신청자는 청약 소득요건 충족으로 소득 초과 시에도 신청 가능"
+    },
+    "assetLimit": {
+      "netAssetAmount": 511000000,
+      "basis": "최근년도 가계금융복지조사 소득 4분위 전체가구 평균값 이하"
+    },
+    "credit": {
+      "creditScoreRequirement": "신용정보회사의 개인신용평가 일정점수 이상",
+      "disqualifyingCreditInformation": [
+        "연체",
+        "대위변제·대지급",
+        "부도",
+        "관련인 정보",
+        "금융질서문란정보",
+        "공공기록정보",
+        "특수기록정보",
+        "신용회복지원등록정보"
+      ],
+      "bankInternalRestrictionMayApply": true
+    },
+    "applicationTiming": {
+      "beforeOwnershipTransferRegistration": true,
+      "afterOwnershipTransferRegistrationDeadlineMonths": 3
+    }
+  },
+  "houseRules": {
+    "exclusiveAreaLimitM2": {
+      "default": 85,
+      "nonUrbanEupMyeon": 100,
+      "singleUnmarriedOver30": {
+        "default": 60,
+        "nonUrbanEupMyeon": 70
+      }
+    },
+    "housePriceLimit": {
+      "general": 500000000,
+      "newlywed": 600000000,
+      "twoOrMoreChildren": 600000000,
+      "singleUnmarriedOver30": 300000000
+    }
+  },
+  "loanLimitRules": {
+    "maxLoanAmount": {
+      "general": 200000000,
+      "firstHomeBuyer": 240000000,
+      "newlywed": 320000000,
+      "twoOrMoreChildren": 320000000,
+      "singleUnmarriedOver30": 150000000,
+      "singleUnmarriedOver30FirstHomeBuyer": 200000000
+    },
+    "legacyContractBefore2025_06_27": {
+      "general": 250000000,
+      "firstHomeBuyer": 300000000,
+      "newlywed": 400000000,
+      "twoOrMoreChildren": 400000000
+    },
+    "dtiLimit": 0.6,
+    "ltvLimit": {
+      "general": 0.7,
+      "firstHomeBuyer": 0.8,
+      "firstHomeBuyerCapitalOrRegulatedArea": 0.7,
+      "landLeaseholdHousing": 0.6
+    },
+    "calculationFormula": {
+      "description": "다음 중 작은 금액으로 산정",
+      "rules": [
+        "상품별 호당대출한도",
+        "매매 또는 분양가격 이내",
+        "(담보주택 평가액 × LTV) - 선순위채권 - 임대보증금 - 최우선변제소액임차보증금"
+      ]
+    }
+  },
+  "interestRates": {
+    "termYearsAvailable": [
+      10,
+      15,
+      20,
+      30
+    ],
+    "baseRateTable": [
+      {
+        "incomeMin": 0,
+        "incomeMax": 20000000,
+        "rates": {
+          "10": 2.85,
+          "15": 2.95,
+          "20": 3.05,
+          "30": 3.1
+        }
+      },
+      {
+        "incomeMin": 20000001,
+        "incomeMax": 40000000,
+        "rates": {
+          "10": 3.2,
+          "15": 3.3,
+          "20": 3.4,
+          "30": 3.45
+        }
+      },
+      {
+        "incomeMin": 40000001,
+        "incomeMax": 70000000,
+        "rates": {
+          "10": 3.55,
+          "15": 3.65,
+          "20": 3.75,
+          "30": 3.8
+        }
+      },
+      {
+        "incomeMin": 70000001,
+        "incomeMax": 85000000,
+        "rates": {
+          "10": 3.9,
+          "15": 4.0,
+          "20": 4.1,
+          "30": 4.15
+        }
+      }
+    ],
+    "regionalDiscounts": [
+      {
+        "condition": "대출대상주택이 지방 소재",
+        "discountPercentPoint": 0.2
+      }
+    ],
+    "interestRateTypeAdditions": [
+      {
+        "type": "FIVE_YEAR_VARIABLE",
+        "additionPercentPoint": 0.1
+      },
+      {
+        "type": "TEN_YEAR_FIXED_THEN_VARIABLE",
+        "additionPercentPoint": 0.2
+      },
+      {
+        "type": "PURE_FIXED",
+        "additionPercentPoint": 0.3
+      },
+      {
+        "type": "TEN_YEAR_FIXED_THEN_VARIABLE_WITH_10_YEAR_TERM",
+        "additionPercentPoint": 0.3
+      }
+    ],
+    "landLeaseholdIncomeExcessAdditionPercentPoint": 0.3,
+    "finalRateFloorPercent": 1.5,
+    "discountCapPercentPoint": {
+      "general": 0.5,
+      "multiChild": 0.7
+    }
+  },
+  "discountRules": {
+    "nonCombinableDiscounts": [
+      {
+        "code": "SINGLE_PARENT",
+        "condition": "annualIncome <= 60000000 && isSingleParentHousehold",
+        "discountPercentPoint": 0.5
+      },
+      {
+        "code": "DISABLED_HOUSEHOLD",
+        "condition": "isDisabledHousehold",
+        "discountPercentPoint": 0.2
+      },
+      {
+        "code": "MULTICULTURAL_HOUSEHOLD",
+        "condition": "isMulticulturalHousehold",
+        "discountPercentPoint": 0.2
+      },
+      {
+        "code": "NEWLYWED",
+        "condition": "isNewlywedHousehold",
+        "discountPercentPoint": 0.2,
+        "maxApplyYears": 5
+      },
+      {
+        "code": "FIRST_HOME",
+        "condition": "isFirstHomeBuyer",
+        "discountPercentPoint": 0.2,
+        "maxApplyYears": 5
+      },
+      {
+        "code": "THREE_OR_MORE_CHILDREN",
+        "condition": "childrenCount >= 3",
+        "discountPercentPoint": 0.7
+      },
+      {
+        "code": "TWO_CHILDREN",
+        "condition": "childrenCount == 2",
+        "discountPercentPoint": 0.5
+      },
+      {
+        "code": "ONE_CHILD",
+        "condition": "childrenCount == 1",
+        "discountPercentPoint": 0.3,
+        "note": "2025.3.24 신규접수분부터 자녀 1명당 5년 적용, 최대 15년"
+      }
+    ],
+    "combinableAdditionalDiscounts": [
+      {
+        "code": "SUBSCRIPTION_SAVINGS_5Y_60",
+        "condition": "subscriptionSavingsYears >= 5 && subscriptionSavingsPaymentCount >= 60",
+        "discountPercentPoint": 0.3,
+        "maxApplyYears": 5
+      },
+      {
+        "code": "SUBSCRIPTION_SAVINGS_10Y_120",
+        "condition": "subscriptionSavingsYears >= 10 && subscriptionSavingsPaymentCount >= 120",
+        "discountPercentPoint": 0.4,
+        "maxApplyYears": 5
+      },
+      {
+        "code": "SUBSCRIPTION_SAVINGS_15Y_180",
+        "condition": "subscriptionSavingsYears >= 15 && subscriptionSavingsPaymentCount >= 180",
+        "discountPercentPoint": 0.5,
+        "maxApplyYears": 5
+      },
+      {
+        "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_5Y",
+        "condition": "privateHousingMinimumDepositSatisfiedYears >= 5",
+        "discountPercentPoint": 0.3
+      },
+      {
+        "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_10Y",
+        "condition": "privateHousingMinimumDepositSatisfiedYears >= 10",
+        "discountPercentPoint": 0.4
+      },
+      {
+        "code": "PRIVATE_HOUSING_MINIMUM_DEPOSIT_15Y",
+        "condition": "privateHousingMinimumDepositSatisfiedYears >= 15",
+        "discountPercentPoint": 0.5
+      },
+      {
+        "code": "ELECTRONIC_CONTRACT",
+        "condition": "usesElectronicContract == true",
+        "discountPercentPoint": 0.1,
+        "validUntil": "2026-12-31",
+        "maxApplyYears": 5
+      },
+      {
+        "code": "LOW_REQUESTED_AMOUNT",
+        "condition": "requestedLoanAmount <= calculatedLoanLimit * 0.30",
+        "discountPercentPoint": 0.1,
+        "validFrom": "2024-07-31",
+        "maxApplyYears": 5
+      },
+      {
+        "code": "EARLY_REPAYMENT_OVER_40_AFTER_1Y",
+        "condition": "afterOneYear && earlyRepaymentAmount >= originalPrincipal * 0.40",
+        "discountPercentPoint": 0.2,
+        "validFrom": "2024-07-31"
+      },
+      {
+        "code": "LOCAL_UNSOLD_COMPLETED_HOUSING",
+        "condition": "isUnsoldCompletedLocalHousing == true",
+        "discountPercentPoint": 0.2,
+        "maxApplyYears": 5
+      }
+    ]
+  },
+  "repayment": {
+    "termYears": [
+      10,
+      15,
+      20,
+      30
+    ],
+    "gracePeriodOptionsYears": [
+      0,
+      1
+    ],
+    "methods": [
+      "EQUAL_PRINCIPAL_AND_INTEREST",
+      "EQUAL_PRINCIPAL",
+      "GRADUATED_PAYMENT"
+    ],
+    "collateral": "대출 대상주택에 대출실행일 이전 제1순위 근저당권 설정"
+  },
+  "fees": {
+    "stampTax": {
+      "payer": "고객/은행 각 50%"
+    },
+    "mortgageRegistrationCost": {
+      "payer": "은행 부담",
+      "customerPays": [
+        "국민주택채권매입 비용"
+      ]
+    },
+    "appraisalCost": {
+      "customerPaysWhen": "고객이 직접 감정평가업자에게 의뢰한 경우",
+      "fundPaysWhen": "가격정보 또는 공시가격이 없어 감정하는 경우"
+    },
+    "prepaymentFee": {
+      "appliesWithinYears": 3,
+      "maxRate": 0.006,
+      "formula": "prepaymentPrincipal * 0.006 * ((3 years - elapsedDays) / 3 years)",
+      "waiver": [
+        {
+          "condition": "대출계약 철회",
+          "waived": true
+        },
+        {
+          "condition": "2024-08-12부터 2026-12-31까지 중도상환된 원금",
+          "waived": true
+        }
+      ]
+    }
+  },
+  "residenceAndOwnershipObligations": {
+    "realResidence": {
+      "moveInWithinMonths": 1,
+      "residenceMaintainYears": 2,
+      "extensionForMoveInDifficultyMonths": 2,
+      "deferralForUnavoidableReasonsMaxYears": 3,
+      "violationEffect": "기한이익 상실 및 대출금 상환"
+    },
+    "oneHouseMaintenance": {
+      "appliesFromNewApplicationsAfter": "2024-06-19",
+      "required": true,
+      "violationEffect": "담보주택 외 추가주택 취득 후 6개월 이내 미처분 시 대출금 회수",
+      "exceptions": [
+        "상속 공유지분 취득 후 3개월 이내 처분",
+        "상속 단독주택 취득 후 6개월 이내 처분",
+        "혼인신고 전 배우자 주택 보유 후 합가한 경우 3년 이내 처분",
+        "전세사기피해주택 낙찰 후 3년 이내 처분",
+        "분양권 또는 조합원 입주권 취득 후 3년 이내 처분"
+      ]
+    }
+  },
+  "specialPrograms": {
+    "lifeCycleConversionLoan": {
+      "description": "디딤돌대출 이용 중인 만 30세 이상 미혼 단독세대주가 결혼하여 다른 주택으로 이사하는 경우 기존 기금대출 담보주택 처분조건으로 신혼부부 우대적용 디딤돌대출로 전환",
+      "target": "만 30세 이상의 미혼 단독세대주 자격으로 2018-03-05 이후 접수된 디딤돌 대출을 받은 차주",
+      "existingCollateralDisposalDeadlineYears": 2,
+      "mustRepayExistingFundLoanByDisposalDate": true,
+      "failureEffect": "기한이익 상실 및 대출금 상환",
+      "otherRules": "위 사항 제외 나머지는 일반대출 안내와 동일"
+    },
+    "limitedLiabilityLoan": {
+      "description": "대출상환책임을 담보물에만 한정하는 대출",
+      "scoreRules": [
+        {
+          "scoreMin": 50,
+          "ltv": 0.7,
+          "landLeaseholdLtv": 0.6,
+          "result": "유한책임대출 가능"
+        },
+        {
+          "scoreMin": 40,
+          "scoreMaxExclusive": 50,
+          "ltv": 0.6,
+          "landLeaseholdLtv": 0.5,
+          "result": "유한책임대출 또는 일반 디딤돌 선택"
+        },
+        {
+          "scoreMaxExclusive": 40,
+          "result": "일반 디딤돌 대출"
+        }
+      ],
+      "notAvailableWhen": [
+        "일반구입자금보증(HF) 담보 취득",
+        "생애최초특례구입자금보증(HF) 담보 취득"
+      ]
+    },
+    "principalRepaymentDeferral": {
+      "description": "일정 사유 발생 시 원금 상환 유예 가능",
+      "supportReasons": [
+        "본인 또는 배우자 실직·휴직",
+        "본인 또는 배우자 폐업·퇴직",
+        "본인 또는 배우자 육아휴직",
+        "부부합산 소득 20% 이상 감소",
+        "질병·상해 등 의료비 지출이 부부합산 소득 10% 초과",
+        "재난적의료비 지급 결정 통보",
+        "가족 사망",
+        "본인 또는 가족 장애",
+        "거주주택 재난 피해",
+        "본인 이혼",
+        "본인 또는 배우자 출산"
+      ],
+      "reasonOccurrenceWindow": "5~11번 사유는 접수일로부터 최근 1년 이내 발생 필요",
+      "eligibleAccount": "대출 실행 후 1년 경과된 계좌",
+      "applicationTiming": "연체 전부터 연체 3개월 미만까지 신청 가능",
+      "maxDeferralCount": 3,
+      "maxTotalDeferralYears": 3,
+      "maxDeferralYearsPerRound": 1,
+      "interestDuringDeferral": "정상 납입"
+    }
+  },
+  "calculationEngineHints": {
+    "eligibilityOrder": [
+      "계약/세대주/무주택/중복대출/소득/자산/신용/대상주택/신청시기 확인",
+      "한도 계산",
+      "소득구간과 기간으로 기본금리 산정",
+      "가산금리 적용",
+      "우대금리 적용",
+      "월납입금 및 총이자 계산",
+      "중도상환수수료 및 고객부담비용 반영"
+    ],
+    "rankingMetric": "totalCost",
+    "totalCostComponents": [
+      "totalInterest",
+      "prepaymentFee",
+      "stampTaxCustomerShare",
+      "bondPurchaseCost",
+      "customerAppraisalCostIfAny"
+    ],
+    "notes": [
+      "정책 기준은 DB/룰엔진이 판단하고, RAG는 근거 설명에 사용한다.",
+      "최종 가능 여부와 우대금리는 수탁은행 심사 결과에 따라 달라질 수 있다."
+    ]
+  }
+}

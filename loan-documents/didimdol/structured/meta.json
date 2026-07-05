@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05",
+  "sourceSummary": {
+    "provider": "주택도시기금",
+    "productName": "내집마련디딤돌대출",
+    "loanType": "DIDIMDOL",
+    "sourceDocuments": [
+      {
+        "name": "일반대출 안내.pdf",
+        "documentRole": "main_policy",
+        "notes": "대출대상, 소득·자산 기준, 대상주택, 한도, 금리, 우대금리, 상환방법, 중도상환수수료, 실거주의무 기준"
+      },
+      {
+        "name": "생애주기형 구입자금 전환대출.pdf",
+        "documentRole": "special_case",
+        "notes": "기존 미혼 단독세대주 디딤돌 차주의 결혼 후 신혼부부 우대 적용 전환 조건"
+      },
+      {
+        "name": "유한책임대출 안내.pdf",
+        "documentRole": "option",
+        "notes": "유한책임대출 취급 기준"
+      },
+      {
+        "name": "이용절차 및 제출서류.pdf",
+        "documentRole": "application_process",
+        "notes": "신청 방법, 이용절차, 제출서류"
+      },
+      {
+        "name": "원금상환유예제도 안내.pdf",
+        "documentRole": "after_loan_support",
+        "notes": "원금상환유예 지원 대상, 신청 시기, 유예 방식"
+      }
+    ]
+  },
+  "product": {
+    "name": "내집마련디딤돌대출",
+    "category": "POLICY_MORTGAGE",
+    "purpose": "무주택자의 주택구입자금 지원",
+    "operatingInstitution": "주택도시기금",
+    "applicationChannels": {
+      "online": {
+        "available": true,
+        "platform": "기금e든든",
+        "availableBanks": [
+          "우리은행",
+          "KB국민은행",
+          "신한은행",
+          "NH농협은행",
+          "하나은행",
+          "부산은행",
+          "iM뱅크"
+        ]
+      },
+      "branch": {
+        "available": true,
+        "availableBanks": [
+          "우리은행",
+          "신한은행",
+          "KB국민은행",
+          "NH농협은행",
+          "하나은행",
+          "부산은행",
+          "iM뱅크"
+        ]
+      }
+    }
+  }
+}

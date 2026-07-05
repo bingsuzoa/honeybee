@@ -1,0 +1,59 @@
+{
+  "lifeCycleConversionLoan": {
+    "description": "디딤돌대출 이용 중인 만 30세 이상 미혼 단독세대주가 결혼하여 다른 주택으로 이사하는 경우 기존 기금대출 담보주택 처분조건으로 신혼부부 우대적용 디딤돌대출로 전환",
+    "target": "만 30세 이상의 미혼 단독세대주 자격으로 2018-03-05 이후 접수된 디딤돌 대출을 받은 차주",
+    "existingCollateralDisposalDeadlineYears": 2,
+    "mustRepayExistingFundLoanByDisposalDate": true,
+    "failureEffect": "기한이익 상실 및 대출금 상환",
+    "otherRules": "위 사항 제외 나머지는 일반대출 안내와 동일"
+  },
+  "limitedLiabilityLoan": {
+    "description": "대출상환책임을 담보물에만 한정하는 대출",
+    "scoreRules": [
+      {
+        "scoreMin": 50,
+        "ltv": 0.7,
+        "landLeaseholdLtv": 0.6,
+        "result": "유한책임대출 가능"
+      },
+      {
+        "scoreMin": 40,
+        "scoreMaxExclusive": 50,
+        "ltv": 0.6,
+        "landLeaseholdLtv": 0.5,
+        "result": "유한책임대출 또는 일반 디딤돌 선택"
+      },
+      {
+        "scoreMaxExclusive": 40,
+        "result": "일반 디딤돌 대출"
+      }
+    ],
+    "notAvailableWhen": [
+      "일반구입자금보증(HF) 담보 취득",
+      "생애최초특례구입자금보증(HF) 담보 취득"
+    ]
+  },
+  "principalRepaymentDeferral": {
+    "description": "일정 사유 발생 시 원금 상환 유예 가능",
+    "supportReasons": [
+      "본인 또는 배우자 실직·휴직",
+      "본인 또는 배우자 폐업·퇴직",
+      "본인 또는 배우자 육아휴직",
+      "부부합산 소득 20% 이상 감소",
+      "질병·상해 등 의료비 지출이 부부합산 소득 10% 초과",
+      "재난적의료비 지급 결정 통보",
+      "가족 사망",
+      "본인 또는 가족 장애",
+      "거주주택 재난 피해",
+      "본인 이혼",
+      "본인 또는 배우자 출산"
+    ],
+    "reasonOccurrenceWindow": "5~11번 사유는 접수일로부터 최근 1년 이내 발생 필요",
+    "eligibleAccount": "대출 실행 후 1년 경과된 계좌",
+    "applicationTiming": "연체 전부터 연체 3개월 미만까지 신청 가능",
+    "maxDeferralCount": 3,
+    "maxTotalDeferralYears": 3,
+    "maxDeferralYearsPerRound": 1,
+    "interestDuringDeferral": "정상 납입"
+  }
+}

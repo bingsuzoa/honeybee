@@ -1,0 +1,31 @@
+{
+  "maxLoanAmount": {
+    "general": 200000000,
+    "firstHomeBuyer": 240000000,
+    "newlywed": 320000000,
+    "twoOrMoreChildren": 320000000,
+    "singleUnmarriedOver30": 150000000,
+    "singleUnmarriedOver30FirstHomeBuyer": 200000000
+  },
+  "legacyContractBefore2025_06_27": {
+    "general": 250000000,
+    "firstHomeBuyer": 300000000,
+    "newlywed": 400000000,
+    "twoOrMoreChildren": 400000000
+  },
+  "dtiLimit": 0.6,
+  "ltvLimit": {
+    "general": 0.7,
+    "firstHomeBuyer": 0.8,
+    "firstHomeBuyerCapitalOrRegulatedArea": 0.7,
+    "landLeaseholdHousing": 0.6
+  },
+  "calculationFormula": {
+    "description": "다음 중 작은 금액으로 산정",
+    "rules": [
+      "상품별 호당대출한도",
+      "매매 또는 분양가격 이내",
+      "(담보주택 평가액 × LTV) - 선순위채권 - 임대보증금 - 최우선변제소액임차보증금"
+    ]
+  }
+}
