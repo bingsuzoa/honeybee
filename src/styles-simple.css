@@ -169,6 +169,7 @@ button {
   text-align: left;
   cursor: pointer;
   transition: all 0.2s ease;
+  outline: none;
 }
 
 .answer-card:hover {
@@ -178,6 +179,17 @@ button {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+.answer-card:focus {
+  outline: none;
+  border-color: #e0e0e0;
+}
+
+.answer-card:active {
+  transform: scale(0.98);
+  border-color: var(--leaf-dark);
+  background: #f0f8e0;
+}
+
 .answer-index {
   display: flex;
   align-items: center;
@@ -185,10 +197,21 @@ button {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--leaf);
-  color: #2d4016;
+  background: #e8e8e8;
+  color: #666;
   font-weight: 700;
   font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.answer-card:hover .answer-index {
+  background: var(--leaf);
+  color: #2d4016;
+}
+
+.answer-card:active .answer-index {
+  background: var(--leaf-dark);
+  color: white;
 }
 
 .answer-copy {
