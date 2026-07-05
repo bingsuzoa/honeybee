@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: honeybee-loan-calculator
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: npm install && npm run build:data
+    startCommand: npm run dev
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: ADMIN_TOKEN
+        generateValue: true
+        # 배포 후 Render 대시보드에서 생성된 값을 확인하세요
+      - key: NODE_ENV
+        value: production

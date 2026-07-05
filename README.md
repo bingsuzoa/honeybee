@@ -147,6 +147,42 @@ honeybee/
 └── data/               # 데이터베이스 저장 위치
 ```
 
+## 배포 (Render)
+
+이 프로젝트는 Render에 쉽게 배포할 수 있도록 `render.yaml` 설정 파일을 포함하고 있습니다.
+
+### 빠른 배포 (클릭 한 번)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+### 수동 배포
+
+1. [Render.com](https://render.com) 회원가입
+2. "New +" → "Web Service" 선택
+3. GitHub 저장소 연결
+4. Render가 자동으로 `render.yaml`을 감지합니다
+5. "Apply" 클릭하여 배포 시작
+
+### 배포 후 설정
+
+1. Render 대시보드에서 서비스 선택
+2. "Environment" 탭에서 `ADMIN_TOKEN` 값 확인
+   - 자동 생성된 보안 토큰이 표시됩니다
+   - 이 값을 관리자 로그인에 사용하세요
+3. 서비스 URL 확인 (예: `https://honeybee-loan-calculator.onrender.com`)
+
+### 관리자 접속
+
+- 프론트엔드: `https://your-app.onrender.com`
+- 관리자: `https://your-app.onrender.com/admin.html`
+- 토큰: Render 대시보드의 `ADMIN_TOKEN` 값
+
+### 주의사항
+
+- 무료 플랜은 15분 동안 요청이 없으면 sleep 상태가 됩니다
+- sleep 상태에서 첫 요청은 응답이 느릴 수 있습니다 (약 30초)
+- 데이터는 JSON 파일에 저장되며, 재배포 시 초기화되지 않습니다
+
 ## 라이선스
 
 Private
