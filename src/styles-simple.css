@@ -172,11 +172,19 @@ button {
   outline: none;
 }
 
-.answer-card:hover {
-  border-color: var(--leaf-dark);
-  background: #f8fdf0;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+/* 마우스가 있는 기기에서만 hover 효과 */
+@media (hover: hover) and (pointer: fine) {
+  .answer-card:hover {
+    border-color: var(--leaf-dark);
+    background: #f8fdf0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .answer-card:hover .answer-index {
+    background: var(--leaf);
+    color: #2d4016;
+  }
 }
 
 .answer-card:focus {
@@ -184,10 +192,16 @@ button {
   border-color: #e0e0e0;
 }
 
+/* 터치 피드백 (모든 기기) */
 .answer-card:active {
   transform: scale(0.98);
   border-color: var(--leaf-dark);
   background: #f0f8e0;
+}
+
+.answer-card:active .answer-index {
+  background: var(--leaf-dark);
+  color: white;
 }
 
 .answer-index {
@@ -202,16 +216,6 @@ button {
   font-weight: 700;
   font-size: 0.9rem;
   transition: all 0.2s ease;
-}
-
-.answer-card:hover .answer-index {
-  background: var(--leaf);
-  color: #2d4016;
-}
-
-.answer-card:active .answer-index {
-  background: var(--leaf-dark);
-  color: white;
 }
 
 .answer-copy {
