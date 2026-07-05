@@ -393,6 +393,16 @@ function renderStartScreen() {
 }
 
 function renderQuestion(question) {
+  // 현재 선택된 옵션인지 확인하는 함수
+  const isOptionSelected = (option) => {
+    for (const [key, value] of Object.entries(option.patch)) {
+      if (selections[key] === value) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   questScreen.innerHTML = `
     <div class="simple-layout">
       <section class="question-card">
@@ -405,15 +415,19 @@ function renderQuestion(question) {
         <div class="answer-grid">
           ${question.options
             .map(
-              (option, index) => `
-                <button class="answer-card" type="button" data-answer="${index}">
-                  <span class="answer-index">${index + 1}</span>
-                  <span class="answer-copy">
-                    <strong>${escapeHtml(option.label)}</strong>
-                    ${option.description ? `<small>${escapeHtml(option.description)}</small>` : ""}
-                  </span>
-                </button>
-              `
+              (option, index) => {
+                const isSelected = isOptionSelected(option);
+                const selectedClass = isSelected ? 'selected' : '';
+                return `
+                  <button class="answer-card ${selectedClass}" type="button" data-answer="${index}">
+                    <span class="answer-index">${index + 1}</span>
+                    <span class="answer-copy">
+                      <strong>${escapeHtml(option.label)}</strong>
+                      ${option.description ? `<small>${escapeHtml(option.description)}</small>` : ""}
+                    </span>
+                  </button>
+                `;
+              }
             )
             .join("")}
         </div>

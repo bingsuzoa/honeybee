@@ -172,6 +172,17 @@ button {
   outline: none;
 }
 
+/* 선택된 상태 */
+.answer-card.selected {
+  border-color: var(--leaf-dark);
+  background: #f8fdf0;
+}
+
+.answer-card.selected .answer-index {
+  background: var(--leaf);
+  color: #2d4016;
+}
+
 /* 마우스가 있는 기기에서만 hover 효과 */
 @media (hover: hover) and (pointer: fine) {
   .answer-card:hover {
