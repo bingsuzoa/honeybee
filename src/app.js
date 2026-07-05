@@ -524,7 +524,8 @@ function goBack() {
       selections = { ...selections, ...previousChoice.patch };
     }
   }
-  answerHistory = answerHistory.slice(0, currentStep);
+  // currentStep의 답변도 유지 (이전 선택 표시용)
+  answerHistory = answerHistory.slice(0, currentStep + 1);
   render();
 }
 
