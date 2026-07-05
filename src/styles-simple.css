@@ -217,12 +217,13 @@ button {
 
 .ghost-action,
 .primary-action {
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  min-height: 44px;
 }
 
 .ghost-action {
@@ -254,64 +255,74 @@ button {
 /* 결과 화면 */
 .result-scroll {
   display: grid;
-  gap: 20px;
-  max-height: 90vh;
-  overflow-y: auto;
+  gap: 24px;
+  background: white;
+  padding: 0;
 }
 
 .result-card,
 .review-card,
 .source-card {
-  padding: 20px;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  background: #fafafa;
+  padding: 24px;
+  border: 0;
+  border-radius: 0;
+  background: white;
+  border-bottom: 8px solid #f5f5f5;
 }
 
 .result-kicker {
-  margin: 0 0 8px;
+  margin: 0 0 12px;
   color: var(--leaf-dark);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .result-card h2 {
-  margin: 0 0 12px;
-  font-size: 1.5rem;
+  margin: 0 0 16px;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  color: var(--ink);
+  font-weight: 800;
 }
 
 .result-card p {
-  margin: 0 0 16px;
+  margin: 0 0 20px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 .metric-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  margin: 16px 0;
+  margin: 20px 0;
 }
 
 .metric-grid div {
-  padding: 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  background: white;
+  padding: 16px;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  background: #fafafa;
+  text-align: center;
 }
 
 .metric-grid span {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
 .metric-grid strong {
-  font-size: 1.1rem;
-  color: var(--ink);
+  font-size: 1.5rem;
+  color: var(--leaf-dark);
+  font-weight: 800;
 }
 
 .rate-discount-detail {
@@ -388,28 +399,31 @@ button {
 
 .repayment-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 10px;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
 
 .repayment-option {
-  padding: 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  background: white;
+  padding: 16px;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  background: #fafafa;
 }
 
 .repayment-option strong {
   display: block;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--leaf-dark);
+  font-weight: 700;
 }
 
 .repayment-option span {
   display: block;
-  color: #666;
-  font-size: 0.85rem;
-  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  line-height: 1.4;
 }
 
 .repayment-note {
@@ -425,8 +439,10 @@ button {
 
 .review-card h3,
 .source-card h3 {
-  margin: 0 0 12px;
-  font-size: 1.1rem;
+  margin: 0 0 16px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .review-list {
@@ -434,56 +450,68 @@ button {
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .review-list li {
-  padding: 12px;
-  border: 1px solid #e8e8e8;
-  border-radius: 8px;
+  padding: 16px;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
   background: #fafafa;
 }
 
 .review-list strong {
   display: block;
-  margin-bottom: 6px;
-  font-size: 0.9rem;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .review-list span {
   display: block;
   color: var(--muted);
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 .source-list {
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .source-item {
-  padding: 12px;
-  border: 1px solid #e8e8e8;
-  border-radius: 8px;
+  padding: 16px;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
   background: #fafafa;
 }
 
 .source-item strong {
   display: block;
-  margin-bottom: 6px;
-  font-size: 0.9rem;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .source-item p {
   margin: 0 0 8px;
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.source-item .source-heading {
+  font-weight: 600;
+  color: var(--leaf-dark);
+  margin-bottom: 6px;
 }
 
 .source-item span {
   color: #888;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 .comparison-table-wrap {
@@ -541,46 +569,180 @@ tr:last-child td {
 
 .final-actions {
   justify-content: center;
+  padding: 20px 0;
 }
 
-.notice {
+.final-actions .primary-action {
+  padding: 16px 48px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.notice,
+.review-summary {
   margin-top: 20px;
-  padding: 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  padding: 16px;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
   background: #fafafa;
   color: var(--muted);
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  line-height: 1.6;
   text-align: center;
 }
 
 @media (max-width: 640px) {
-  .question-card,
+  .quest-screen {
+    padding: 0;
+  }
+
+  .question-card {
+    padding: 24px 20px;
+    border-radius: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .result-scroll {
-    padding: 20px;
+    padding: 0;
+    border-radius: 0;
+    max-height: none;
+  }
+
+  .result-card,
+  .review-card,
+  .source-card {
+    padding: 32px 20px;
+    border-radius: 0;
+  }
+
+  .result-card h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .result-card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
   }
 
   .question-card h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .question-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 
   .answer-card {
-    grid-template-columns: 32px 1fr;
-    padding: 12px;
+    grid-template-columns: 40px 1fr;
+    padding: 16px;
+    min-height: 64px;
   }
 
   .answer-index {
-    width: 28px;
-    height: 28px;
-    font-size: 0.85rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .answer-card strong {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
   .metric-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .metric-grid div {
+    padding: 20px;
+  }
+
+  .metric-grid strong {
+    font-size: 2rem;
   }
 
   .discount-comparison {
     flex-direction: column;
+    gap: 12px;
+  }
+
+  .rate-item strong {
+    font-size: 1.6rem;
+  }
+
+  .rate-item.highlight strong {
+    font-size: 2rem;
+  }
+
+  .comparison-table-wrap {
+    border-radius: 0;
+    margin: 0 -20px;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+
+  th {
+    font-size: 0.75rem;
+  }
+
+  .repayment-option {
+    padding: 20px;
+  }
+
+  .repayment-option strong {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .repayment-option span {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .nav-row {
+    flex-direction: column;
+  }
+
+  .ghost-action,
+  .primary-action {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+
+  .review-card h3,
+  .source-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .review-list li,
+  .source-item {
+    padding: 20px;
+  }
+
+  .review-list strong,
+  .source-item strong {
+    font-size: 1rem;
+  }
+
+  .review-list span,
+  .source-item p {
+    font-size: 0.95rem;
   }
 }
