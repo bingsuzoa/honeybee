@@ -393,15 +393,8 @@ function renderStartScreen() {
 }
 
 function renderQuestion(question) {
-  // 현재 선택된 옵션인지 확인하는 함수
-  const isOptionSelected = (option) => {
-    for (const [key, value] of Object.entries(option.patch)) {
-      if (selections[key] === value) {
-        return true;
-      }
-    }
-    return false;
-  };
+  // answerHistory에서 실제로 사용자가 선택한 인덱스를 가져옴
+  const selectedIndex = answerHistory[currentStep];
 
   questScreen.innerHTML = `
     <div class="simple-layout">
@@ -416,7 +409,8 @@ function renderQuestion(question) {
           ${question.options
             .map(
               (option, index) => {
-                const isSelected = isOptionSelected(option);
+                // answerHistory 기반으로만 선택 여부 확인 (DEFAULT_SELECTIONS 무시)
+                const isSelected = selectedIndex === index;
                 const selectedClass = isSelected ? 'selected' : '';
                 return `
                   <button class="answer-card ${selectedClass}" type="button" data-answer="${index}">
