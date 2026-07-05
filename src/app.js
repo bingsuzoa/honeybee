@@ -652,7 +652,8 @@ function renderSourceReferences(references) {
 
 function renderComparisonTable(results) {
   return `
-    <div class="comparison-table-wrap">
+    <!-- 데스크톱: 테이블 뷰 -->
+    <div class="comparison-table-wrap desktop-only">
       <table>
         <thead>
           <tr>
@@ -667,6 +668,47 @@ function renderComparisonTable(results) {
         </thead>
         <tbody>${results.map(renderResultRow).join("")}</tbody>
       </table>
+    </div>
+
+    <!-- 모바일: 카드 뷰 -->
+    <div class="comparison-cards mobile-only">
+      ${results.map(renderResultCard).join("")}
+    </div>
+  `;
+}
+
+function renderResultCard(result) {
+  const status = getStatus(result);
+  const rank = result.rank ? `${result.rank}위` : "-";
+  const reasons = result.isEligible ? result.reasons : result.ineligibleReasons;
+
+  return `
+    <div class="product-card">
+      <div class="product-card-header">
+        <div class="product-rank">${rank}</div>
+        <div class="product-info">
+          <strong>${escapeHtml(result.productName)}</strong>
+          <small>${escapeHtml(result.provider)}</small>
+        </div>
+        <span class="status ${status.className}">${status.label}</span>
+      </div>
+
+      <div class="product-card-body">
+        <div class="product-metric">
+          <span>예상 금리</span>
+          <strong>${formatRate(result.estimatedRate)}</strong>
+        </div>
+        <div class="product-metric">
+          <span>최대 한도</span>
+          <strong>${formatMoney(result.maxAvailableAmount)}</strong>
+        </div>
+      </div>
+
+      <div class="product-card-footer">
+        <div class="product-reasons">
+          <small>${escapeHtml(reasons.slice(0, 2).join(" · "))}</small>
+        </div>
+      </div>
     </div>
   `;
 }
