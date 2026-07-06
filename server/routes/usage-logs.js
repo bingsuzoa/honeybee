@@ -5,7 +5,7 @@ import { hashIP } from "../utils/hash.js";
 const router = express.Router();
 
 // 사용 이력 저장
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { anonymousUserId, sessionId, inputData, analysisResult } = req.body;
 
@@ -24,7 +24,7 @@ router.post("/", (req, res) => {
     const userAgent = req.headers["user-agent"] || "unknown";
 
     // DB에 저장
-    const logId = insertUsageLog({
+    const logId = await insertUsageLog({
       anonymous_user_id: anonymousUserId,
       session_id: sessionId,
       ip_hash: ipHash,
@@ -51,7 +51,7 @@ router.post("/", (req, res) => {
 });
 
 // 관리자용 조회 API (간단한 기본 인증)
-router.get("/admin", (req, res) => {
+router.get("/admin", async (req, res) => {
   try {
     // 간단한 토큰 인증 (실제 환경에서는 더 강력한 인증 필요)
     const authHeader = req.headers.authorization;
@@ -67,7 +67,7 @@ router.get("/admin", (req, res) => {
 
     const { limit = 100, offset = 0, anonymousUserId, sessionId } = req.query;
 
-    const { logs, total } = getUsageLogs({
+    const { logs, total } = await getUsageLogs({
       limit: parseInt(limit),
       offset: parseInt(offset),
       anonymousUserId,
@@ -93,7 +93,7 @@ router.get("/admin", (req, res) => {
 });
 
 // 통계 API
-router.get("/admin/stats", (req, res) => {
+router.get("/admin/stats", async (req, res) => {
   try {
     const authHeader = req.headers.authorization;
     const authToken = authHeader?.startsWith("Bearer ") ? authHeader.slice(7) : authHeader;
@@ -106,7 +106,7 @@ router.get("/admin/stats", (req, res) => {
       });
     }
 
-    const stats = getStats();
+    const stats = await getStats();
 
     res.json({
       success: true,

@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
+import { initDB } from "./db.js";
 import usageLogsRouter from "./routes/usage-logs.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -26,7 +27,9 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
-// 서버 시작
+// DB 초기화 후 서버 시작
+await initDB();
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   console.log(`Frontend: http://localhost:${PORT}`);
