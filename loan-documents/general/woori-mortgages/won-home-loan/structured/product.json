@@ -1,0 +1,11 @@
+{
+  "productName": "우리WON주택대출",
+  "channel": "MOBILE",
+  "applicant": {"employeeMinimumMonths": 3, "businessMinimumYears": 1},
+  "collateral": {"types": ["아파트", "도시형생활주택(아파트)", "연립주택", "다세대주택"], "marketPriceLookupRequired": true, "firstPriorityMortgageRequired": true},
+  "maximumAmount": 1000000000,
+  "termYears": {"minimum": 10, "maximum": 40, "capitalAndRegulatedAreaMaximum": 30},
+  "repaymentMethods": ["EQUAL_PRINCIPAL", "EQUAL_PRINCIPAL_AND_INTEREST"],
+  "bulletRepaymentAllowed": false,
+  "discountRate": 0.0
+}

@@ -1,0 +1,13 @@
+{
+  "rateFormula": "기준금리 + 가산금리 - 우대금리",
+  "housingFinanceFundContributionAdditionalRateRange": {"minimum": 0.01, "maximum": 0.20},
+  "prepaymentFee": {
+    "fixedRate": 0.71,
+    "variableRate": 0.95,
+    "maximumChargeYears": 3,
+    "formula": "중도상환금액 × 요율 × 잔존기간 ÷ 대출기간",
+    "annualFreeRepaymentRatioOfOriginalPrincipal": 0.10
+  },
+  "stampTaxCustomerShareRatio": 0.5,
+  "finalLimitFormula": "MIN(LTV 기준 한도, DSR 기준 한도, 유효담보가액 기준 한도, 은행 심사 한도, 적용 중인 임시 정책 한도, 희망금액)"
+}

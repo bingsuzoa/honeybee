@@ -1,0 +1,9 @@
+{
+  "applicant": {"description": "주택을 담보로 대출 신청하는 고객"},
+  "purposes": ["주택구입", "주택신축", "경락주택 구입", "기타 주택담보자금", "통장자동대출"],
+  "collateral": {
+    "allowedTypes": ["주택", "주거전용면적이 전체 전용면적의 1/2 이상인 복합용도 건물"],
+    "mortgageRegistrationRequired": true
+  },
+  "finalBankReviewRequired": true
+}

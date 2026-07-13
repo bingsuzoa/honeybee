@@ -1,0 +1,15 @@
+{
+  "rateNoticeDate": "2026-07-12",
+  "rateResultType": "OFFICIAL_EXAMPLE_RANGE",
+  "formula": "기준금리 + 가산금리 - 우대금리",
+  "maximumDiscountRate": 1.4,
+  "rateTable": [
+    {"rateType": "금융채5년", "baseRate": 4.30, "additionalRate": 2.17, "minimumRate": 5.07, "maximumRate": 6.47},
+    {"rateType": "신규COFIX6개월", "baseRate": 2.90, "additionalRate": 2.52, "minimumRate": 4.02, "maximumRate": 5.42},
+    {"rateType": "신규COFIX12개월", "baseRate": 2.90, "additionalRate": 2.45, "minimumRate": 3.95, "maximumRate": 5.35},
+    {"rateType": "신잔액COFIX6개월", "baseRate": 2.50, "additionalRate": 3.13, "minimumRate": 4.23, "maximumRate": 5.63},
+    {"rateType": "신잔액COFIX12개월", "baseRate": 2.50, "additionalRate": 3.10, "minimumRate": 4.20, "maximumRate": 5.60}
+  ],
+  "exampleAssumptions": {"loanAmount": 200000000, "termYears": 30, "repayment": "비거치식 분할상환", "internalCreditGrade": 3, "collateral": "주택 전액담보"},
+  "individualRateMayDiffer": true
+}

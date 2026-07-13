@@ -1,3 +1,58 @@
+/**
+ * 일반 주담대 자격 판정.
+ * 정책대출과 달리 엄격한 자격요건이 아닌 상품 매칭 기반.
+ */
+export function checkGeneralMortgageEligibility(input, product) {
+  const reasons = [];
+  const gm = product.generalMortgage;
+
+  // 비교 불가 (stale 데이터)
+  if (!product.comparisonEligible) {
+    reasons.push("금리 데이터가 최신이 아니어서 비교 대상에서 제외됩니다.");
+    return { isEligible: false, ineligibleReasons: reasons, eligibilityType: "DATA_STALE", maxAvailableAmount: null, hasEnoughLimit: null };
+  }
+
+  // 담보 유형 매칭
+  if (gm?.collateralTypes?.length && input.housingType) {
+    const isApartment = input.housingType === "apartment";
+    const collateralMatch = isApartment
+      ? gm.collateralTypes.some((t) => t.includes("아파트"))
+      : gm.collateralTypes.some((t) => !t.includes("아파트") || t.includes("주택"));
+    if (!collateralMatch) {
+      reasons.push(`이 상품은 ${gm.collateralTypes.join(", ")} 담보만 가능합니다.`);
+    }
+  }
+
+  // 대출 목적 매칭
+  if (gm?.purposes?.length && input.detailedPurpose) {
+    const purposeMap = {
+      purchase: ["주택구입", "주택구입자금", "주택자금", "가계자금", "구입자금대출"],
+      refinance: ["대환", "타행대환", "기타 주택담보자금", "가계자금"],
+      living: ["생활안정자금", "가계자금", "기타 주택담보자금"]
+    };
+    const expectedPurposes = purposeMap[input.detailedPurpose] || [];
+    const purposeMatch = expectedPurposes.some((ep) => gm.purposes.some((gp) => gp.includes(ep) || ep.includes(gp)));
+    if (!purposeMatch && input.detailedPurpose !== "unknown") {
+      reasons.push(`이 상품은 ${gm.purposes.join(", ")} 목적만 가능합니다.`);
+    }
+  }
+
+  // 수도권 기간 제한
+  if (gm?.termYears?.capitalAreaMaximum && input.region === "capital") {
+    if (input.loanTermYears > gm.termYears.capitalAreaMaximum) {
+      reasons.push(`수도권 주택은 최대 ${gm.termYears.capitalAreaMaximum}년까지 가능합니다.`);
+    }
+  }
+
+  return {
+    isEligible: reasons.length === 0,
+    ineligibleReasons: reasons,
+    eligibilityType: "BANK_REVIEW_REQUIRED",
+    maxAvailableAmount: null,
+    hasEnoughLimit: null
+  };
+}
+
 export function checkLoanEligibility(input, product) {
   const reasons = [];
   const elig = product.eligibility;

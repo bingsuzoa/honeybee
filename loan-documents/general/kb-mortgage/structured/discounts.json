@@ -1,0 +1,14 @@
+{
+  "maximumDiscountRate": 1.4,
+  "performanceLinkedMaximum": 0.9,
+  "discounts": [
+    {"code": "KB_CREDIT_CARD", "rate": 0.3},
+    {"code": "AUTO_TRANSFER_3_OR_MORE", "rate": 0.1},
+    {"code": "SALARY_OR_PENSION_TRANSFER", "rate": 0.3},
+    {"code": "SAVINGS_BALANCE_300K", "rate": 0.1},
+    {"code": "KB_STAR_BANKING", "rate": 0.1},
+    {"code": "REAL_ESTATE_E_CONTRACT", "rate": 0.2, "purpose": "HOUSE_PURCHASE"},
+    {"code": "VULNERABLE_BORROWER", "rate": 0.3, "purpose": "HOUSE_PURCHASE"}
+  ],
+  "performanceDiscountRecalculation": "대출 신규 3개월 후 매월"
+}

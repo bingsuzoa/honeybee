@@ -1,0 +1,8 @@
+{
+  "provider": "우리은행",
+  "generatedAt": "2026-07-12",
+  "sources": [
+    {"name": "주택담보대출 상품설명서", "file": "주택담보대출 상품설명서(25.10월 개정).pdf", "validPeriod": "2025-09-26 ~ 2026-12-31", "reviewNumber": "2025-9892"},
+    {"name": "은행여신거래기본약관(가계용)", "file": "은행여신거래기본약관(가계용)(2025.10개정).pdf", "documentRole": "common_loan_agreement"}
+  ]
+}

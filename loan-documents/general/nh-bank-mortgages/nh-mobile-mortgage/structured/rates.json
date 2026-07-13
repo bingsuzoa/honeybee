@@ -1,0 +1,8 @@
+{
+  "asOf":"2026-07-12","unit":"annual_percent","comparisonEligible":true,
+  "assumption":"주택자금 2억원, 신용등급 3등급, 30년, 원금균등상환",
+  "options":[
+    {"name":"금융채 5년 변동","base":4.33,"spread":2.91,"maximumDiscount":1.80,"minimum":5.44,"maximum":7.24},
+    {"name":"월중신규 COFIX 6개월 변동","base":2.90,"spread":3.27,"maximumDiscount":1.60,"minimum":4.57,"maximum":6.17}
+  ]
+}

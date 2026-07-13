@@ -1,0 +1,12 @@
+{
+  "applicant": {
+    "description": "주택을 담보로 대출을 받고자 하는 고객",
+    "finalBankReviewRequired": true
+  },
+  "collateral": {
+    "primaryAllowedTypes": ["주상복합아파트", "단독주택", "다가구주택", "다세대주택"],
+    "apartmentRoutingRule": "시세 조회 가능한 일반 아파트는 신한주택대출(아파트)을 우선 비교",
+    "individualAppraisalMayBeRequired": true
+  },
+  "bankReviewFactors": ["담보평가", "소득", "보유부채", "신용도", "LTV", "DSR", "대출목적", "주택보유수"]
+}

@@ -1,0 +1,12 @@
+{
+  "productName": "우리부동산론(월상환액고정형)",
+  "channel": "BRANCH",
+  "collateral": {"types": ["단독주택", "연립주택", "다세대주택", "다가구주택", "근린주택"], "excluded": ["아파트", "주거용 오피스텔"], "thirdPartyCollateralAllowed": true},
+  "termYears": {"minimum": 15, "maximum": 35, "capitalAreaMaximum": 30},
+  "repaymentMethod": "FIXED_MONTHLY_PAYMENT_VARIABLE_PRINCIPAL",
+  "fixedPaymentYears": 10,
+  "rateCap": {"totalPercentPoint": 2.0, "annualPercentPoint": 1.0},
+  "graceAllowed": false,
+  "bulletAllowed": false,
+  "maximumDiscountRate": 0.1
+}

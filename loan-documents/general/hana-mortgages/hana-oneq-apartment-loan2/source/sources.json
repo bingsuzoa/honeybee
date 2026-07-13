@@ -1,0 +1,12 @@
+{
+  "provider": "하나은행",
+  "productName": "하나원큐아파트론2",
+  "generatedAt": "2026-07-12",
+  "sourceType": "OFFICIAL_MOBILE_APP_SCREENSHOT",
+  "sources": [
+    {"name": "상품 및 신청정보", "files": ["IMG_8153.PNG", "IMG_8158.jpg", "IMG_8159.jpg", "IMG_8160.jpg", "IMG_8161.jpg", "IMG_8163.jpg", "IMG_8164.jpg"]},
+    {"name": "금리 및 우대정보", "files": ["IMG_8154.PNG", "IMG_8155.PNG", "IMG_8156.PNG", "IMG_8157.PNG"], "rateNoticeDate": "2026-07-12"},
+    {"name": "중도상환해약금", "file": "IMG_8165.PNG"},
+    {"name": "인지세", "file": "IMG_8162.PNG"}
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "termYearsMaximum": null,
+  "termRequiresAdditionalOfficialConfirmation": true,
+  "methods": ["EQUAL_PRINCIPAL", "EQUAL_PRINCIPAL_AND_INTEREST", "OTHER_AS_AGREED"],
+  "methodConfirmedAtContract": true
+}

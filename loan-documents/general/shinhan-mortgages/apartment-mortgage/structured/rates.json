@@ -1,0 +1,29 @@
+{
+  "rateResultType": "OFFICIAL_EXAMPLE_RANGE",
+  "formula": "기준금리 + 가산금리 - 우대금리",
+  "baseRateCandidates": ["COFIX", "금융채 금리", "계약 시 제시되는 기타 기준금리"],
+  "noticeDate": "2026-07-12",
+  "annualRate": true,
+  "exampleAssumptions": {
+    "loanAmount": 200000000,
+    "termMonths": 360,
+    "repaymentMethod": "EQUAL_PRINCIPAL",
+    "transactionType": "건별거래",
+    "internalCreditGrade": 3,
+    "collateralCoverage": "전액담보대출",
+    "purpose": "구입자금대출",
+    "purchaseRegistrationWindow": "소유권 이전 접수일로부터 근저당 설정 접수일까지 3개월 이내"
+  },
+  "rateTable": [
+    {"rateType": "금융채(6개월)", "baseRate": 3.29, "additionalRate": 2.24, "maximumDiscountRate": 1.40, "minimumRate": 4.12, "maximumRate": 5.53},
+    {"rateType": "금융채(5년)", "baseRate": 4.34, "additionalRate": 1.75, "maximumDiscountRate": 1.40, "minimumRate": 4.68, "maximumRate": 6.09},
+    {"rateType": "금융채(10년)", "baseRate": 4.68, "additionalRate": 1.78, "maximumDiscountRate": 1.40, "minimumRate": 5.05, "maximumRate": 6.46}
+  ],
+  "variableRateResetCycles": ["6개월", "5년", "10년"],
+  "delinquency": {
+    "additionalPercentPoint": 3.0,
+    "maximumAnnualRate": 15.0
+  },
+  "updateRequiredAfterNoticeDate": true,
+  "individualRateMayDiffer": true
+}

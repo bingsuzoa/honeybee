@@ -1,0 +1,9 @@
+{
+  "permanentProductLimit": {
+    "maximumAmount": null,
+    "rule": "담보조사가격, 소득금액, 담보물건지 지역 등에 따른 대출가능금액 이내"
+  },
+  "overdraftMortgageLimit": 300000000,
+  "calculationFormula": "MIN(LTV 기준 한도, DSR 기준 한도, 상품 심사 한도, 적용 중인 은행 임시한도, 희망금액)",
+  "temporaryPolicyReference": "temporary_policy.json"
+}

@@ -1,0 +1,9 @@
+{
+  "provider": "우리은행",
+  "productName": "우리아파트론(일반자금)",
+  "generatedAt": "2026-07-12",
+  "sources": [
+    {"name": "상품안내 인쇄본", "file": "우리아파트론(일반자금)1.pdf", "reviewNumber": "2026-5944", "validPeriod": "2026-07-02 ~ 2026-12-31"},
+    {"name": "금리안내 인쇄본", "file": "우리아파트론(일반자금)2.pdf", "rateNoticeDate": "2026-07-12"}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "prepaymentFee": {
+    "applicable": true,
+    "rate": null,
+    "rateRule": "대출유형 및 금리종류별 매년 공시율",
+    "applicableYearsFromOrigination": 3,
+    "formula": "중도상환금액 × 해약금률 × 대출잔여일수 ÷ 대출기간"
+  },
+  "stampTax": {
+    "upTo50000000": 0,
+    "over50000000UpTo100000000": 70000,
+    "over100000000UpTo1000000000": 150000,
+    "over1000000000": 350000,
+    "customerShareRatio": 0.5
+  },
+  "otherPossibleCosts": ["국민주택채권 매입비", "근저당권 말소·감액 비용", "개별 감정평가 관련 비용 조건", "계약 철회 시 반환 비용"]
+}

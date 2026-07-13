@@ -12,6 +12,10 @@ export function calculateActualRate(product, input) {
     return calculateDidimdolRate(product, input);
   }
 
+  if (product.category === "general") {
+    return calculateGeneralMortgageRate(product, input);
+  }
+
   // 기타 상품 (보금자리론 등): 기본금리만 반환
   const baseRate = getBaseRate(product, input);
   return {
@@ -23,6 +27,91 @@ export function calculateActualRate(product, input) {
     isCapped: false,
     discountPeriodYears: 0,
     rateAfterDiscount: baseRate
+  };
+}
+
+/**
+ * 일반 주담대 금리 계산.
+ * 확정 금리가 아닌 범위(min~max)와 예상금리를 반환한다.
+ * 모든 금리유형을 계산하여 가장 유리한 유형을 대표로 선택하고,
+ * 나머지는 alternativeRates로 반환한다.
+ */
+function calculateGeneralMortgageRate(product, input) {
+  const gm = product.generalMortgage;
+  if (!gm?.rateTable?.length) {
+    return {
+      finalRate: null,
+      rateRange: null,
+      estimatedRate: null,
+      baseRate: null,
+      discounts: [],
+      totalDiscount: 0,
+      maxDiscount: 0,
+      isCapped: false,
+      discountPeriodYears: 0,
+      rateAfterDiscount: null,
+      isEstimate: true,
+      rateType: null,
+      alternativeRates: [],
+      rateNoticeDate: product.rateNoticeDate
+    };
+  }
+
+  // 모든 금리유형 계산
+  const allRates = gm.rateTable.map(entry => {
+    const grossRate = entry.baseRate + entry.additionalRate;
+    const minRate = entry.minimumRate ?? (grossRate - (gm.maximumDiscountRate || 0));
+    const maxRate = entry.maximumRate ?? grossRate;
+    const estimated = Math.round(((minRate + maxRate) / 2) * 100) / 100;
+    return {
+      rateType: entry.rateType,
+      baseRate: entry.baseRate,
+      additionalRate: entry.additionalRate,
+      rateRange: { min: Math.round(minRate * 100) / 100, max: Math.round(maxRate * 100) / 100 },
+      estimatedRate: estimated
+    };
+  });
+
+  // 최저 minimumRate 기준 best 선택
+  allRates.sort((a, b) => a.rateRange.min - b.rateRange.min);
+  const best = allRates[0];
+  const alternatives = allRates.slice(1);
+
+  // 우대금리 정보 (확인 가능한 항목만)
+  const confirmedDiscounts = [];
+  const unconfirmedDiscounts = [];
+
+  if (gm.discountGroups?.length) {
+    for (const group of gm.discountGroups) {
+      for (const item of group.items || []) {
+        unconfirmedDiscounts.push({
+          reason: item.code,
+          amount: item.rate,
+          group: group.name,
+          groupMaximum: group.maximum
+        });
+      }
+    }
+  }
+
+  return {
+    finalRate: null, // 확정 불가
+    rateRange: best.rateRange,
+    estimatedRate: best.estimatedRate,
+    rateType: best.rateType,
+    baseRate: best.baseRate,
+    additionalRate: best.additionalRate,
+    alternativeRates: alternatives,
+    confirmedDiscounts,
+    unconfirmedDiscounts,
+    discounts: confirmedDiscounts,
+    totalDiscount: 0,
+    maxDiscount: gm.maximumDiscountRate || 0,
+    isCapped: false,
+    discountPeriodYears: 0,
+    rateAfterDiscount: best.baseRate + best.additionalRate,
+    isEstimate: true,
+    rateNoticeDate: product.rateNoticeDate
   };
 }
 

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-12",
+  "provider": "KB국민은행",
+  "productName": "KB 주택담보대출",
+  "productCode": "LN20001160",
+  "loanType": "GENERAL_MORTGAGE",
+  "sourceType": "OFFICIAL_URL_OFFICIAL_PDF_AND_TEMPORARY_POLICY_REPORT",
+  "status": "MVP_READY_WITH_TEMPORARY_POLICY"
+}

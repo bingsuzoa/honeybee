@@ -1,0 +1,14 @@
+{
+  "productName": "우리아파트론(월상환액고정형)",
+  "channel": "BRANCH",
+  "collateralTypes": ["아파트"],
+  "amountRule": "LTV를 감안한 유효담보가액 범위",
+  "termYears": {"minimum": 15, "maximum": 35, "capitalAreaMaximum": 30},
+  "repaymentMethod": "FIXED_MONTHLY_PAYMENT_VARIABLE_PRINCIPAL",
+  "fixedPaymentYears": 10,
+  "rateCap": {"totalPercentPoint": 2.0, "annualPercentPoint": 1.0},
+  "graceAllowed": false,
+  "bulletAllowed": false,
+  "maximumDiscountRate": 0.1,
+  "rateReductionRequestEligible": false
+}

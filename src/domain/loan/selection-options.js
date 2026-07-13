@@ -109,6 +109,48 @@ export function normalizeSelections(selections) {
     hasHousingSubscription: deriveSubscriptionStatus(selections) !== "NONE",
     usesElectronicContract: selections.usesElectronicContract === "yes",
     isLegacyContract: selections.contractDate === "before2025_06_27",
-    precisionLevel: "estimated"
+    precisionLevel: "estimated",
+
+    // Phase 2 일반 주담대 추가 입력
+    housingType: selections.housingType || null, // apartment, non_apartment, unknown
+    detailedPurpose: deriveDetailedPurpose(selections),
+    preferredChannel: selections.preferredChannel || "any", // mobile, branch, any
+    preferredRateType: "any", // 자동 최적 금리 비교 (질문 제거됨)
+    existingAnnualRepayment: deriveExistingRepayment(selections),
+    creditScoreRange: deriveCreditScoreRange(selections),
+    plansEarlyRepaymentWithin3Years: selections.earlyRepaymentPlan === "within_3_years",
+    regulationZone: selections.regulationZone || "unknown" // SPECULATION_OVERHEATED, ADJUSTMENT_TARGET, NON_REGULATED, unknown
   };
+}
+
+function deriveDetailedPurpose(selections) {
+  if (selections.detailedPurpose) return selections.detailedPurpose;
+  if (selections.purchasePurpose === "refinance") return "refinance";
+  if (selections.purchasePurpose === "purchase_live") return "purchase";
+  return "unknown";
+}
+
+function deriveExistingRepayment(selections) {
+  if (!selections.existingRepayment) return 0;
+  const map = {
+    none: 0,
+    unknown: null,
+    under12m: 6000000,
+    "12mto24m": 18000000,
+    "24mto36m": 30000000,
+    over36m: 42000000
+  };
+  return map[selections.existingRepayment] ?? 0;
+}
+
+function deriveCreditScoreRange(selections) {
+  if (!selections.creditScore) return null;
+  const map = {
+    "900plus": { min: 900, max: 1000, label: "900점 이상" },
+    "800to899": { min: 800, max: 899, label: "800~899점" },
+    "700to799": { min: 700, max: 799, label: "700~799점" },
+    under700: { min: 0, max: 699, label: "700점 미만" },
+    unknown: null
+  };
+  return map[selections.creditScore] ?? null;
 }

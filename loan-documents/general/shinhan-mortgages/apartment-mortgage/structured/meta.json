@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-12",
+  "provider": "신한은행",
+  "productName": "신한주택대출(아파트)",
+  "productCode": "S614221100",
+  "loanType": "GENERAL_MORTGAGE",
+  "collateralCategory": "APARTMENT",
+  "sourceType": "OFFICIAL_URL_AND_OFFICIAL_PDF",
+  "status": "MVP_READY_WITH_DYNAMIC_FIELDS",
+  "dynamicFields": ["actualLimit", "baseRate", "additionalRate", "discountRate", "finalRate", "prepaymentFeeRate"]
+}

@@ -1,0 +1,10 @@
+{
+  "bank":"NH농협은행","productName":"NH모바일주택담보대출","channel":"mobile","availability":"active",
+  "borrowers":["개인","개인사업자"],
+  "purposes":["주택구입자금","생활안정자금","타행대환"],
+  "collateralTypes":["시세 있는 아파트","시세 있는 연립주택","시세 있는 다세대주택"],
+  "minimumLoanWon":10000000,"maximumLoanWon":1000000000,
+  "terms":{"sixMonthRateCycle":{"minimumYearsExclusive":3,"maximumYears":40},"fiveYearRateCycle":{"minimumYearsExclusive":5,"maximumYears":40},"capitalAreaMaximumYears":30,"maximumGraceYears":1},
+  "repaymentMethods":["원금균등할부상환","원리금균등할부상환"],
+  "restrictions":["임차인이 없는 본인 또는 부부공동명의 주택","타행 선순위설정 불가(대환은 전액말소 조건)","기존주택 담보 신규주택 구입자금 신청 불가","구입자금 개인간 매매 불가"]
+}

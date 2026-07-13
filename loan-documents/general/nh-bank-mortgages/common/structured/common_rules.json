@@ -1,0 +1,12 @@
+{
+  "bank": "NH농협은행",
+  "rateFormula": "기준금리 + 가산금리 - 우대금리",
+  "prepaymentFee": {
+    "fixedRateRealEstateSecured": 0.63,
+    "variableRateRealEstateSecured": 0.93,
+    "maximumChargeYears": 3,
+    "formula": "중도상환원금 × 적용요율 × (잔여기간 ÷ 대출기간)"
+  },
+  "lateRate": {"additionalPercentagePoint": 3.0, "maximumAnnualRate": 15.0},
+  "stampTaxShare": {"customer": 0.5, "bank": 0.5}
+}

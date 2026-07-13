@@ -1,0 +1,26 @@
+{
+  "provider": "신한은행",
+  "loanType": "GENERAL_MORTGAGE",
+  "productCode": "S614221100",
+  "productName": "신한주택대출(아파트)",
+  "generatedAt": "2026-07-12",
+  "sources": [
+    {
+      "name": "신한주택대출(아파트) 상품안내 및 금리안내",
+      "url": "https://bank.shinhan.com/index.jsp?cr=020305010000&pcd=S614221100",
+      "documentRole": "product_eligibility_collateral_limits_rates_repayment"
+    },
+    {
+      "name": "주택담보대출 상품설명서",
+      "file": "신한설명서.pdf",
+      "documentRole": "common_rates_fees_rights_risks",
+      "reviewNumber": "제2025-15728-3호",
+      "validPeriod": "2026-01-14 ~ 2027-01-13"
+    },
+    {
+      "name": "은행여신거래기본약관(가계용)",
+      "file": "신한 거래약정서.pdf",
+      "documentRole": "common_loan_agreement_default_collateral"
+    }
+  ]
+}

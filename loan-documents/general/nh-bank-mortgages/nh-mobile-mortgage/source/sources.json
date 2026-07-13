@@ -1,0 +1,10 @@
+{
+  "productName": "NH모바일주택담보대출",
+  "sources": [
+    {"type":"product_page_pdf","file":"농협1(1).pdf","libraryFileId":"libfile_62071573cbb08191851d668570c90c8d","capturedAt":"2026-07-12"},
+    {"type":"rates_page_pdf","file":"농협2(1).pdf","libraryFileId":"libfile_19b299359a54819188c5525304656b5d","rateDate":"2026-07-12"},
+    {"type":"official_explanation_pdf","file":"상품설명서.pdf","libraryFileId":"libfile_e753f0786c808191ac83f1848f716724"}
+  ],
+  "complianceReview":"2026-3597",
+  "publicationValidThrough":"2027-06-11"
+}

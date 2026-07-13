@@ -1,0 +1,10 @@
+{
+  "productName": "우리아파트론(일반자금)",
+  "channel": "BRANCH",
+  "collateral": {"types": ["아파트", "분양아파트 후취담보"], "leaseDeductionRule": "시세 - 임차보증금"},
+  "maximumAmount": null,
+  "amountRule": "LTV를 감안한 유효담보가액 범위",
+  "termYears": {"maximum": 40, "capitalAreaMaximum": 30, "bulletMaximum": 10, "graceMaximum": 10},
+  "repaymentMethods": ["BULLET", "EQUAL_PRINCIPAL", "EQUAL_PRINCIPAL_AND_INTEREST", "PARTIAL_BULLET"],
+  "maximumDiscountRate": 1.2
+}

@@ -1,0 +1,11 @@
+{
+  "terms": {
+    "bulletYears": {"minimum": 1, "maximum": 5},
+    "overdraftYears": 1,
+    "installmentYears": {"minimum": 1, "maximum": 50, "over40AgeMaximum": 34},
+    "fixedInstallmentMaximumYears": 10,
+    "mixedMaximumYears": 20
+  },
+  "methods": ["BULLET", "EQUAL_PRINCIPAL", "EQUAL_PRINCIPAL_AND_INTEREST", "CUSTOMER_DESIGNATED_PRINCIPAL", "FIXED_INSTALLMENT", "MIXED", "OVERDRAFT"],
+  "gracePeriod": {"maximumYears": 3, "maximumRatioOfTerm": 0.3, "regulatoryRestrictionMayApply": true}
+}

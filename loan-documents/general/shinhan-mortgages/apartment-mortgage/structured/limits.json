@@ -1,0 +1,12 @@
+{
+  "maximumAmount": null,
+  "amountRule": "대출 조건에 따라 차등 적용",
+  "calculation": {
+    "formula": "MIN(LTV 기준 한도, DSR 기준 한도, 은행 심사 한도, 희망 대출금액)",
+    "ltvRuleSource": "COMMON_REGULATION",
+    "dsrRuleSource": "COMMON_REGULATION",
+    "collateralValueSource": "신한은행이 인정하는 아파트 시세 및 담보평가"
+  },
+  "termYearsMaximum": 50,
+  "individualReviewRequired": true
+}

@@ -1,0 +1,14 @@
+{
+  "rateFormula": "기준금리 + 가산금리 - 우대금리",
+  "prepaymentFee": {
+    "mixedRate": 0.65,
+    "variableRate": 0.78,
+    "maximumChargeYears": 3,
+    "waiverWhenRemainingMonthsAtMost": 3,
+    "formula": "중도상환금액 × 중도상환해약금률 × 대출잔여일수 ÷ 대출기간",
+    "rateMayBeRecalculatedAnnuallyForNewLoans": true,
+    "existingAccountRateUnchanged": true
+  },
+  "stampTaxCustomerShareRatio": 0.5,
+  "finalLimitFormula": "MIN(LTV 기준 한도, DSR 기준 한도, 가용담보가액 기준 한도, 은행 심사 한도, 적용 중인 임시 정책 한도, 희망금액)"
+}

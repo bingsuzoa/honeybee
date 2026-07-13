@@ -1,0 +1,9 @@
+{
+  "bank":"NH농협은행","productName":"NH월상환액고정형주택담보대출","channel":"branch","availability":"active",
+  "borrowers":["개인","개인사업자"],"purposes":["가계자금","주택자금"],
+  "collateralTypes":["단독주택","다가구주택","다세대주택","연립주택","아파트","주상복합아파트"],
+  "minimumTermYears":15,"maximumTermYears":30,"gracePeriodAllowed":false,
+  "repaymentMethod":"원리금균등분할상환","monthlyPaymentFixedYears":10,
+  "afterFixedPeriod":"잔여원금 기준 원리금균등 월상환액 재산정",
+  "maximumLoan":"담보평가금액에 따른 대출가능액 범위"
+}

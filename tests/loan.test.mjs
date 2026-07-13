@@ -40,10 +40,16 @@ const defaultSelections = {
 };
 
 test("products.json contains all expected products", () => {
-  assert.equal(products.length, 3);
+  assert.equal(products.length, 15);
+  // 정책대출 3개
   assert.ok(products.find((p) => p.id === "didimdol"));
   assert.ok(products.find((p) => p.id === "newborn-special"));
   assert.ok(products.find((p) => p.id === "bogeumjari"));
+  // 일반 주담대 12개
+  const generalProducts = products.filter((p) => p.category === "general");
+  assert.equal(generalProducts.length, 12);
+  assert.equal(generalProducts.filter((p) => p.comparisonEligible).length, 11);
+  assert.equal(generalProducts.filter((p) => !p.comparisonEligible).length, 1); // NH월상환액고정형 stale
 });
 
 test("normalizes choice-based selections into analysis input", () => {

@@ -1,0 +1,6 @@
+{
+  "rankingMetric": "estimatedTotalCost",
+  "preferWhen": ["담보주택이 시세 조회 가능한 아파트", "정책대출 자격이 없거나 정책대출 한도가 부족함", "최대 50년 범위의 장기 분할상환을 검토함"],
+  "doNotAutoApproveWhen": ["공식 시세 조회 불가", "DSR 계산 불가", "현재 금리 데이터 미갱신", "은행 담보심사 미완료"],
+  "compareWith": ["SHINHAN_HOME_MORTGAGE", "DIDIMDOL", "NEWBORN_SPECIAL_DIDIMDOL", "BOGEUMJARI", "OTHER_BANK_GENERAL_MORTGAGE"]
+}

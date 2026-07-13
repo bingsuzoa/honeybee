@@ -1,0 +1,11 @@
+{
+  "prepaymentFee": {
+    "baseRate": 0.55,
+    "specialRate": 0.75,
+    "specialCondition": "금리변동주기 또는 고정금리기간이 3년 이상이거나 금리변동주기와 대출기간이 동일",
+    "maximumChargeYears": 3,
+    "formula": "중도상환원금 × 수수료율 × 잔존일수 ÷ 대출기간"
+  },
+  "delinquency": {"additionalRate": 3.0, "maximumRate": 15.0},
+  "stampTaxCustomerShareRatio": 0.5
+}

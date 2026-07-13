@@ -1,0 +1,6 @@
+{
+  "termYearsMaximum": 50,
+  "methods": ["EQUAL_PRINCIPAL", "EQUAL_PRINCIPAL_AND_INTEREST", "OTHER_AS_AGREED"],
+  "methodConfirmedAtContract": true,
+  "holidayPrincipalRepayment": "상품 및 채널 조건 확인 필요"
+}

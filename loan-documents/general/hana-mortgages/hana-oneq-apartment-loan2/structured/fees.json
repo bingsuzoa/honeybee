@@ -1,0 +1,15 @@
+{
+  "prepaymentFee": {
+    "mixedRate": 0.65,
+    "variableRate": 0.78,
+    "maximumChargeYears": 3,
+    "waiverWhenRemainingMonthsAtMost": 3,
+    "formula": "중도상환금액 × 요율 × 대출잔여일수 ÷ 대출기간"
+  },
+  "stampTax": {
+    "upTo50000000": 0,
+    "over50000000UpTo100000000": {"total": 70000, "customer": 35000},
+    "over100000000UpTo1000000000": {"total": 150000, "customer": 75000},
+    "over1000000000": {"total": 350000, "customer": 175000}
+  }
+}

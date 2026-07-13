@@ -1,0 +1,7 @@
+{
+  "noticeDate": "2026-07-12",
+  "rateTable": [
+    {"rateType": "신규COFIX 6개월", "baseRate": 2.90, "additionalRate": 2.11, "maximumDiscountRate": 0.10, "minimumRate": 4.91},
+    {"rateType": "신규COFIX 1년", "baseRate": 2.90, "additionalRate": 2.51, "maximumDiscountRate": 0.10, "minimumRate": 5.31}
+  ]
+}

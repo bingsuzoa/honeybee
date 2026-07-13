@@ -1,0 +1,14 @@
+{
+  "applicant": {
+    "minimumAge": 19,
+    "nationality": "대한민국 내국인",
+    "mustOwnCollateral": true
+  },
+  "collateral": {
+    "allowedTypes": ["아파트"],
+    "marketPriceLookupRequired": true,
+    "description": "시세가 조회되는 본인 소유 아파트"
+  },
+  "finalApprovalRequired": true,
+  "bankReviewFactors": ["담보평가", "소득", "보유부채", "신용도", "LTV", "DSR", "대출목적", "주택보유수"]
+}

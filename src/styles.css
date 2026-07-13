@@ -1145,3 +1145,265 @@ tr:last-child td {
     transform: rotate(90deg);
   }
 }
+
+/* ========================================
+   일반 주담대 결과 스타일
+   ======================================== */
+
+.general-section {
+  border-color: rgba(140, 200, 232, 0.4);
+  background: linear-gradient(180deg, #f8fcff, #fffdf6);
+}
+
+.general-disclaimer {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(140, 200, 232, 0.15);
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.general-mortgage-list {
+  display: grid;
+  gap: 12px;
+}
+
+.general-card {
+  border-color: rgba(140, 200, 232, 0.35);
+}
+
+.general-card.is-ineligible {
+  opacity: 0.6;
+}
+
+.product-card {
+  padding: 16px;
+  border: 1px solid #ded5bd;
+  border-radius: 18px;
+  background: #fffaf0;
+}
+
+.product-card-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.product-rank {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lime);
+  color: #41511b;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.product-info strong {
+  display: block;
+  font-size: 1.02rem;
+}
+
+.product-info small {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.product-card-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.product-metric {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #ece4d0;
+}
+
+.product-metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.product-metric strong {
+  font-size: 0.95rem;
+}
+
+.product-card-discounts {
+  padding: 10px 14px;
+  background: var(--bg-alt, #f8f9fa);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.product-card-discounts strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.product-card-discounts ul {
+  margin: 0;
+  padding: 0 0 0 16px;
+  line-height: 1.6;
+}
+
+.product-card-discounts > small {
+  display: block;
+  margin-top: 6px;
+  color: var(--accent, #0066cc);
+  font-weight: 700;
+}
+
+.product-card-footer {
+  display: grid;
+  gap: 6px;
+}
+
+.product-reasons small,
+.product-prepayment small {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.excluded-products {
+  margin-top: 8px;
+}
+
+.excluded-products summary {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.excluded-products[open] summary {
+  margin-bottom: 10px;
+}
+
+.section-card {
+  padding: 18px;
+}
+
+.section-card .comparison-table-wrap,
+.section-card .comparison-cards {
+  margin-top: 12px;
+}
+
+.answer-card.selected {
+  border-color: var(--leaf-dark);
+  background: #e8f5c8;
+  box-shadow: 0 0 0 2px rgba(117, 173, 62, 0.3);
+}
+
+/* 1위 vs 2위 비교 카드 */
+.ranking-comparison {
+  margin-top: 20px;
+  padding: 18px;
+  border: 2px dashed rgba(151, 188, 86, 0.5);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 248, 0.95), rgba(238, 247, 216, 0.6));
+}
+
+.ranking-comparison .result-kicker {
+  margin-bottom: 12px;
+}
+
+.ranking-table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #ded5bd;
+  background: #fffaf0;
+}
+
+.ranking-table {
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+}
+
+.ranking-table th,
+.ranking-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e5dcc8;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.ranking-table th {
+  background: #f0f8d8;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.ranking-table th:first-child,
+.ranking-table td.ranking-label {
+  text-align: left;
+  font-weight: 800;
+}
+
+.ranking-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.ranking-winner {
+  background: #e8f5c8;
+  font-weight: 900;
+  color: var(--ok);
+}
+
+.ranking-summary {
+  margin: 12px 0 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(185, 231, 124, 0.2);
+  color: var(--leaf-dark);
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+@media (max-width: 620px) {
+  .ranking-table th,
+  .ranking-table td {
+    padding: 8px 8px;
+    font-size: 0.78rem;
+  }
+
+  .ranking-comparison {
+    padding: 14px;
+  }
+}
+
+/* 모바일/데스크톱 뷰 전환 */
+.desktop-only { display: block; }
+.mobile-only { display: none; }
+
+@media (max-width: 760px) {
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
+
+  .product-card-body {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

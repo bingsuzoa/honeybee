@@ -1,0 +1,23 @@
+{
+  "maximumDiscountRate": 1.2,
+  "transactionDiscountMaximum": 0.6,
+  "transactionDiscounts": [
+    {"code": "SALARY_TRANSFER", "rate": 0.3},
+    {"code": "SAVINGS_OR_SUBSCRIPTION", "rate": 0.1},
+    {"code": "AFFILIATED_CARD_300K", "rate": 0.1},
+    {"code": "AFFILIATED_CARD_700K_ADDITIONAL", "rate": 0.1}
+  ],
+  "childrenDiscountMaximum": 0.2,
+  "childrenDiscounts": [
+    {"code": "TWO_CHILDREN_AND_AREA_85_OR_LESS", "rate": 0.1},
+    {"code": "THREE_OR_MORE_CHILDREN", "rate": 0.2}
+  ],
+  "socialCareMaximum": 0.4,
+  "socialCareDiscounts": [
+    {"code": "BASIC_LIVELIHOOD", "rate": 0.1},
+    {"code": "SINGLE_PARENT", "rate": 0.1, "incomeLimit": 70000000},
+    {"code": "MULTICULTURAL", "rate": 0.1, "incomeLimit": 70000000},
+    {"code": "DISABLED", "rate": 0.1}
+  ],
+  "realEstateElectronicContractDiscount": 0.0
+}

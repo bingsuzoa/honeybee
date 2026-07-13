@@ -1,0 +1,8 @@
+{
+  "bank":"NH농협은행","productName":"NH주택담보대출","channel":"branch","availability":"active",
+  "borrowers":["개인","개인사업자"],"purposes":["가계자금","주택자금"],
+  "collateralTypes":["단독주택","다가구주택","다세대주택","연립주택","아파트","주상복합아파트"],
+  "maximumLoan":"담보평가금액에 따른 대출가능액 범위",
+  "terms":{"bulletHouseholdMaximumYears":3,"bulletHousingMaximumYears":10,"creditLineMaximumYears":2,"installmentOrMixedMaximumYears":30,"graceMaximumYears":10,"graceMaximumRatio":"대출기간의 1/3"},
+  "repaymentMethods":["만기일시상환","원금균등할부상환","원리금균등할부상환","혼합상환 50:50","마이너스통장"]
+}

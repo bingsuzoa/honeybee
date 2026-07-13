@@ -1,0 +1,16 @@
+{
+  "productName": "하나원큐아파트론2",
+  "channel": "MOBILE_APP",
+  "applicant": "아파트를 담보로 은행 심사기준을 충족한 개인",
+  "collateral": {
+    "allowed": ["KB시세 보유 아파트", "KB시세 보유 주상복합아파트"],
+    "excluded": ["도시형생활주택", "연립주택", "빌라", "다세대주택", "다가구주택", "단독주택", "오피스텔"]
+  },
+  "amountRule": "가용담보가액 범위",
+  "minimumAmount": 10000000,
+  "applicationUnit": 100000,
+  "mciAdditionalLimitPossible": true,
+  "termYears": {"minimum": 6, "maximum": 40, "capitalAndRegulatedAreaMaximum": 30},
+  "repaymentMethods": ["EQUAL_PRINCIPAL", "EQUAL_PRINCIPAL_AND_INTEREST"],
+  "minimumProcessingBusinessDays": 15
+}

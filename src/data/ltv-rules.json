@@ -1,0 +1,42 @@
+{
+  "lastVerifiedAt": "2026-07-12",
+  "source": "금융위원회 주택담보대출 LTV 규제 (주택금융규제 현황)",
+  "notes": [
+    "이 파일의 수치는 구현 시 조사한 초안이며, 사용 전 반드시 검증 필요",
+    "규제지역 지정/해제에 따라 변경될 수 있음"
+  ],
+  "ltvRules": [
+    {
+      "zone": "SPECULATION_OVERHEATED",
+      "label": "투기과열지구",
+      "rules": [
+        { "housePriceMax": 900000000, "ownerCount": 0, "ltv": 0.50, "purpose": "PURCHASE" },
+        { "housePriceMin": 900000001, "housePriceMax": 1500000000, "ownerCount": 0, "ltv": 0.40, "purpose": "PURCHASE", "note": "9억 초과분은 별도 비율 적용 가능" },
+        { "housePriceMin": 1500000001, "ownerCount": 0, "ltv": 0.40, "purpose": "PURCHASE" },
+        { "ownerCount": 1, "ltv": 0, "purpose": "PURCHASE", "note": "2주택 이상 주택구입 목적 불가" }
+      ]
+    },
+    {
+      "zone": "ADJUSTMENT_TARGET",
+      "label": "조정대상지역",
+      "rules": [
+        { "housePriceMax": 900000000, "ownerCount": 0, "ltv": 0.50, "purpose": "PURCHASE" },
+        { "housePriceMin": 900000001, "ownerCount": 0, "ltv": 0.30, "purpose": "PURCHASE", "note": "9억 초과분 별도 비율" },
+        { "ownerCount": 1, "ltv": 0, "purpose": "PURCHASE", "note": "다주택자 주택구입 불가" }
+      ]
+    },
+    {
+      "zone": "NON_REGULATED",
+      "label": "비규제지역",
+      "rules": [
+        { "ownerCount": 0, "ltv": 0.70, "purpose": "PURCHASE" },
+        { "ownerCount": 1, "ltv": 0.60, "purpose": "PURCHASE" },
+        { "ownerCount": 2, "ltv": 0, "purpose": "PURCHASE", "note": "3주택 이상 주택구입 불가" }
+      ]
+    }
+  ],
+  "dsrRules": {
+    "generalBorrower": { "dsrLimit": 0.40, "note": "총부채원리금상환비율 40%" },
+    "note": "DSR 산정에는 모든 금융기관 대출의 연간 원리금상환액이 포함됨"
+  }
+}

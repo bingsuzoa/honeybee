@@ -1,0 +1,10 @@
+{
+  "provider": "우리은행",
+  "productName": "우리WON주택대출",
+  "generatedAt": "2026-07-12",
+  "sources": [
+    {"name": "공식 상품안내", "url": "https://spot.wooribank.com/pot/Dream?PRD_CD=P020006197&PRD_YN=Y&cc=c010528%3Ac010531%3Bc012425%3Ac012399&withyou=POLON0056"},
+    {"name": "상품안내 인쇄본", "file": "우리WON주택대출1.pdf"},
+    {"name": "금리안내 인쇄본", "file": "우리WON주택대출2.pdf", "rateNoticeDate": "2026-07-12"}
+  ]
+}

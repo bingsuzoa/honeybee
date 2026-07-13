@@ -1,0 +1,5 @@
+{
+  "asOf":"2026-07-12","unit":"annual_percent","comparisonEligible":true,
+  "assumption":"가계일반자금 2억원, 신용등급 3등급, 30년, 비거치 원금균등, 아파트담보",
+  "options":[{"name":"금융채 6개월 변동","base":3.29,"spread":3.54,"maximumDiscount":2.50,"minimum":4.33,"maximum":6.83}]
+}

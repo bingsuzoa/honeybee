@@ -1,0 +1,6 @@
+{
+  "rankingMetric": "estimatedTotalCost",
+  "preferWhen": ["혼합금리와 변동금리를 비교하고 싶음", "다양한 주택 유형을 담보로 제공", "최대 50년 분할상환 검토"],
+  "temporaryRestriction": "주택구입 목적이면 현재 최대 3억원 임시한도 우선 적용",
+  "compareWith": ["SHINHAN_APARTMENT_MORTGAGE", "SHINHAN_HOME_MORTGAGE", "DIDIMDOL", "NEWBORN_SPECIAL_DIDIMDOL", "BOGEUMJARI", "OTHER_BANK_GENERAL_MORTGAGE"]
+}

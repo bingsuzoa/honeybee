@@ -1,0 +1,6 @@
+{
+  "fiveYearCycle":{"maximum":1.80,"transactionMaximum":1.00,"policyMaximum":0.80},
+  "sixMonthCycle":{"maximum":1.60,"transactionMaximum":1.00,"policyMaximum":0.60},
+  "transactionItems":[{"item":"카드 3개월 100만원 이상","rate":0.30},{"item":"급여 매월 150만원 이상","rate":0.30},{"item":"입출금예금 평잔 200만원 이상","rate":0.30},{"item":"자동이체 매월 3건 이상","rate":0.10}],
+  "policyItems":[{"item":"최초신규","rate":0.10},{"item":"NH포용금융","rate":0.30},{"item":"비거치식 분할상환(5년주기형)","rate":0.20},{"item":"대출금액 2억원 이하","rate":0.20}]
+}

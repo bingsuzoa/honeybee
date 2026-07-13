@@ -1,0 +1,13 @@
+{
+  "productName": "우리부동산론(일반자금)",
+  "channel": "BRANCH",
+  "collateral": {
+    "serviceIncludedTypes": ["단독주택", "다가구주택", "다세대주택", "연립주택", "근린주택"],
+    "serviceExcludedTypes": ["아파트", "상가", "오피스텔", "나대지"],
+    "thirdPartyCollateralAllowed": true,
+    "leaseDeductionRule": "시세 - 임차보증금"
+  },
+  "termYears": {"housingMaximum": 40, "capitalAreaHousingMaximum": 30, "nonHousingMaximum": 10},
+  "repaymentMethods": ["BULLET", "EQUAL_PRINCIPAL", "EQUAL_PRINCIPAL_AND_INTEREST", "PARTIAL_BULLET"],
+  "housingMaximumDiscountRate": 1.2
+}

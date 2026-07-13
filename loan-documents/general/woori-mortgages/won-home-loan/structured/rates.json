@@ -1,0 +1,9 @@
+{
+  "noticeDate": "2026-07-12",
+  "exampleAssumptions": {"loanAmount": 200000000, "termYears": 30, "repayment": "비거치분할상환", "purpose": "주택구입", "internalCreditGrade": 3},
+  "rateTable": [
+    {"rateType": "신규COFIX 6개월", "baseRate": 2.90, "additionalRate": 2.05, "discountRate": 0.00, "exampleRate": 4.95},
+    {"rateType": "신잔액COFIX 6개월", "baseRate": 2.50, "additionalRate": 2.29, "discountRate": 0.00, "exampleRate": 4.79},
+    {"rateType": "5년 변동금리", "baseRate": 4.34, "additionalRate": 1.62, "discountRate": 0.00, "exampleRate": 5.96}
+  ]
+}

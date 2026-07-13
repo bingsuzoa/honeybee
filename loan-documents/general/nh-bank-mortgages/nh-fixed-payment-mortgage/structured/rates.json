@@ -1,0 +1,11 @@
+{
+  "displayPageAsOf":"2026-07-12","embeddedRateDate":"2019-05-23","status":"stale","comparisonEligible":false,
+  "reason":"표 내부 금리 기준일이 2019-05-23으로 현재 금리로 사용할 수 없음",
+  "historicalOptions":[
+    {"name":"당행 기준금리 1년 변동","base":1.79,"spread":2.91,"maximumDiscount":1.60,"minimum":3.10,"maximum":4.70},
+    {"name":"당행 기준금리 6개월 변동","base":1.78,"spread":2.92,"maximumDiscount":1.60,"minimum":3.10,"maximum":4.70},
+    {"name":"월중신규 COFIX 6개월 변동","base":1.85,"spread":2.79,"maximumDiscount":1.60,"minimum":3.04,"maximum":4.64},
+    {"name":"월말잔액 COFIX 6개월 변동","base":2.01,"spread":2.79,"maximumDiscount":1.60,"minimum":3.20,"maximum":4.80}
+  ],
+  "rateCap":{"years":10,"totalIncreaseLimitPercentagePoint":2.0,"annualIncreaseLimitPercentagePoint":1.0,"premiumPercentagePoint":0.3}
+}

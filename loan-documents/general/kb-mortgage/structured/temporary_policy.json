@@ -1,0 +1,15 @@
+{
+  "code": "KB_PURCHASE_MORTGAGE_CAP_20260710",
+  "status": "ACTIVE_REQUIRES_PERIODIC_VERIFICATION",
+  "effectiveFrom": "2026-07-10",
+  "effectiveTo": null,
+  "untilFurtherNotice": true,
+  "lastVerifiedAt": "2026-07-12",
+  "purpose": "HOUSE_PURCHASE",
+  "area": "NATIONWIDE",
+  "maximumAmount": 300000000,
+  "higherPriorityRule": {"condition": "주택 시가 25억원 초과", "maximumAmount": 200000000},
+  "exceptions": ["집단대출", "주택도시기금 대출", "보금자리론", "대환대출", "전세사기피해자 구입·경락잔금대출"],
+  "evidenceLevel": "MULTIPLE_MEDIA_REPORTS_QUOTING_BANK_ANNOUNCEMENT",
+  "officialPublicNoticeUrl": null
+}

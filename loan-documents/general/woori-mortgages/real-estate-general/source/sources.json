@@ -1,0 +1,10 @@
+{
+  "provider": "우리은행",
+  "productName": "우리부동산론(일반자금)",
+  "generatedAt": "2026-07-12",
+  "sources": [
+    {"name": "공식 상품안내", "url": "https://spot.wooribank.com/pot/Dream?PRD_CD=P020000040&cc=c010528%3Ac010531%3Bc012425%3Ac012399&withyou=POLON0052"},
+    {"name": "상품안내 인쇄본", "file": "부동산론(일반자금)1.pdf", "reviewNumber": "2025-13104", "validPeriod": "2025-12-31 ~ 2026-12-29"},
+    {"name": "금리안내 인쇄본", "file": "부동산론(일반자금)2.pdf", "rateNoticeDate": "2026-07-12"}
+  ]
+}

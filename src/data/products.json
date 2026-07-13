@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T11:14:35.895Z",
+  "generatedAt": "2026-07-13T11:45:12.859Z",
   "products": [
     {
       "id": "bogeumjari",
@@ -469,6 +469,293 @@
       "sourceReferences": []
     },
     {
+      "id": "hana-mortgages/hana-oneq-apartment-loan2",
+      "name": "하나원큐아파트론2",
+      "provider": "하나은행",
+      "category": "general",
+      "channel": "MOBILE",
+      "isActive": true,
+      "comparisonEligible": true,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "KB시세 보유 아파트",
+          "KB시세 보유 주상복합아파트"
+        ],
+        "purposes": [],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "금융채 6개월",
+            "baseRate": 3.276,
+            "additionalRate": 2.082,
+            "minimumRate": 4.158,
+            "maximumRate": 5.358
+          },
+          {
+            "rateType": "금융채 5년",
+            "baseRate": 4.335,
+            "additionalRate": 1.84,
+            "minimumRate": 4.975,
+            "maximumRate": 6.175
+          }
+        ],
+        "maximumDiscountRate": 1.2,
+        "discountGroups": [
+          {
+            "name": "거래실적",
+            "maximum": 0.6,
+            "items": [
+              {
+                "code": "SALARY_TRANSFER",
+                "rate": 0.3
+              },
+              {
+                "code": "SAVINGS_OR_SUBSCRIPTION",
+                "rate": 0.1
+              },
+              {
+                "code": "AFFILIATED_CARD_300K",
+                "rate": 0.1
+              },
+              {
+                "code": "AFFILIATED_CARD_700K_ADDITIONAL",
+                "rate": 0.1
+              }
+            ]
+          },
+          {
+            "name": "다자녀",
+            "maximum": 0.2,
+            "items": [
+              {
+                "code": "TWO_CHILDREN_AND_AREA_85_OR_LESS",
+                "rate": 0.1
+              },
+              {
+                "code": "THREE_OR_MORE_CHILDREN",
+                "rate": 0.2
+              }
+            ]
+          },
+          {
+            "name": "사회배려",
+            "maximum": 0.4,
+            "items": [
+              {
+                "code": "BASIC_LIVELIHOOD",
+                "rate": 0.1
+              },
+              {
+                "code": "SINGLE_PARENT",
+                "rate": 0.1
+              },
+              {
+                "code": "MULTICULTURAL",
+                "rate": 0.1
+              },
+              {
+                "code": "DISABLED",
+                "rate": 0.1
+              }
+            ]
+          }
+        ],
+        "termYears": {
+          "installmentMaximum": 40,
+          "capitalAreaMaximum": 30,
+          "bulletMaximum": null,
+          "graceMaximum": null,
+          "minimum": 6
+        },
+        "temporaryPolicy": null,
+        "prepaymentFee": {
+          "fixedRate": null,
+          "variableRate": 0.78,
+          "mixedRate": 0.65,
+          "maximumChargeYears": 3,
+          "formula": "중도상환금액 × 요율 × 대출잔여일수 ÷ 대출기간",
+          "annualFreeRepaymentRatio": null
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true,
+        "fixedPaymentYears": null,
+        "rateCap": null
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "equal_principal",
+        "equal_payment"
+      ],
+      "sourceReferences": [],
+      "recommendation": null
+    },
+    {
+      "id": "kb-mortgage",
+      "name": "KB 주택담보대출",
+      "provider": "KB국민은행",
+      "category": "general",
+      "channel": "BRANCH",
+      "isActive": true,
+      "comparisonEligible": true,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "주택",
+          "주거전용면적이 전체 전용면적의 1/2 이상인 복합용도 건물"
+        ],
+        "purposes": [
+          "주택구입",
+          "주택신축",
+          "경락주택 구입",
+          "기타 주택담보자금",
+          "통장자동대출"
+        ],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "금융채5년",
+            "baseRate": 4.3,
+            "additionalRate": 2.17,
+            "minimumRate": 5.07,
+            "maximumRate": 6.47
+          },
+          {
+            "rateType": "신규COFIX6개월",
+            "baseRate": 2.9,
+            "additionalRate": 2.52,
+            "minimumRate": 4.02,
+            "maximumRate": 5.42
+          },
+          {
+            "rateType": "신규COFIX12개월",
+            "baseRate": 2.9,
+            "additionalRate": 2.45,
+            "minimumRate": 3.95,
+            "maximumRate": 5.35
+          },
+          {
+            "rateType": "신잔액COFIX6개월",
+            "baseRate": 2.5,
+            "additionalRate": 3.13,
+            "minimumRate": 4.23,
+            "maximumRate": 5.63
+          },
+          {
+            "rateType": "신잔액COFIX12개월",
+            "baseRate": 2.5,
+            "additionalRate": 3.1,
+            "minimumRate": 4.2,
+            "maximumRate": 5.6
+          }
+        ],
+        "maximumDiscountRate": 1.4,
+        "discountGroups": [
+          {
+            "name": "거래실적 우대",
+            "maximum": 0.9,
+            "items": [
+              {
+                "code": "KB_CREDIT_CARD",
+                "rate": 0.3,
+                "purpose": null
+              },
+              {
+                "code": "AUTO_TRANSFER_3_OR_MORE",
+                "rate": 0.1,
+                "purpose": null
+              },
+              {
+                "code": "SALARY_OR_PENSION_TRANSFER",
+                "rate": 0.3,
+                "purpose": null
+              },
+              {
+                "code": "SAVINGS_BALANCE_300K",
+                "rate": 0.1,
+                "purpose": null
+              },
+              {
+                "code": "KB_STAR_BANKING",
+                "rate": 0.1,
+                "purpose": null
+              },
+              {
+                "code": "REAL_ESTATE_E_CONTRACT",
+                "rate": 0.2,
+                "purpose": "HOUSE_PURCHASE"
+              },
+              {
+                "code": "VULNERABLE_BORROWER",
+                "rate": 0.3,
+                "purpose": "HOUSE_PURCHASE"
+              }
+            ]
+          }
+        ],
+        "termYears": {
+          "installmentMaximum": 50,
+          "capitalAreaMaximum": null,
+          "bulletMaximum": 5,
+          "graceMaximum": null
+        },
+        "temporaryPolicy": {
+          "maximumAmount": 300000000,
+          "purpose": "HOUSE_PURCHASE",
+          "effectiveFrom": "2026-07-10",
+          "status": "ACTIVE_REQUIRES_PERIODIC_VERIFICATION",
+          "higherPriorityRule": {
+            "condition": "주택 시가 25억원 초과",
+            "maximumAmount": 200000000
+          }
+        },
+        "prepaymentFee": {
+          "baseRate": 0.55,
+          "specialRate": 0.75,
+          "variableRate": null,
+          "mixedRate": null,
+          "maximumChargeYears": 3,
+          "formula": "중도상환원금 × 수수료율 × 잔존일수 ÷ 대출기간"
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "bullet",
+        "equal_principal",
+        "equal_payment",
+        "customer_designated_principal",
+        "fixed_installment",
+        "mixed",
+        "overdraft"
+      ],
+      "sourceReferences": [],
+      "recommendation": {
+        "rankingMetric": "estimatedTotalCost",
+        "preferWhen": [
+          "혼합금리와 변동금리를 비교하고 싶음",
+          "다양한 주택 유형을 담보로 제공",
+          "최대 50년 분할상환 검토"
+        ],
+        "temporaryRestriction": "주택구입 목적이면 현재 최대 3억원 임시한도 우선 적용",
+        "compareWith": [
+          "SHINHAN_APARTMENT_MORTGAGE",
+          "SHINHAN_HOME_MORTGAGE",
+          "DIDIMDOL",
+          "NEWBORN_SPECIAL_DIDIMDOL",
+          "BOGEUMJARI",
+          "OTHER_BANK_GENERAL_MORTGAGE"
+        ]
+      }
+    },
+    {
       "id": "newborn-special",
       "name": "신생아 특례 디딤돌대출",
       "provider": "주택도시기금/마이홈",
@@ -776,6 +1063,895 @@
         }
       },
       "sourceReferences": []
+    },
+    {
+      "id": "nh-bank-mortgages/nh-fixed-payment-mortgage",
+      "name": "NH월상환액고정형주택담보대출",
+      "provider": "NH농협은행",
+      "category": "general",
+      "channel": "BRANCH",
+      "isActive": true,
+      "comparisonEligible": false,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "단독주택",
+          "다가구주택",
+          "다세대주택",
+          "연립주택",
+          "아파트",
+          "주상복합아파트"
+        ],
+        "purposes": [
+          "가계자금",
+          "주택자금"
+        ],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "당행 기준금리 1년 변동",
+            "baseRate": 1.79,
+            "additionalRate": 2.91,
+            "minimumRate": 3.1,
+            "maximumRate": 4.7
+          },
+          {
+            "rateType": "당행 기준금리 6개월 변동",
+            "baseRate": 1.78,
+            "additionalRate": 2.92,
+            "minimumRate": 3.1,
+            "maximumRate": 4.7
+          },
+          {
+            "rateType": "월중신규 COFIX 6개월 변동",
+            "baseRate": 1.85,
+            "additionalRate": 2.79,
+            "minimumRate": 3.04,
+            "maximumRate": 4.64
+          },
+          {
+            "rateType": "월말잔액 COFIX 6개월 변동",
+            "baseRate": 2.01,
+            "additionalRate": 2.79,
+            "minimumRate": 3.2,
+            "maximumRate": 4.8
+          }
+        ],
+        "maximumDiscountRate": 0,
+        "discountGroups": [],
+        "termYears": {
+          "installmentMaximum": null,
+          "capitalAreaMaximum": null,
+          "bulletMaximum": null,
+          "graceMaximum": null,
+          "minimum": 15
+        },
+        "temporaryPolicy": null,
+        "prepaymentFee": {
+          "fixedRate": 0.63,
+          "variableRate": 0.93,
+          "mixedRate": null,
+          "maximumChargeYears": 3,
+          "formula": "중도상환원금 × 적용요율 × (잔여기간 ÷ 대출기간)",
+          "annualFreeRepaymentRatio": null
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true,
+        "fixedPaymentYears": null,
+        "rateCap": {
+          "years": 10,
+          "totalIncreaseLimitPercentagePoint": 2,
+          "annualIncreaseLimitPercentagePoint": 1,
+          "premiumPercentagePoint": 0.3
+        }
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "equal_payment"
+      ],
+      "sourceReferences": [],
+      "recommendation": null
+    },
+    {
+      "id": "nh-bank-mortgages/nh-mobile-mortgage",
+      "name": "NH모바일주택담보대출",
+      "provider": "NH농협은행",
+      "category": "general",
+      "channel": "MOBILE",
+      "isActive": true,
+      "comparisonEligible": true,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "시세 있는 아파트",
+          "시세 있는 연립주택",
+          "시세 있는 다세대주택"
+        ],
+        "purposes": [
+          "주택구입자금",
+          "생활안정자금",
+          "타행대환"
+        ],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "금융채 5년 변동",
+            "baseRate": 4.33,
+            "additionalRate": 2.91,
+            "minimumRate": 5.44,
+            "maximumRate": 7.24
+          },
+          {
+            "rateType": "월중신규 COFIX 6개월 변동",
+            "baseRate": 2.9,
+            "additionalRate": 3.27,
+            "minimumRate": 4.57,
+            "maximumRate": 6.17
+          }
+        ],
+        "maximumDiscountRate": 0,
+        "discountGroups": [
+          {
+            "name": "거래실적",
+            "maximum": 1,
+            "items": [
+              {
+                "code": "카드 3개월 100만원 이상",
+                "rate": 0.3
+              },
+              {
+                "code": "급여 매월 150만원 이상",
+                "rate": 0.3
+              },
+              {
+                "code": "입출금예금 평잔 200만원 이상",
+                "rate": 0.3
+              },
+              {
+                "code": "자동이체 매월 3건 이상",
+                "rate": 0.1
+              }
+            ]
+          },
+          {
+            "name": "정책",
+            "maximum": 0.6,
+            "items": [
+              {
+                "code": "최초신규",
+                "rate": 0.1
+              },
+              {
+                "code": "NH포용금융",
+                "rate": 0.3
+              },
+              {
+                "code": "비거치식 분할상환(5년주기형)",
+                "rate": 0.2
+              },
+              {
+                "code": "대출금액 2억원 이하",
+                "rate": 0.2
+              }
+            ]
+          }
+        ],
+        "termYears": {
+          "installmentMaximum": null,
+          "capitalAreaMaximum": null,
+          "bulletMaximum": null,
+          "graceMaximum": 1,
+          "minimum": null
+        },
+        "temporaryPolicy": null,
+        "prepaymentFee": {
+          "fixedRate": 0.63,
+          "variableRate": 0.93,
+          "mixedRate": null,
+          "maximumChargeYears": 3,
+          "formula": "중도상환원금 × 적용요율 × (잔여기간 ÷ 대출기간)",
+          "annualFreeRepaymentRatio": null
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true,
+        "fixedPaymentYears": null,
+        "rateCap": null
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "equal_principal",
+        "equal_payment"
+      ],
+      "sourceReferences": [],
+      "recommendation": null
+    },
+    {
+      "id": "nh-bank-mortgages/nh-mortgage",
+      "name": "NH주택담보대출",
+      "provider": "NH농협은행",
+      "category": "general",
+      "channel": "BRANCH",
+      "isActive": true,
+      "comparisonEligible": true,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "단독주택",
+          "다가구주택",
+          "다세대주택",
+          "연립주택",
+          "아파트",
+          "주상복합아파트"
+        ],
+        "purposes": [
+          "가계자금",
+          "주택자금"
+        ],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "금융채 6개월 변동",
+            "baseRate": 3.29,
+            "additionalRate": 3.54,
+            "minimumRate": 4.33,
+            "maximumRate": 6.83
+          }
+        ],
+        "maximumDiscountRate": 0,
+        "discountGroups": [
+          {
+            "name": "거래실적",
+            "maximum": 1,
+            "items": [
+              {
+                "code": "카드 3개월 100만원 이상",
+                "rate": 0.3
+              },
+              {
+                "code": "급여 매월 150만원 이상",
+                "rate": 0.3
+              },
+              {
+                "code": "입출금예금 평잔 200만원 이상",
+                "rate": 0.3
+              },
+              {
+                "code": "적립식예금 월 10만원 이상",
+                "rate": 0.1
+              }
+            ]
+          },
+          {
+            "name": "정책",
+            "maximum": 1.4,
+            "items": [
+              {
+                "code": "농업인",
+                "rate": 0.4
+              },
+              {
+                "code": "채움공직자우대통장",
+                "rate": 0.1
+              },
+              {
+                "code": "비거치식 분할상환",
+                "rate": 0.2
+              },
+              {
+                "code": "NH포용금융",
+                "rate": 0.3
+              },
+              {
+                "code": "최초신규고객",
+                "rate": 0.1
+              },
+              {
+                "code": "단기변동금리 6개월 이하",
+                "rate": 0.3
+              }
+            ]
+          },
+          {
+            "name": "상품",
+            "maximum": 0.1,
+            "items": [
+              {
+                "code": "부동산 전자계약",
+                "rate": 0.1
+              }
+            ]
+          }
+        ],
+        "termYears": {
+          "installmentMaximum": 30,
+          "capitalAreaMaximum": null,
+          "bulletMaximum": 3,
+          "graceMaximum": 10,
+          "minimum": null
+        },
+        "temporaryPolicy": null,
+        "prepaymentFee": {
+          "fixedRate": 0.63,
+          "variableRate": 0.93,
+          "mixedRate": null,
+          "maximumChargeYears": 3,
+          "formula": "중도상환원금 × 적용요율 × (잔여기간 ÷ 대출기간)",
+          "annualFreeRepaymentRatio": null
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true,
+        "fixedPaymentYears": null,
+        "rateCap": null
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "bullet",
+        "equal_principal",
+        "equal_payment",
+        "mixed",
+        "overdraft"
+      ],
+      "sourceReferences": [],
+      "recommendation": null
+    },
+    {
+      "id": "shinhan-mortgages/apartment-mortgage",
+      "name": "신한주택대출(아파트)",
+      "provider": "신한은행",
+      "category": "general",
+      "channel": "BRANCH",
+      "isActive": true,
+      "comparisonEligible": true,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "아파트"
+        ],
+        "purposes": [],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "금융채(6개월)",
+            "baseRate": 3.29,
+            "additionalRate": 2.24,
+            "minimumRate": 4.12,
+            "maximumRate": 5.53
+          },
+          {
+            "rateType": "금융채(5년)",
+            "baseRate": 4.34,
+            "additionalRate": 1.75,
+            "minimumRate": 4.68,
+            "maximumRate": 6.09
+          },
+          {
+            "rateType": "금융채(10년)",
+            "baseRate": 4.68,
+            "additionalRate": 1.78,
+            "minimumRate": 5.05,
+            "maximumRate": 6.46
+          }
+        ],
+        "maximumDiscountRate": 0,
+        "discountGroups": [],
+        "termYears": {
+          "installmentMaximum": null,
+          "capitalAreaMaximum": null,
+          "bulletMaximum": null,
+          "graceMaximum": null
+        },
+        "temporaryPolicy": null,
+        "prepaymentFee": {
+          "baseRate": null,
+          "specialRate": null,
+          "variableRate": null,
+          "mixedRate": null,
+          "maximumChargeYears": 3,
+          "formula": "중도상환금액 × 해약금률 × 대출잔여일수 ÷ 대출기간"
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "equal_principal",
+        "equal_payment",
+        "other_as_agreed"
+      ],
+      "sourceReferences": [],
+      "recommendation": {
+        "rankingMetric": "estimatedTotalCost",
+        "preferWhen": [
+          "담보주택이 시세 조회 가능한 아파트",
+          "정책대출 자격이 없거나 정책대출 한도가 부족함",
+          "최대 50년 범위의 장기 분할상환을 검토함"
+        ],
+        "doNotAutoApproveWhen": [
+          "공식 시세 조회 불가",
+          "DSR 계산 불가",
+          "현재 금리 데이터 미갱신",
+          "은행 담보심사 미완료"
+        ],
+        "compareWith": [
+          "SHINHAN_HOME_MORTGAGE",
+          "DIDIMDOL",
+          "NEWBORN_SPECIAL_DIDIMDOL",
+          "BOGEUMJARI",
+          "OTHER_BANK_GENERAL_MORTGAGE"
+        ]
+      }
+    },
+    {
+      "id": "shinhan-mortgages/home-mortgage",
+      "name": "신한주택대출",
+      "provider": "신한은행",
+      "category": "general",
+      "channel": "BRANCH",
+      "isActive": true,
+      "comparisonEligible": true,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "단독주택",
+          "다가구주택",
+          "다세대주택",
+          "연립주택",
+          "주상복합아파트"
+        ],
+        "purposes": [],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "금융채(6개월)",
+            "baseRate": 3.29,
+            "additionalRate": 2.34,
+            "minimumRate": 4.23,
+            "maximumRate": 5.63
+          },
+          {
+            "rateType": "금융채(5년)",
+            "baseRate": 4.34,
+            "additionalRate": 1.85,
+            "minimumRate": 4.78,
+            "maximumRate": 6.19
+          },
+          {
+            "rateType": "금융채(10년)",
+            "baseRate": 4.68,
+            "additionalRate": 1.88,
+            "minimumRate": 5.15,
+            "maximumRate": 6.56
+          }
+        ],
+        "maximumDiscountRate": 0,
+        "discountGroups": [],
+        "termYears": {
+          "installmentMaximum": null,
+          "capitalAreaMaximum": null,
+          "bulletMaximum": null,
+          "graceMaximum": null
+        },
+        "temporaryPolicy": null,
+        "prepaymentFee": {
+          "baseRate": null,
+          "specialRate": null,
+          "variableRate": null,
+          "mixedRate": null,
+          "maximumChargeYears": 3,
+          "formula": "중도상환금액 × 해약금률 × 대출잔여일수 ÷ 대출기간"
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "equal_principal",
+        "equal_payment",
+        "other_as_agreed"
+      ],
+      "sourceReferences": [],
+      "recommendation": {
+        "rankingMetric": "estimatedTotalCost",
+        "preferWhen": [
+          "담보주택이 단독·다가구·다세대·주상복합 등 아파트 전용 상품 대상이 아님",
+          "정책대출 자격이 없거나 한도가 부족함"
+        ],
+        "lowerConfidenceWhen": [
+          "담보 감정평가 전",
+          "DSR 계산 불가",
+          "현재 금리 데이터 미갱신"
+        ],
+        "compareWith": [
+          "SHINHAN_APARTMENT_MORTGAGE",
+          "DIDIMDOL",
+          "NEWBORN_SPECIAL_DIDIMDOL",
+          "BOGEUMJARI",
+          "OTHER_BANK_GENERAL_MORTGAGE"
+        ]
+      }
+    },
+    {
+      "id": "woori-mortgages/apartment-fixed-payment",
+      "name": "우리아파트론(월상환액고정형)",
+      "provider": "우리은행",
+      "category": "general",
+      "channel": "BRANCH",
+      "isActive": true,
+      "comparisonEligible": true,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "아파트"
+        ],
+        "purposes": [],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "신규COFIX 6개월",
+            "baseRate": 2.9,
+            "additionalRate": 1.91,
+            "minimumRate": 4.71,
+            "maximumRate": 4.81
+          },
+          {
+            "rateType": "신규COFIX 1년",
+            "baseRate": 2.9,
+            "additionalRate": 2.31,
+            "minimumRate": 5.11,
+            "maximumRate": 5.21
+          }
+        ],
+        "maximumDiscountRate": 0.1,
+        "discountGroups": [],
+        "termYears": {
+          "installmentMaximum": 35,
+          "capitalAreaMaximum": 30,
+          "bulletMaximum": null,
+          "graceMaximum": null,
+          "minimum": 15
+        },
+        "temporaryPolicy": null,
+        "prepaymentFee": {
+          "fixedRate": 0.71,
+          "variableRate": 0.95,
+          "mixedRate": null,
+          "maximumChargeYears": 3,
+          "formula": "중도상환금액 × 요율 × 잔존기간 ÷ 대출기간",
+          "annualFreeRepaymentRatio": 0.1
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true,
+        "fixedPaymentYears": 10,
+        "rateCap": {
+          "totalPercentPoint": 2,
+          "annualPercentPoint": 1
+        }
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "fixed_monthly_payment",
+        "equal_payment"
+      ],
+      "sourceReferences": [],
+      "recommendation": null
+    },
+    {
+      "id": "woori-mortgages/apartment-general",
+      "name": "우리아파트론(일반자금)",
+      "provider": "우리은행",
+      "category": "general",
+      "channel": "BRANCH",
+      "isActive": true,
+      "comparisonEligible": true,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "아파트",
+          "분양아파트 후취담보"
+        ],
+        "purposes": [],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "5년 변동금리",
+            "baseRate": 4.34,
+            "additionalRate": 2.31,
+            "minimumRate": 5.45,
+            "maximumRate": 6.65
+          },
+          {
+            "rateType": "신규COFIX 6개월",
+            "baseRate": 2.9,
+            "additionalRate": 2.69,
+            "minimumRate": 4.39,
+            "maximumRate": 5.59
+          },
+          {
+            "rateType": "신잔액COFIX 6개월",
+            "baseRate": 2.5,
+            "additionalRate": 2.88,
+            "minimumRate": 4.18,
+            "maximumRate": 5.38
+          }
+        ],
+        "maximumDiscountRate": 1.2,
+        "discountGroups": [],
+        "termYears": {
+          "installmentMaximum": 40,
+          "capitalAreaMaximum": 30,
+          "bulletMaximum": 10,
+          "graceMaximum": 10,
+          "minimum": null
+        },
+        "temporaryPolicy": null,
+        "prepaymentFee": {
+          "fixedRate": 0.71,
+          "variableRate": 0.95,
+          "mixedRate": null,
+          "maximumChargeYears": 3,
+          "formula": "중도상환금액 × 요율 × 잔존기간 ÷ 대출기간",
+          "annualFreeRepaymentRatio": 0.1
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true,
+        "fixedPaymentYears": null,
+        "rateCap": null
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "bullet",
+        "equal_principal",
+        "equal_payment",
+        "partial_bullet"
+      ],
+      "sourceReferences": [],
+      "recommendation": null
+    },
+    {
+      "id": "woori-mortgages/real-estate-fixed-payment",
+      "name": "우리부동산론(월상환액고정형)",
+      "provider": "우리은행",
+      "category": "general",
+      "channel": "BRANCH",
+      "isActive": true,
+      "comparisonEligible": true,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "단독주택",
+          "연립주택",
+          "다세대주택",
+          "다가구주택",
+          "근린주택"
+        ],
+        "purposes": [],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "신규COFIX 6개월",
+            "baseRate": 2.9,
+            "additionalRate": 2.11,
+            "minimumRate": 4.91,
+            "maximumRate": 5.01
+          },
+          {
+            "rateType": "신규COFIX 1년",
+            "baseRate": 2.9,
+            "additionalRate": 2.51,
+            "minimumRate": 5.31,
+            "maximumRate": 5.41
+          }
+        ],
+        "maximumDiscountRate": 0.1,
+        "discountGroups": [],
+        "termYears": {
+          "installmentMaximum": 35,
+          "capitalAreaMaximum": 30,
+          "bulletMaximum": null,
+          "graceMaximum": null,
+          "minimum": 15
+        },
+        "temporaryPolicy": null,
+        "prepaymentFee": {
+          "fixedRate": 0.71,
+          "variableRate": 0.95,
+          "mixedRate": null,
+          "maximumChargeYears": 3,
+          "formula": "중도상환금액 × 요율 × 잔존기간 ÷ 대출기간",
+          "annualFreeRepaymentRatio": 0.1
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true,
+        "fixedPaymentYears": 10,
+        "rateCap": {
+          "totalPercentPoint": 2,
+          "annualPercentPoint": 1
+        }
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "fixed_monthly_payment",
+        "equal_payment"
+      ],
+      "sourceReferences": [],
+      "recommendation": null
+    },
+    {
+      "id": "woori-mortgages/real-estate-general",
+      "name": "우리부동산론(일반자금)",
+      "provider": "우리은행",
+      "category": "general",
+      "channel": "BRANCH",
+      "isActive": true,
+      "comparisonEligible": true,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "단독주택",
+          "다가구주택",
+          "다세대주택",
+          "연립주택",
+          "근린주택"
+        ],
+        "purposes": [],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "5년 변동금리",
+            "baseRate": 4.34,
+            "additionalRate": 2.52,
+            "minimumRate": 5.66,
+            "maximumRate": 6.859999999999999
+          },
+          {
+            "rateType": "신규COFIX 6개월",
+            "baseRate": 2.9,
+            "additionalRate": 2.7,
+            "minimumRate": 4.4,
+            "maximumRate": 5.6
+          },
+          {
+            "rateType": "신잔액COFIX 6개월",
+            "baseRate": 2.5,
+            "additionalRate": 2.89,
+            "minimumRate": 4.19,
+            "maximumRate": 5.390000000000001
+          }
+        ],
+        "maximumDiscountRate": 1.2,
+        "discountGroups": [],
+        "termYears": {
+          "installmentMaximum": null,
+          "capitalAreaMaximum": 30,
+          "bulletMaximum": null,
+          "graceMaximum": null,
+          "minimum": null
+        },
+        "temporaryPolicy": null,
+        "prepaymentFee": {
+          "fixedRate": 0.71,
+          "variableRate": 0.95,
+          "mixedRate": null,
+          "maximumChargeYears": 3,
+          "formula": "중도상환금액 × 요율 × 잔존기간 ÷ 대출기간",
+          "annualFreeRepaymentRatio": 0.1
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true,
+        "fixedPaymentYears": null,
+        "rateCap": null
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "bullet",
+        "equal_principal",
+        "equal_payment",
+        "partial_bullet"
+      ],
+      "sourceReferences": [],
+      "recommendation": null
+    },
+    {
+      "id": "woori-mortgages/won-home-loan",
+      "name": "우리WON주택대출",
+      "provider": "우리은행",
+      "category": "general",
+      "channel": "MOBILE",
+      "isActive": true,
+      "comparisonEligible": true,
+      "rateNoticeDate": "2026-07-12",
+      "generalMortgage": {
+        "collateralTypes": [
+          "아파트",
+          "도시형생활주택(아파트)",
+          "연립주택",
+          "다세대주택"
+        ],
+        "purposes": [],
+        "rateFormula": "기준금리 + 가산금리 - 우대금리",
+        "rateTable": [
+          {
+            "rateType": "신규COFIX 6개월",
+            "baseRate": 2.9,
+            "additionalRate": 2.05,
+            "minimumRate": 4.95,
+            "maximumRate": 4.949999999999999
+          },
+          {
+            "rateType": "신잔액COFIX 6개월",
+            "baseRate": 2.5,
+            "additionalRate": 2.29,
+            "minimumRate": 4.79,
+            "maximumRate": 4.79
+          },
+          {
+            "rateType": "5년 변동금리",
+            "baseRate": 4.34,
+            "additionalRate": 1.62,
+            "minimumRate": 5.96,
+            "maximumRate": 5.96
+          }
+        ],
+        "maximumDiscountRate": 0,
+        "discountGroups": [],
+        "termYears": {
+          "installmentMaximum": 40,
+          "capitalAreaMaximum": 30,
+          "bulletMaximum": null,
+          "graceMaximum": null,
+          "minimum": 10
+        },
+        "temporaryPolicy": null,
+        "prepaymentFee": {
+          "fixedRate": 0.71,
+          "variableRate": 0.95,
+          "mixedRate": null,
+          "maximumChargeYears": 3,
+          "formula": "중도상환금액 × 요율 × 잔존기간 ÷ 대출기간",
+          "annualFreeRepaymentRatio": 0.1
+        },
+        "bankReviewRequired": true,
+        "individualRateMayDiffer": true,
+        "fixedPaymentYears": null,
+        "rateCap": null
+      },
+      "eligibility": null,
+      "rates": null,
+      "discounts": null,
+      "maxLoanAmount": null,
+      "repaymentTypes": [
+        "equal_principal",
+        "equal_payment"
+      ],
+      "sourceReferences": [],
+      "recommendation": null
     }
   ]
 }

@@ -1,0 +1,6 @@
+{
+  "rankingMetric": "estimatedTotalCost",
+  "preferWhen": ["담보주택이 단독·다가구·다세대·주상복합 등 아파트 전용 상품 대상이 아님", "정책대출 자격이 없거나 한도가 부족함"],
+  "lowerConfidenceWhen": ["담보 감정평가 전", "DSR 계산 불가", "현재 금리 데이터 미갱신"],
+  "compareWith": ["SHINHAN_APARTMENT_MORTGAGE", "DIDIMDOL", "NEWBORN_SPECIAL_DIDIMDOL", "BOGEUMJARI", "OTHER_BANK_GENERAL_MORTGAGE"]
+}

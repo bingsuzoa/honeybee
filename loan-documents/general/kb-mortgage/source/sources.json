@@ -1,0 +1,38 @@
+{
+  "provider": "KB국민은행",
+  "loanType": "GENERAL_MORTGAGE",
+  "productCode": "LN20001160",
+  "productName": "KB 주택담보대출",
+  "generatedAt": "2026-07-12",
+  "sources": [
+    {
+      "name": "KB 주택담보대출 상품안내",
+      "url": "https://obank.kbstar.com/quics?page=C103557&cc=b104363:b104516&isNew=N&prcode=LN20001160&QSL=F#loading",
+      "documentRole": "product_eligibility_limits_rates_repayment_fees"
+    },
+    {
+      "name": "KB 주택담보대출 인쇄본",
+      "file": "국민주담대.pdf",
+      "documentRole": "official_page_snapshot",
+      "rateNoticeDate": "2026-07-12"
+    },
+    {
+      "name": "주택담보대출 상품설명서",
+      "file": "약관 및 상품설명서.pdf",
+      "documentRole": "historical_common_explanation",
+      "status": "HISTORICAL_REFERENCE",
+      "validPeriod": "2025-01-13 ~ 2026-06-30"
+    },
+    {
+      "name": "은행여신거래기본약관(가계용)",
+      "file": "약관 및 상품설명서 (1).pdf",
+      "documentRole": "common_loan_agreement"
+    },
+    {
+      "name": "KB 주택구입자금 한도 3억원 제한 보도",
+      "url": "https://www.hani.co.kr/arti/economy/finance/1267304.html",
+      "documentRole": "temporary_bank_policy",
+      "sourceType": "MEDIA_REPORT_OF_BANK_ANNOUNCEMENT"
+    }
+  ]
+}

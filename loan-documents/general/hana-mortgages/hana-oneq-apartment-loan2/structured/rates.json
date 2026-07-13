@@ -1,0 +1,6 @@
+{
+  "noticeDate": "2026-07-12",
+  "maximumDiscountRate": 1.2,
+  "variableRate": {"rateType": "금융채 6개월", "resetCycleMonths": 6, "baseRate": 3.276, "additionalRate": 2.082, "minimumRate": 4.158, "maximumRate": 5.358},
+  "mixedRate": {"rateType": "금융채 5년", "fixedPeriodMonths": 60, "baseRate": 4.335, "additionalRate": 1.840, "minimumRate": 4.975, "maximumRate": 6.175}
+}

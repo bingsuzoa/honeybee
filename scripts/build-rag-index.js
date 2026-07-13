@@ -40,49 +40,89 @@ function splitMarkdownBySections(markdown) {
   return sections.filter((s) => s.content.length > 0);
 }
 
+function processProductDir(dirPath, dirName, chunks) {
+  // Try meta.json first (KB/shinhan format)
+  let meta = loadJson(path.join(dirPath, "structured", "meta.json"));
+  // Try product.json (woori/hana/NH format)
+  if (!meta) {
+    const product = loadJson(path.join(dirPath, "structured", "product.json"));
+    if (product) {
+      meta = { productName: product.productName };
+    }
+  }
+  if (!meta) return 0;
+
+  const productName = meta.productName || meta.product?.name || meta.sourceSummary?.productName || dirName;
+  const ragDir = path.join(dirPath, "rag");
+
+  let ragFiles;
+  try {
+    ragFiles = fs.readdirSync(ragDir).filter((f) => f.endsWith(".md"));
+  } catch {
+    return 0;
+  }
+
+  let count = 0;
+  for (const mdFile of ragFiles) {
+    const topic = path.basename(mdFile, ".md");
+    const content = fs.readFileSync(path.join(ragDir, mdFile), "utf-8");
+    const sections = splitMarkdownBySections(content);
+
+    for (let i = 0; i < sections.length; i++) {
+      const section = sections[i];
+      count++;
+      chunks.push({
+        id: `${dirName}/${topic}/section-${i + 1}`,
+        productId: dirName,
+        productName,
+        topic,
+        heading: section.heading,
+        content: section.content
+      });
+    }
+  }
+
+  if (count > 0) console.log(`  ✓ ${dirName}: ${ragFiles.length} md files`);
+  return count;
+}
+
 function main() {
   const entries = fs.readdirSync(LOAN_DOCUMENTS_DIR, { withFileTypes: true });
   const chunks = [];
   let chunkCount = 0;
 
+  // 정책대출
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
-    const dirName = entry.name;
-    const dirPath = path.join(LOAN_DOCUMENTS_DIR, dirName);
+    if (entry.name === "general" || entry.name === "regulations") continue;
+    const dirPath = path.join(LOAN_DOCUMENTS_DIR, entry.name);
+    chunkCount += processProductDir(dirPath, entry.name, chunks);
+  }
 
-    const meta = loadJson(path.join(dirPath, "structured", "meta.json"));
-    if (!meta) continue;
+  // 일반 주담대 (general/ 하위 재귀 탐색)
+  const generalDir = path.join(LOAN_DOCUMENTS_DIR, "general");
+  if (fs.existsSync(generalDir)) {
+    const bankGroups = fs.readdirSync(generalDir, { withFileTypes: true });
+    for (const bankEntry of bankGroups) {
+      if (!bankEntry.isDirectory()) continue;
+      const bankPath = path.join(generalDir, bankEntry.name);
 
-    const productName = meta.productName || meta.product?.name || meta.sourceSummary?.productName || dirName;
-    const ragDir = path.join(dirPath, "rag");
+      // Direct product dir?
+      if (fs.existsSync(path.join(bankPath, "structured", "meta.json")) ||
+          fs.existsSync(path.join(bankPath, "structured", "product.json"))) {
+        chunkCount += processProductDir(bankPath, bankEntry.name, chunks);
+        continue;
+      }
 
-    let ragFiles;
-    try {
-      ragFiles = fs.readdirSync(ragDir).filter((f) => f.endsWith(".md"));
-    } catch {
-      continue;
-    }
-
-    for (const mdFile of ragFiles) {
-      const topic = path.basename(mdFile, ".md");
-      const content = fs.readFileSync(path.join(ragDir, mdFile), "utf-8");
-      const sections = splitMarkdownBySections(content);
-
-      for (let i = 0; i < sections.length; i++) {
-        const section = sections[i];
-        chunkCount++;
-        chunks.push({
-          id: `${dirName}/${topic}/section-${i + 1}`,
-          productId: dirName,
-          productName,
-          topic,
-          heading: section.heading,
-          content: section.content
-        });
+      // Bank group: iterate sub-products
+      const subEntries = fs.readdirSync(bankPath, { withFileTypes: true });
+      for (const subEntry of subEntries) {
+        if (!subEntry.isDirectory() || subEntry.name === "common") continue;
+        const subPath = path.join(bankPath, subEntry.name);
+        const subId = `${bankEntry.name}/${subEntry.name}`;
+        chunkCount += processProductDir(subPath, subId, chunks);
       }
     }
-
-    console.log(`  ✓ ${dirName}: ${ragFiles.length} md files`);
   }
 
   const output = {

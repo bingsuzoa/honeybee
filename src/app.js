@@ -1,9 +1,9 @@
-import { analyzeLoanProducts } from "./domain/loan/analysis.js?v=20260705";
-import { normalizeSelections } from "./domain/loan/selection-options.js?v=20260705";
-import { loadProducts } from "./data/loan-product-loader.js?v=20260705";
-import { loadRagIndex, searchRag } from "./data/rag-loader.js?v=20260705";
-import { GAME_MAP, getStepInfo, isEvolution, isReward, getRandomMessage } from "./domain/game-map.js?v=20260705";
-import { saveUsageLog } from "./utils/analytics.js?v=20260705";
+import { analyzeLoanProducts, analyzeAllProducts, buildRankingReason } from "./domain/loan/analysis.js?v=20260712";
+import { normalizeSelections } from "./domain/loan/selection-options.js?v=20260712";
+import { loadProducts } from "./data/loan-product-loader.js?v=20260712";
+import { loadRagIndex, searchRag } from "./data/rag-loader.js?v=20260712";
+import { GAME_MAP, getStepInfo, isEvolution, isReward, getRandomMessage } from "./domain/game-map.js?v=20260712";
+import { saveUsageLog } from "./utils/analytics.js?v=20260712";
 
 const questScreen = document.querySelector("#quest-screen");
 const headerCharacter = document.querySelector("#header-character");
@@ -292,6 +292,80 @@ const QUESTIONS = [
       { label: "개인회생·파산·채무조정 이력이 있음", patch: { creditStatus: "debt_adjustment" } },
       { label: "잘 모르겠음", patch: { creditStatus: "unknown" } }
     ]
+  },
+  {
+    title: "구입 주택 유형은 무엇인가요?",
+    subtitle: "✓ 아파트와 비아파트 주택은 신청 가능한 은행 상품이 다릅니다.",
+    item: null,
+    options: [
+      { label: "아파트", patch: { housingType: "apartment" } },
+      { label: "비아파트 주택 (단독, 다세대, 연립 등)", patch: { housingType: "non_apartment" } },
+      { label: "잘 모르겠음", patch: { housingType: "unknown" } }
+    ]
+  },
+  {
+    title: "대출 목적을 구체적으로 선택해주세요",
+    subtitle: "✓ 일반 주담대는 구입 외에도 대환·생활안정자금 등 다양한 목적으로 가능합니다.",
+    item: null,
+    options: [
+      { label: "주택 구입 (실거주)", patch: { detailedPurpose: "purchase" } },
+      { label: "기존 대출 대환 (갈아타기)", patch: { detailedPurpose: "refinance" } },
+      { label: "생활안정자금", patch: { detailedPurpose: "living" } },
+      { label: "잘 모르겠음", patch: { detailedPurpose: "unknown" } }
+    ]
+  },
+  {
+    title: "대출 신청 채널을 선택해주세요",
+    subtitle: "✓ 모바일 전용 상품은 비대면으로 간편 신청이 가능하지만 선택 가능한 상품이 제한됩니다.",
+    item: null,
+    options: [
+      { label: "모바일 비대면 선호", patch: { preferredChannel: "mobile" } },
+      { label: "영업점 방문 선호", patch: { preferredChannel: "branch" } },
+      { label: "상관없음", patch: { preferredChannel: "any" } }
+    ]
+  },
+  {
+    title: "기존 대출의 연간 원리금 상환액이 있나요?",
+    subtitle: "✓ DSR(총부채원리금상환비율) 계산에 필요합니다.\n✓ 카드론, 학자금, 신용대출 등 모든 대출의 원리금이 포함됩니다.",
+    item: null,
+    options: [
+      { label: "기존 대출 없음", patch: { existingRepayment: "none" } },
+      { label: "연 1,200만원 미만", patch: { existingRepayment: "under12m" } },
+      { label: "연 1,200만원 ~ 2,400만원", patch: { existingRepayment: "12mto24m" } },
+      { label: "있지만 정확히 모름", patch: { existingRepayment: "unknown" } }
+    ]
+  },
+  {
+    title: "본인 신용점수(NICE 기준)는 어느 구간인가요?",
+    subtitle: "✓ 신용점수에 따라 가산금리가 달라질 수 있습니다.\n✓ 올크레딧(allcredit.co.kr) 또는 나이스지키미에서 무료 조회 가능합니다.",
+    item: null,
+    options: [
+      { label: "900점 이상", patch: { creditScore: "900plus" } },
+      { label: "800 ~ 899점", patch: { creditScore: "800to899" } },
+      { label: "700 ~ 799점", patch: { creditScore: "700to799" } },
+      { label: "잘 모르겠음", patch: { creditScore: "unknown" } }
+    ]
+  },
+  {
+    title: "3년 이내 중도상환(일시상환) 계획이 있나요?",
+    subtitle: "✓ 대부분의 은행은 3년 이내 중도상환 시 수수료를 부과합니다.\n✓ 중도상환 계획이 있다면 수수료율이 낮은 상품이 유리합니다.",
+    item: null,
+    options: [
+      { label: "3년 이내 상환 계획 있음", patch: { earlyRepaymentPlan: "within_3_years" } },
+      { label: "상환 계획 없음", patch: { earlyRepaymentPlan: "no_plan" } },
+      { label: "아직 미정", patch: { earlyRepaymentPlan: "undecided" } }
+    ]
+  },
+  {
+    title: "주택이 위치한 곳이 규제지역인가요?",
+    subtitle: "✓ 규제지역에 따라 LTV(담보인정비율) 한도가 달라집니다.\n✓ 투기과열지구: LTV 최대 50%\n✓ 조정대상지역: LTV 최대 50%\n✓ 비규제지역: LTV 최대 70%",
+    item: null,
+    options: [
+      { label: "투기과열지구 (서울 일부 등)", patch: { regulationZone: "SPECULATION_OVERHEATED" } },
+      { label: "조정대상지역", patch: { regulationZone: "ADJUSTMENT_TARGET" } },
+      { label: "비규제지역", patch: { regulationZone: "NON_REGULATED" } },
+      { label: "잘 모르겠음", patch: { regulationZone: "unknown" } }
+    ]
   }
 ];
 
@@ -302,6 +376,7 @@ let finalAnalysis = null;
 let answerHistory = [];
 let loanProducts = [];
 let ragIndex = { chunks: [] };
+let ltvRules = null;
 
 render();
 initData();
@@ -311,6 +386,11 @@ async function initData() {
     const [products, rag] = await Promise.all([loadProducts(), loadRagIndex()]);
     loanProducts = products;
     ragIndex = rag;
+    // Load LTV rules
+    try {
+      const resp = await fetch("./src/data/ltv-rules.json");
+      if (resp.ok) ltvRules = await resp.json();
+    } catch { /* LTV rules optional */ }
     if (currentStep >= QUESTIONS.length) render();
   } catch (err) {
     console.error("Failed to load data:", err);
@@ -327,7 +407,7 @@ function render() {
   }
 
   if (currentStep >= QUESTIONS.length) {
-    renderFinalScene();
+    renderIntegratedResult();
     return;
   }
 
@@ -440,10 +520,11 @@ function renderQuestion(question) {
   questScreen.querySelector("[data-action='reset']").addEventListener("click", resetQuest);
 }
 
-function renderFinalScene() {
+
+function renderIntegratedResult() {
   const input = normalizeSelections(selections);
-  finalAnalysis = analyzeLoanProducts(input, loanProducts);
-  const recommended = finalAnalysis.results.find((result) => result.productId === finalAnalysis.recommendedProductId);
+  finalAnalysis = analyzeAllProducts(input, loanProducts, ltvRules);
+  const recommended = finalAnalysis.results.find((r) => r.productId === finalAnalysis.recommendedProductId);
   const references = findRelevantReferences(recommended);
 
   // 사용 이력 저장 (비동기, 실패해도 사용자 경험에 영향 없음)
@@ -468,13 +549,32 @@ function renderFinalScene() {
     }
   );
 
+  const policyResults = finalAnalysis.results.filter((r) => r.product.category !== "general");
+  const generalResults = finalAnalysis.results.filter((r) => r.product.category === "general");
+
   questScreen.innerHTML = `
     <div class="simple-layout">
       <section class="result-scroll">
-        ${renderRecommendation(finalAnalysis, recommended)}
+        ${renderRecommendation(finalAnalysis, recommended, finalAnalysis.results.find(r => r.rank === 2))}
+
+        ${policyResults.length > 0 ? `
+          <article class="result-card section-card">
+            <p class="result-kicker">정책대출 비교</p>
+            ${renderComparisonTable(policyResults)}
+          </article>
+        ` : ""}
+
+        ${generalResults.length > 0 ? `
+          <article class="result-card section-card general-section">
+            <p class="result-kicker">일반 주담대 비교</p>
+            <p class="general-disclaimer">아래 금리는 ${escapeHtml(generalResults[0]?.rateNoticeDate || "최근")} 기준 예시 조건(신용 3등급, 30년 등) 참고 금리이며, 실제 금리·한도는 은행 심사 결과에 따라 달라집니다.</p>
+            ${renderGeneralMortgageCards(generalResults)}
+          </article>
+        ` : ""}
+
         ${renderFinalReviewConditions(recommended, input)}
         ${renderSourceReferences(references)}
-        ${renderComparisonTable(finalAnalysis.results)}
+
         <div class="nav-row final-actions">
           <button class="primary-action" type="button" data-action="reset">처음부터</button>
         </div>
@@ -483,6 +583,139 @@ function renderFinalScene() {
   `;
 
   questScreen.querySelector("[data-action='reset']").addEventListener("click", resetQuest);
+}
+
+function renderGeneralMortgageCards(results) {
+  const eligible = results.filter((r) => r.isEligible);
+  const ineligible = results.filter((r) => !r.isEligible);
+
+  return `
+    <div class="general-mortgage-list">
+      ${eligible.map(renderGeneralMortgageCard).join("")}
+      ${ineligible.length > 0 ? `
+        <details class="excluded-products">
+          <summary>제외된 상품 (${ineligible.length}개)</summary>
+          ${ineligible.map(renderGeneralMortgageCard).join("")}
+        </details>
+      ` : ""}
+    </div>
+  `;
+}
+
+function renderGeneralMortgageCard(result) {
+  const status = getStatus(result);
+  const rank = result.rank ? `${result.rank}위` : "-";
+  const rateDisplay = result.rateRange
+    ? `${result.rateRange.min.toFixed(2)}% ~ ${result.rateRange.max.toFixed(2)}%`
+    : (result.estimatedRate ? formatRate(result.estimatedRate) : "-");
+  const channelLabel = result.product.channel === "MOBILE" ? "모바일" : "영업점";
+  const reasons = result.isEligible ? result.reasons : result.ineligibleReasons;
+
+  return `
+    <div class="product-card general-card ${result.isEligible ? '' : 'is-ineligible'}">
+      <div class="product-card-header">
+        <div class="product-rank">${rank}</div>
+        <div class="product-info">
+          <strong>${escapeHtml(result.productName)}</strong>
+          <small>${escapeHtml(result.provider)} · ${channelLabel}</small>
+        </div>
+        <span class="status ${status.className}">${status.label}</span>
+      </div>
+
+      <div class="product-card-body">
+        <div class="product-metric">
+          <span>금리 범위</span>
+          <strong>${rateDisplay}</strong>
+        </div>
+        <div class="product-metric">
+          <span>최저 금리 유형</span>
+          <strong>${escapeHtml(result.rateType || "-")}</strong>
+        </div>
+        ${(result.alternativeRates || []).map(alt => `
+          <div class="product-metric alt-rate">
+            <span>${escapeHtml(alt.rateType)}</span>
+            <small>${alt.rateRange.min.toFixed(2)}% ~ ${alt.rateRange.max.toFixed(2)}%</small>
+          </div>
+        `).join("")}
+        ${result.maxAvailableAmount != null ? `
+          <div class="product-metric">
+            <span>예상 한도</span>
+            <strong>${formatMoney(result.maxAvailableAmount)}</strong>
+          </div>
+        ` : `
+          <div class="product-metric">
+            <span>한도</span>
+            <strong>은행 심사</strong>
+          </div>
+        `}
+        <div class="product-metric">
+          <span>예상 월 납입</span>
+          <strong>${result.monthlyPayment > 0 ? formatMoney(result.monthlyPayment) : "-"}</strong>
+        </div>
+      </div>
+
+      ${renderAvailableDiscounts(result)}
+
+      <div class="product-card-footer">
+        <div class="product-reasons">
+          <small>${escapeHtml(reasons.slice(0, 2).join(" · "))}</small>
+        </div>
+        ${result.prepaymentPenaltySummary ? `
+          <div class="product-prepayment">
+            <small>${escapeHtml(result.prepaymentPenaltySummary)}</small>
+          </div>
+        ` : ""}
+      </div>
+    </div>
+  `;
+}
+
+const DISCOUNT_CODE_LABELS = {
+  SALARY_TRANSFER: "급여이체 실적",
+  SALARY_OR_PENSION_TRANSFER: "급여·연금이체 실적",
+  "급여 매월 150만원 이상": "급여이체 월 150만원 이상",
+  AFFILIATED_CARD_300K: "제휴카드 월 30만원 이상",
+  AFFILIATED_CARD_700K_ADDITIONAL: "제휴카드 월 70만원 이상 (추가)",
+  KB_CREDIT_CARD: "KB카드 이용실적",
+  "카드 3개월 100만원 이상": "카드 3개월 100만원 이상",
+  AUTO_TRANSFER_3_OR_MORE: "자동이체 3건 이상",
+  "자동이체 매월 3건 이상": "자동이체 매월 3건 이상",
+  SAVINGS_OR_SUBSCRIPTION: "적금·청약 실적",
+  SAVINGS_BALANCE_300K: "적금 잔액 30만원 이상",
+  KB_STAR_BANKING: "KB스타뱅킹 이용",
+  REAL_ESTATE_E_CONTRACT: "부동산 전자계약",
+  VULNERABLE_BORROWER: "취약차주 우대",
+  "입출금예금 평잔 200만원 이상": "입출금예금 평잔 200만원 이상",
+  "적립식예금 월 10만원 이상": "적립식예금 월 10만원 이상"
+};
+
+function renderAvailableDiscounts(result) {
+  const discounts = result.unconfirmedDiscounts;
+  if (!discounts || discounts.length === 0 || !result.isEligible) return "";
+
+  // 거래실적 그룹만 필터 (사용자가 확인 가능한 항목)
+  const transactionDiscounts = discounts.filter(
+    (d) => d.group === "거래실적" || d.group === "거래실적 우대"
+  );
+  if (transactionDiscounts.length === 0) return "";
+
+  const groupMax = transactionDiscounts[0]?.groupMaximum;
+  const totalPossible = groupMax
+    ? Math.min(transactionDiscounts.reduce((s, d) => s + d.amount, 0), groupMax)
+    : transactionDiscounts.reduce((s, d) => s + d.amount, 0);
+
+  const items = transactionDiscounts.map((d) => {
+    const label = DISCOUNT_CODE_LABELS[d.reason] || d.reason;
+    return `<li>${escapeHtml(label)}: -${d.amount.toFixed(1)}%p</li>`;
+  }).join("");
+
+  return `
+    <div class="product-card-discounts">
+      <strong>추가 우대 가능 항목</strong>
+      <ul>${items}</ul>
+      <small>해당 은행 거래실적 시 최대 -${totalPossible.toFixed(1)}%p 추가 우대</small>
+    </div>
+  `;
 }
 
 function findNextVisibleStep(fromStep) {
@@ -542,7 +775,7 @@ function resetQuest() {
   render();
 }
 
-function renderRecommendation(analysis, recommended) {
+function renderRecommendation(analysis, recommended, runnerUp) {
   if (!recommended) {
     return `
       <article class="result-card is-empty">
@@ -562,13 +795,49 @@ function renderRecommendation(analysis, recommended) {
       <p>${escapeHtml(analysis.summary)} 사용자가 선택한 조건으로 우선순위를 계산한 결과입니다.</p>
       ${hasRateDiscounts ? renderRateDiscountDetail(recommended) : ""}
       <div class="metric-grid">
-        <div><span>${hasRateDiscounts ? "우대 적용 금리" : "예상 금리"}</span><strong>${formatRate(recommended.estimatedRate)}</strong></div>
-        <div><span>최대 가능 금액</span><strong>${formatMoney(recommended.maxAvailableAmount)}</strong></div>
-        <div><span>원리금균등 월 납입</span><strong>${formatMoney(recommended.monthlyPayment)}</strong></div>
-        <div><span>총 이자</span><strong>${formatMoney(recommended.totalInterest)}</strong></div>
+        <div><span>${hasRateDiscounts ? "우대 적용 금리" : (recommended.rateRange ? "예상 금리 범위" : "예상 금리")}</span><strong>${recommended.rateRange ? `${recommended.rateRange.min.toFixed(2)}%~${recommended.rateRange.max.toFixed(2)}%` : formatRate(recommended.estimatedRate)}</strong></div>
+        <div><span>${recommended.maxAvailableAmount != null ? "최대 가능 금액" : "한도"}</span><strong>${recommended.maxAvailableAmount != null ? formatMoney(recommended.maxAvailableAmount) : "은행 심사"}</strong></div>
+        <div><span>원리금균등 월 납입</span><strong>${recommended.monthlyPayment > 0 ? formatMoney(recommended.monthlyPayment) : "-"}</strong></div>
+        <div><span>총 이자</span><strong>${recommended.totalInterest > 0 ? formatMoney(recommended.totalInterest) : "-"}</strong></div>
       </div>
+      ${runnerUp ? renderRankingComparison(recommended, runnerUp) : ""}
       ${renderRepaymentOptions(recommended.repaymentOptions)}
     </article>
+  `;
+}
+
+function renderRankingComparison(recommended, runnerUp) {
+  const reason = buildRankingReason(recommended, runnerUp);
+  if (!reason) return "";
+
+  const firstName = recommended.productName;
+  const secondName = runnerUp.productName;
+
+  const rows = reason.items.map((item) => `
+    <tr>
+      <td class="ranking-label">${escapeHtml(item.label)}</td>
+      <td class="${item.winner === "first" ? "ranking-winner" : ""}">${escapeHtml(item.firstValue)}</td>
+      <td class="${item.winner === "second" ? "ranking-winner" : ""}">${escapeHtml(item.secondValue)}</td>
+    </tr>
+  `).join("");
+
+  return `
+    <div class="ranking-comparison">
+      <p class="result-kicker">1순위 선정 이유</p>
+      <div class="ranking-table-wrap">
+        <table class="ranking-table">
+          <thead>
+            <tr>
+              <th>비교 항목</th>
+              <th>1위 ${escapeHtml(firstName)}</th>
+              <th>2위 ${escapeHtml(secondName)}</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <p class="ranking-summary">${escapeHtml(reason.summary)}</p>
+    </div>
   `;
 }
 
@@ -812,6 +1081,12 @@ function findRelevantReferences(recommended) {
 }
 
 function getStatus(result) {
+  if (result.product?.category === "general") {
+    if (!result.isEligible) return { label: "미해당", className: "no" };
+    if (result.eligibilityType === "DATA_STALE") return { label: "데이터 오래됨", className: "warn" };
+    if (result.hasEnoughLimit === false) return { label: "한도 부족 추정", className: "warn" };
+    return { label: "비교 가능", className: "ok" };
+  }
   if (result.isEligible && result.hasEnoughLimit) return { label: "가능", className: "ok" };
   if (result.isEligible && !result.hasEnoughLimit) return { label: "한도 부족", className: "warn" };
   if (result.ineligibleReasons.some((reason) => reason.includes("확인"))) return { label: "확인 필요", className: "warn" };
