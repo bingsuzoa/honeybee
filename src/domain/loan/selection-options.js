@@ -119,7 +119,10 @@ export function normalizeSelections(selections) {
     existingAnnualRepayment: deriveExistingRepayment(selections),
     creditScoreRange: deriveCreditScoreRange(selections),
     plansEarlyRepaymentWithin3Years: selections.earlyRepaymentPlan === "within_3_years",
-    regulationZone: selections.regulationZone || "unknown" // SPECULATION_OVERHEATED, ADJUSTMENT_TARGET, NON_REGULATED, unknown
+    regulationZone: selections.regulationZone || "unknown", // SPECULATION_OVERHEATED, ADJUSTMENT_TARGET, NON_REGULATED, unknown
+    salaryTransferBank: selections.salaryTransferBank || null, // KB, HANA, NH, none
+    bankTransactionLevel: selections.bankTransactionLevel || null, // primary, card_only, salary_only
+    socialCareStatus: selections.socialCareStatus || null // none, eligible, farmer
   };
 }
 

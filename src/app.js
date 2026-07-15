@@ -325,6 +325,28 @@ const QUESTIONS = [
     ]
   },
   {
+    title: "급여(또는 연금)를 이체받는 은행이 있나요?",
+    subtitle: "✓ 급여이체 실적이 있는 은행에서 대출 시 최대 0.3%p 금리 우대를 받을 수 있습니다.",
+    item: null,
+    options: [
+      { label: "KB국민은행", patch: { salaryTransferBank: "KB" } },
+      { label: "하나은행", patch: { salaryTransferBank: "HANA" } },
+      { label: "NH농협은행", patch: { salaryTransferBank: "NH" } },
+      { label: "해당 없음", patch: { salaryTransferBank: "none" } }
+    ]
+  },
+  {
+    title: "해당 은행에서 다른 금융 거래도 하고 있나요?",
+    subtitle: "✓ 카드·적금·자동이체 등 거래실적이 있으면 추가 금리 우대를 받을 수 있습니다.",
+    item: null,
+    shouldShow: (sel) => sel.salaryTransferBank && sel.salaryTransferBank !== "none",
+    options: [
+      { label: "네, 주거래 은행입니다 (카드·적금·자동이체 등)", patch: { bankTransactionLevel: "primary" } },
+      { label: "카드만 사용합니다", patch: { bankTransactionLevel: "card_only" } },
+      { label: "급여이체만 합니다", patch: { bankTransactionLevel: "salary_only" } }
+    ]
+  },
+  {
     title: "기존 대출의 연간 원리금 상환액이 있나요?",
     subtitle: "✓ DSR(총부채원리금상환비율) 계산에 필요합니다.\n✓ 카드론, 학자금, 신용대출 등 모든 대출의 원리금이 포함됩니다.",
     item: null,
@@ -365,6 +387,16 @@ const QUESTIONS = [
       { label: "조정대상지역", patch: { regulationZone: "ADJUSTMENT_TARGET" } },
       { label: "비규제지역", patch: { regulationZone: "NON_REGULATED" } },
       { label: "잘 모르겠음", patch: { regulationZone: "unknown" } }
+    ]
+  },
+  {
+    title: "다음 중 해당되는 사항이 있나요?",
+    subtitle: "✓ 해당 시 은행별로 0.1~0.4%p 추가 우대가 가능합니다.",
+    item: null,
+    options: [
+      { label: "해당 없음", patch: { socialCareStatus: "none" } },
+      { label: "기초생활수급자·한부모·다문화·장애인 중 해당", patch: { socialCareStatus: "eligible" } },
+      { label: "농업인", patch: { socialCareStatus: "farmer" } }
     ]
   }
 ];
@@ -654,6 +686,7 @@ function renderGeneralMortgageCard(result) {
         </div>
       </div>
 
+      ${renderConfirmedDiscounts(result)}
       ${renderAvailableDiscounts(result)}
 
       <div class="product-card-footer">
@@ -686,8 +719,38 @@ const DISCOUNT_CODE_LABELS = {
   REAL_ESTATE_E_CONTRACT: "부동산 전자계약",
   VULNERABLE_BORROWER: "취약차주 우대",
   "입출금예금 평잔 200만원 이상": "입출금예금 평잔 200만원 이상",
-  "적립식예금 월 10만원 이상": "적립식예금 월 10만원 이상"
+  "적립식예금 월 10만원 이상": "적립식예금 월 10만원 이상",
+  TWO_CHILDREN_AND_AREA_85_OR_LESS: "2자녀(85m² 이하) 우대",
+  THREE_OR_MORE_CHILDREN: "다자녀(3명 이상) 우대",
+  "부동산 전자계약": "부동산 전자계약 우대",
+  "대출금액 2억원 이하": "대출금액 2억원 이하 우대",
+  "최초신규": "최초 신규 고객 우대",
+  "최초신규고객": "최초 신규 고객 우대",
+  "비거치식 분할상환": "비거치식 분할상환 우대",
+  "비거치식 분할상환(5년주기형)": "비거치식 분할상환 우대",
+  BASIC_LIVELIHOOD: "기초생활수급자 우대",
+  SINGLE_PARENT: "한부모가정 우대",
+  MULTICULTURAL: "다문화가정 우대",
+  DISABLED: "장애인 우대",
+  "농업인": "농업인 우대"
 };
+
+function renderConfirmedDiscounts(result) {
+  const discounts = result.rateDiscounts;
+  if (!discounts || discounts.length === 0 || !result.isEligible) return "";
+
+  const items = discounts.map((d) => {
+    const label = DISCOUNT_CODE_LABELS[d.reason] || d.reason;
+    return `<li>${escapeHtml(label)}: -${d.amount.toFixed(1)}%p</li>`;
+  }).join("");
+
+  return `
+    <div class="confirmed-discounts">
+      <strong>적용된 우대</strong>
+      <ul>${items}</ul>
+    </div>
+  `;
+}
 
 function renderAvailableDiscounts(result) {
   const discounts = result.unconfirmedDiscounts;

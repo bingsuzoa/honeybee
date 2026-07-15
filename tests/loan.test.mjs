@@ -289,17 +289,178 @@ test("caps total discount at 0.7%p for 3+ children", () => {
   assert.ok(rateInfo.totalDiscount <= 0.7);
 });
 
-test("does not apply rate discounts for bogeumjari", () => {
+test("bogeumjari applies newlywed discount for income under 70M", () => {
   const input = normalizeSelections({
     ...defaultSelections,
+    combinedIncome: "under85", // representative 70M → ≤ 70M
+    childrenCount: "0"
+  });
+  const bogeumjari = products.find((p) => p.id === "bogeumjari");
+  const rateInfo = calculateActualRate(bogeumjari, input);
+
+  const newlywedDiscount = rateInfo.discounts.find((d) => d.reason === "신혼가구");
+  assert.ok(newlywedDiscount);
+  assert.equal(newlywedDiscount.amount, 0.3);
+  assert.equal(rateInfo.finalRate, 4.9); // 5.2 - 0.3
+});
+
+test("bogeumjari does not apply newlywed discount for income over 70M", () => {
+  const input = normalizeSelections({
+    ...defaultSelections,
+    combinedIncome: "85to100", // representative 92M → > 70M
+    childrenCount: "0"
+  });
+  const bogeumjari = products.find((p) => p.id === "bogeumjari");
+  const rateInfo = calculateActualRate(bogeumjari, input);
+
+  const newlywedDiscount = rateInfo.discounts.find((d) => d.reason === "신혼가구");
+  assert.equal(newlywedDiscount, undefined);
+  assert.equal(rateInfo.finalRate, 5.2);
+});
+
+test("bogeumjari applies 2-children discount", () => {
+  const input = normalizeSelections({
+    ...defaultSelections,
+    combinedIncome: "85to100", // income doesn't matter for children discount
     childrenCount: "2"
+  });
+  const bogeumjari = products.find((p) => p.id === "bogeumjari");
+  const rateInfo = calculateActualRate(bogeumjari, input);
+
+  const childDiscount = rateInfo.discounts.find((d) => d.reason === "2자녀");
+  assert.ok(childDiscount);
+  assert.equal(childDiscount.amount, 0.5);
+  assert.equal(rateInfo.finalRate, 4.7); // 5.2 - 0.5
+});
+
+test("bogeumjari applies 3+ children discount", () => {
+  const input = normalizeSelections({
+    ...defaultSelections,
+    maritalStatus: "single",
+    childrenCount: "3"
+  });
+  const bogeumjari = products.find((p) => p.id === "bogeumjari");
+  const rateInfo = calculateActualRate(bogeumjari, input);
+
+  const childDiscount = rateInfo.discounts.find((d) => d.reason === "다자녀(3명 이상)");
+  assert.ok(childDiscount);
+  assert.equal(childDiscount.amount, 0.7);
+  assert.equal(rateInfo.finalRate, 4.5); // 5.2 - 0.7
+});
+
+test("bogeumjari stacks newlywed + children discount within 1.0%p cap", () => {
+  const input = normalizeSelections({
+    ...defaultSelections,
+    combinedIncome: "under85",
+    childrenCount: "2"
+  });
+  const bogeumjari = products.find((p) => p.id === "bogeumjari");
+  const rateInfo = calculateActualRate(bogeumjari, input);
+
+  // 신혼 0.3 + 2자녀 0.5 = 0.8, under 1.0 cap
+  assert.equal(rateInfo.totalDiscount, 0.8);
+  assert.equal(rateInfo.isCapped, false);
+  assert.equal(rateInfo.finalRate, 4.4); // 5.2 - 0.8
+});
+
+test("bogeumjari caps discount at 1.0%p", () => {
+  const input = normalizeSelections({
+    ...defaultSelections,
+    combinedIncome: "under85",
+    childrenCount: "3"
+  });
+  const bogeumjari = products.find((p) => p.id === "bogeumjari");
+  const rateInfo = calculateActualRate(bogeumjari, input);
+
+  // 신혼 0.3 + 3자녀이상 0.7 = 1.0, exactly at cap
+  assert.equal(rateInfo.totalDiscount, 1.0);
+  assert.equal(rateInfo.isCapped, false); // exactly at cap, not over
+  assert.equal(rateInfo.finalRate, 4.2); // 5.2 - 1.0
+});
+
+test("bogeumjari newborn discount not combined with newlywed", () => {
+  const input = normalizeSelections({
+    ...defaultSelections,
+    combinedIncome: "under85",
+    hasNewborn: "yes",
+    childrenCount: "0"
+  });
+  const bogeumjari = products.find((p) => p.id === "bogeumjari");
+  const rateInfo = calculateActualRate(bogeumjari, input);
+
+  // 신혼 0.3 적용됨 → 출산 0.2는 비결합으로 제외
+  const newlywedDiscount = rateInfo.discounts.find((d) => d.reason === "신혼가구");
+  const newbornDiscount = rateInfo.discounts.find((d) => d.reason === "출산가구");
+  assert.ok(newlywedDiscount);
+  assert.equal(newbornDiscount, undefined);
+  assert.equal(rateInfo.finalRate, 4.9); // 5.2 - 0.3
+});
+
+test("bogeumjari newborn discount applies when not married", () => {
+  const input = normalizeSelections({
+    ...defaultSelections,
+    maritalStatus: "single",
+    combinedIncome: "under85",
+    hasNewborn: "yes",
+    childrenCount: "0"
+  });
+  const bogeumjari = products.find((p) => p.id === "bogeumjari");
+  const rateInfo = calculateActualRate(bogeumjari, input);
+
+  const newbornDiscount = rateInfo.discounts.find((d) => d.reason === "출산가구");
+  assert.ok(newbornDiscount);
+  assert.equal(newbornDiscount.amount, 0.2);
+  assert.equal(rateInfo.finalRate, 5.0); // 5.2 - 0.2
+});
+
+test("bogeumjari uses akkim-e rate when electronic contract selected", () => {
+  const input = normalizeSelections({
+    ...defaultSelections,
+    combinedIncome: "85to100",
+    childrenCount: "0",
+    usesElectronicContract: "yes"
+  });
+  const bogeumjari = products.find((p) => p.id === "bogeumjari");
+  const rateInfo = calculateActualRate(bogeumjari, input);
+
+  // 아낌e 30yr = 5.1 (U_BOGEUMJARI 5.2보다 0.1%p 낮음)
+  assert.equal(rateInfo.baseRate, 5.1);
+  assert.equal(rateInfo.finalRate, 5.1);
+  // 아낌e 표시 포함
+  const eDiscount = rateInfo.discounts.find((d) => d.reason.includes("아낌e"));
+  assert.ok(eDiscount);
+});
+
+test("bogeumjari adds regulated area surcharge", () => {
+  const input = normalizeSelections({
+    ...defaultSelections,
+    combinedIncome: "85to100",
+    childrenCount: "0",
+    regulationZone: "SPECULATION_OVERHEATED"
+  });
+  const bogeumjari = products.find((p) => p.id === "bogeumjari");
+  const rateInfo = calculateActualRate(bogeumjari, input);
+
+  // 5.2 + 0.1 (규제지역) = 5.3
+  assert.equal(rateInfo.finalRate, 5.3);
+  const addition = rateInfo.discounts.find((d) => d.reason === "규제지역 가산");
+  assert.ok(addition);
+  assert.equal(addition.amount, -0.1); // negative = surcharge
+});
+
+test("bogeumjari no discount for unmarried no-children no-newborn", () => {
+  const input = normalizeSelections({
+    ...defaultSelections,
+    maritalStatus: "single",
+    combinedIncome: "85to100",
+    hasNewborn: "no",
+    childrenCount: "0"
   });
   const bogeumjari = products.find((p) => p.id === "bogeumjari");
   const rateInfo = calculateActualRate(bogeumjari, input);
 
   assert.equal(rateInfo.discounts.length, 0);
   assert.equal(rateInfo.totalDiscount, 0);
-  // Bogeumjari base rate from rate table (U_BOGEUMJARI, 30yr)
   assert.equal(rateInfo.finalRate, 5.2);
 });
 
@@ -615,7 +776,12 @@ test("NONE subscription status does not apply subscription discount", () => {
 test("bogeumjari ignores subscription status entirely", () => {
   const input = normalizeSelections({
     ...defaultSelections,
-    childrenCount: "2"
+    maritalStatus: "single",
+    childrenCount: "0",
+    hasNewborn: "no",
+    hasHousingSubscription: "yes",
+    subscriptionYears: "over15",
+    subscriptionPaymentCount: "over180"
   });
   const bogeumjari = products.find((p) => p.id === "bogeumjari");
   const rateInfo = calculateActualRate(bogeumjari, input);
