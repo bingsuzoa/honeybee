@@ -16,7 +16,7 @@ export function checkGeneralMortgageEligibility(input, product) {
   if (gm?.collateralTypes?.length && input.housingType) {
     const isApartment = input.housingType === "apartment";
     const collateralMatch = isApartment
-      ? gm.collateralTypes.some((t) => t.includes("아파트"))
+      ? gm.collateralTypes.some((t) => t.includes("아파트") || t === "주택")
       : gm.collateralTypes.some((t) => !t.includes("아파트") || t.includes("주택"));
     if (!collateralMatch) {
       reasons.push(`이 상품은 ${gm.collateralTypes.join(", ")} 담보만 가능합니다.`);
